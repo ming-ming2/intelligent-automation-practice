@@ -1,7 +1,7 @@
 # intelligent-automation-practice
 지능형자동화실습 팀플 — 경쟁사 공시 변화 탐지 및 분석 보고서 자동화
 
-지능형자동화실습 팀 응소.net의 프로젝트 기획 요약입니다.
+지능형자동화실습 팀 응소.net의 프로젝트입니다. 개발 환경, 프로젝트 구조와 실행 방법을 안내합니다.
 원본 기획안: [기획안 PPT](docs/기획안.pptx)
 
 ## 팀 공통 개발 환경
@@ -43,7 +43,7 @@ DART_API_KEY=개인_OpenDART_인증키
 OPENAI_API_KEY=개인_OpenAI_API_키
 ```
 
-A의 데이터 수집에는 `DART_API_KEY`, C의 OpenAI 기반 Agent 실행에는 `OPENAI_API_KEY`가 필요합니다.
+OpenDART 데이터 수집에는 `DART_API_KEY`, OpenAI 기반 Agent 실행에는 `OPENAI_API_KEY`가 필요합니다.
 키가 없어도 패키지 설치와 환경 점검은 할 수 있습니다.
 실제 키와 `.env`는 공유하지 않고, 변수명과 기본값만 `.env.example`로 공유합니다.
 
@@ -56,9 +56,9 @@ A의 데이터 수집에는 `DART_API_KEY`, C의 OpenAI 기반 Agent 실행에�
 | 실행 결과·보고서 | `results/` | `RESULTS_DIR` |
 | CrewAI 모델 | `openai/gpt-4o-mini` | `CREWAI_MODEL` |
 
-이 경로는 팀 공통 기본값입니다. A·B·C의 구현 코드에서 변수를 읽고, 상대 경로는
+이 경로는 팀 공통 기본값입니다. 각 모듈에서 변수를 읽고, 상대 경로는
 현재 터미널 위치가 아닌 **프로젝트 최상위 폴더 기준**으로 해석해야 합니다.
-DB와 원문은 Git에서 제외하며, A가 B에게 선별한 자료와 DB를 별도로 전달합니다.
+DB와 원문은 Git에서 제외하며, 필요한 자료는 같은 폴더 구조를 유지하여 별도로 공유합니다.
 실행 결과를 커밋할 때는 API 키가 포함되지 않았는지 확인합니다.
 
 ### 환경 점검
@@ -80,8 +80,44 @@ Windows에서는:
 점검 스크립트는 Python 버전, 패키지 import, SQLite 동작과 키 설정 여부를 확인합니다.
 키 값은 출력하지 않으며 외부 API를 호출하거나 키의 유효성을 검증하지 않습니다.
 CrewAI 내부 저장 경로는 프로젝트의 `.cache/crewai`로 설정합니다.
-C의 코드에서도 `.env` 로딩과 저장 경로 설정을 **CrewAI import 전에** 적용하세요.
-환경 준비 후 A의 수집 모듈, B의 정규화·탐지 모듈, C의 CrewAI 모듈을 구현합니다.
+Agent 실행 코드에서도 `.env` 로딩과 저장 경로 설정을 **CrewAI import 전에** 적용하세요.
+
+## 프로젝트 구조
+
+현재 저장소의 주요 파일과 경로입니다. DB와 원문 파일은 수집 시 생성됩니다.
+
+```text
+intelligent-automation-practice/
+├── config.py                   # 환경변수 및 공통 설정
+├── dart_collector.py           # OpenDART 수집·SQLite 저장
+├── requirements.txt            # 공통 패키지
+├── .env.example                # 환경변수 템플릿
+├── scripts/
+│   └── check_environment.py    # 개발 환경 점검
+├── data/
+│   ├── dart.db                 # 수집 시 생성되는 DB (Git 제외)
+│   └── raw/                    # 수집 원문 ZIP·XML (Git 제외)
+├── results/                    # 실행 결과·보고서
+└── docs/
+    ├── 기획안.pptx             # 프로젝트 기획안
+    ├── COLLECTOR.md            # 수집 옵션·DB 구조
+    └── API_INTEGRATION_TODO.md # 실제 API 검증 체크리스트
+```
+
+원문 정규화(`normalizer.py`), 변화 탐지(`change_detector.py`),
+Agent 실행(`crew.py`)과 전체 실행 진입점(`main.py`)은 향후 통합할 예정이며 현재 저장소에는 없습니다.
+
+## 실행 방법과 구현 상태
+
+현재 실행 가능한 데이터 수집 명령입니다. `.env` 설정 후 가상환경에서 실행합니다.
+
+```sh
+python dart_collector.py --company LG전자 --start 20220101 --end 20251231
+```
+
+실행 옵션과 저장 구조는 [수집 모듈 안내](docs/COLLECTOR.md)를 참고하세요.
+데이터 수집부터 분석 보고서 생성까지의 전체 실행은 후속 모듈 통합 후 제공할 예정입니다.
+실제 API 수집 검증은 남아 있으며, 확인 항목은 [API 검증 체크리스트](docs/API_INTEGRATION_TODO.md)에 정리되어 있습니다.
 
 ## 프로젝트 목적
 
