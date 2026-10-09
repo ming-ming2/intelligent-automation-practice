@@ -1,0 +1,3 @@
+-r requirements.txt
+# B → C 출력 규격 테스트용. 실행 모듈에서는 import하지 않는다.
+jsonschema>=4.18,<5

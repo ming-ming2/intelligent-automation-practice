@@ -4,6 +4,11 @@
 지능형자동화실습 팀 응소.net의 프로젝트입니다. 개발 환경, 프로젝트 구조와 실행 방법을 안내합니다.
 원본 기획안: [기획안 PPT](docs/기획안.pptx)
 
+역할 B와 C의 입출력 계약: [B → C JSON 규격 v1.0.0](docs/B_TO_C_CONTRACT.md).
+역할 B 구현과 테스트 방법: [원문 정규화·변화 탐지](docs/ROLE_B.md).
+[개발용 가상 입력](examples/mock_input.json)은 인터페이스 예시이며 실제 공시 검증 결과가 아닙니다.
+제출용 테스트 3건은 API 복구 후 실제 LG전자 공시로 다시 실행하고 검증해야 합니다.
+
 ## 팀 공통 개발 환경
 
 Python **3.12**와 각자의 **`.venv`**를 사용합니다. Docker는 현재 필수가 아닙니다.
@@ -104,8 +109,11 @@ intelligent-automation-practice/
     └── API_INTEGRATION_TODO.md # 실제 API 검증 체크리스트
 ```
 
-원문 정규화(`normalizer.py`), 변화 탐지(`change_detector.py`),
-Agent 실행(`crew.py`)과 전체 실행 진입점(`main.py`)은 향후 통합할 예정이며 현재 저장소에는 없습니다.
+원문 정규화(normalizer.py)와 변화 탐지(change_detector.py)는 역할 B에서 구현되었습니다.
+현재는 개발용 가상 데이터로 단위 테스트를 완료했으며,
+OpenDART API 복구 후 실제 LG전자 공시로 추가 검증할 예정입니다.
+
+CrewAI Agent 실행(crew.py)과 전체 실행 진입점(main.py)은 역할 C에서 통합 예정입니다.
 
 ## 실행 방법과 구현 상태
 

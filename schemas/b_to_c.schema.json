@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "B to C disclosure input v1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "data_origin", "rcept_no", "corp_code", "corp_name", "report_nm", "rcept_dt", "normalized_text", "normalization", "source", "triggers", "past_cases", "history_search", "needs_verification"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "data_origin": {"enum": ["synthetic", "dart", "mixed"]},
+    "rcept_no": {"$ref": "#/$defs/receipt"},
+    "corp_code": {"type": "string", "pattern": "^[0-9]{8}$"},
+    "corp_name": {"type": "string", "minLength": 1},
+    "report_nm": {"type": "string", "minLength": 1},
+    "rcept_dt": {"$ref": "#/$defs/date"},
+    "normalized_text": {"type": "string", "maxLength": 15000},
+    "normalization": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "original_length", "truncated", "selected_sections"],
+      "properties": {
+        "status": {"enum": ["ok", "missing", "error"]},
+        "original_length": {"type": "integer", "minimum": 0},
+        "truncated": {"type": "boolean"},
+        "selected_sections": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "source": {"$ref": "#/$defs/source"},
+    "triggers": {
+      "type": "object", "additionalProperties": false,
+      "required": ["amount_changes", "financial_changes", "keywords"],
+      "properties": {
+        "amount_changes": {
+          "type": "array", "items": {
+            "allOf": [{"$ref": "#/$defs/comparison"}, {"properties": {"threshold": {"const": 0.2}, "dimensions": {"type": "null"}}}]
+          }
+        },
+        "financial_changes": {
+          "type": "array", "items": {
+            "allOf": [{"$ref": "#/$defs/comparison"}, {"properties": {"threshold": {"const": 0.15}, "dimensions": {"$ref": "#/$defs/dimensions"}}}]
+          }
+        },
+        "keywords": {
+          "type": "array", "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["keyword", "evidence"],
+            "properties": {
+              "keyword": {"enum": ["신규사업", "중단", "양수", "분할", "합병"]},
+              "evidence": {"allOf": [{"$ref": "#/$defs/evidence"}, {"properties": {"kind": {"const": "document"}}}]}
+            }
+          }
+        }
+      }
+    },
+    "past_cases": {
+      "type": "array", "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["rcept_no", "report_nm", "rcept_dt", "source", "excerpt"],
+        "properties": {
+          "rcept_no": {"$ref": "#/$defs/receipt"},
+          "report_nm": {"type": "string"},
+          "rcept_dt": {"$ref": "#/$defs/date"},
+          "source": {"$ref": "#/$defs/source"},
+          "excerpt": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "history_search": {
+      "type": "object", "additionalProperties": false,
+      "required": ["match_rule", "search_window_years", "cases_in_three_years", "requested_start", "end_exclusive", "coverage_status", "coverage_note"],
+      "properties": {
+        "match_rule": {"const": "same_corp_and_normalized_report_type_unique_events"},
+        "search_window_years": {"enum": [3, 5]},
+        "cases_in_three_years": {"type": "integer", "minimum": 0},
+        "requested_start": {"$ref": "#/$defs/date"},
+        "end_exclusive": {"$ref": "#/$defs/date"},
+        "coverage_status": {"enum": ["complete", "incomplete", "unknown"]},
+        "coverage_note": {"type": ["string", "null"]}
+      },
+      "if": {"properties": {"cases_in_three_years": {"maximum": 1}}},
+      "then": {"properties": {"search_window_years": {"const": 5}}},
+      "else": {"properties": {"search_window_years": {"const": 3}}}
+    },
+    "needs_verification": {
+      "type": "array", "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["code", "field", "message"],
+        "properties": {
+          "code": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]*$"},
+          "field": {"type": "string", "minLength": 1},
+          "message": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"data_origin": {"const": "dart"}}},
+      "then": {"properties": {"rcept_no": {"pattern": "^[0-9]{14}$"}}}
+    },
+    {
+      "if": {"properties": {"data_origin": {"const": "synthetic"}}},
+      "then": {"properties": {"rcept_no": {"pattern": "^MOCK-"}}}
+    }
+  ],
+  "$defs": {
+    "receipt": {"type": "string", "pattern": "^([0-9]{14}|MOCK-[A-Z0-9-]+)$"},
+    "date": {"type": "string", "pattern": "^[0-9]{8}$"},
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_url", "document_paths"],
+      "properties": {
+        "source_url": {"type": ["string", "null"]},
+        "document_paths": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true}
+      }
+    },
+    "evidence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kind", "rcept_no", "document_path", "section", "quote", "db_row", "field"],
+      "properties": {
+        "kind": {"enum": ["document", "financial_account"]},
+        "rcept_no": {"$ref": "#/$defs/receipt"},
+        "document_path": {"type": ["string", "null"]},
+        "section": {"type": ["string", "null"]},
+        "quote": {"type": ["string", "null"]},
+        "db_row": {
+          "oneOf": [{"type": "null"}, {
+            "type": "object", "additionalProperties": false,
+            "required": ["table", "corp_code", "bsns_year", "reprt_code", "row_no"],
+            "properties": {
+              "table": {"const": "financial_accounts"},
+              "corp_code": {"type": "string", "pattern": "^[0-9]{8}$"},
+              "bsns_year": {"type": "string", "pattern": "^[0-9]{4}$"},
+              "reprt_code": {"enum": ["11011", "11012", "11013", "11014"]},
+              "row_no": {"type": "integer", "minimum": 0}
+            }
+          }]
+        },
+        "field": {"type": ["string", "null"]}
+      },
+      "if": {"properties": {"kind": {"const": "document"}}},
+      "then": {"properties": {"quote": {"type": "string", "minLength": 1}, "db_row": {"type": "null"}, "field": {"type": "null"}}},
+      "else": {"properties": {"db_row": {"type": "object"}, "field": {"type": "string", "minLength": 1}}}
+    },
+    "value": {
+      "type": "object", "additionalProperties": false,
+      "required": ["value", "unit", "currency", "raw_value", "evidence"],
+      "properties": {
+        "value": {"type": ["string", "null"], "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"},
+        "unit": {"type": ["string", "null"]},
+        "currency": {"type": ["string", "null"]},
+        "raw_value": {"type": ["string", "null"]},
+        "evidence": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/evidence"}]}
+      }
+    },
+    "dimensions": {
+      "type": "object", "additionalProperties": false,
+      "required": ["fs_div", "sj_div", "reprt_code", "current_year", "previous_year", "current_period", "previous_period", "period_basis"],
+      "properties": {
+        "fs_div": {"enum": ["CFS", "OFS", null]},
+        "sj_div": {"type": ["string", "null"]},
+        "reprt_code": {"enum": ["11011", "11012", "11013", "11014", null]},
+        "current_year": {"type": ["string", "null"], "pattern": "^[0-9]{4}$"},
+        "previous_year": {"type": ["string", "null"], "pattern": "^[0-9]{4}$"},
+        "current_period": {"type": ["string", "null"]},
+        "previous_period": {"type": ["string", "null"]},
+        "period_basis": {"enum": ["instant", "quarter", "cumulative", "annual", null]}
+      }
+    },
+    "comparison": {
+      "type": "object", "additionalProperties": false,
+      "required": ["metric", "status", "triggered", "reason", "current", "previous", "change_rate", "threshold", "dimensions"],
+      "properties": {
+        "metric": {"type": "string", "minLength": 1},
+        "status": {"enum": ["evaluated", "not_comparable"]},
+        "triggered": {"type": ["boolean", "null"]},
+        "reason": {"type": ["string", "null"]},
+        "current": {"$ref": "#/$defs/value"},
+        "previous": {"$ref": "#/$defs/value"},
+        "change_rate": {"type": ["number", "null"]},
+        "threshold": {"enum": [0.2, 0.15]},
+        "dimensions": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/dimensions"}]}
+      },
+      "if": {"properties": {"status": {"const": "evaluated"}}},
+      "then": {
+        "properties": {
+          "triggered": {"type": "boolean"}, "reason": {"type": "null"}, "change_rate": {"type": "number"},
+          "current": {"properties": {"value": {"type": "string"}, "unit": {"type": "string"}, "currency": {"type": "string"}, "evidence": {"type": "object"}}},
+          "previous": {"properties": {"value": {"type": "string"}, "unit": {"type": "string"}, "currency": {"type": "string"}, "evidence": {"type": "object"}}}
+        }
+      },
+      "else": {"properties": {"triggered": {"type": "null"}, "change_rate": {"type": "null"}, "reason": {"type": "string", "minLength": 1}}}
+    }
+  }
+}

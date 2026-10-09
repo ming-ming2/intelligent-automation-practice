@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0.0",
+  "data_origin": "synthetic",
+  "rcept_no": "MOCK-CURRENT-001",
+  "corp_code": "00401731",
+  "corp_name": "LG전자",
+  "report_nm": "개발용 가상 투자 공시",
+  "rcept_dt": "20251001",
+  "normalized_text": "[개발용 가상 데이터 — 실제 LG전자 공시가 아님]\n투자금액 | 1,300억원\n현재 합병 계획은 없습니다.",
+  "normalization": {
+    "status": "ok",
+    "original_length": 60,
+    "truncated": false,
+    "selected_sections": []
+  },
+  "source": {"source_url": null, "document_paths": []},
+  "triggers": {
+    "amount_changes": [
+      {
+        "metric": "투자금액",
+        "status": "evaluated",
+        "triggered": true,
+        "reason": null,
+        "current": {
+          "value": "130000000000",
+          "unit": "원",
+          "currency": "KRW",
+          "raw_value": "1,300억원",
+          "evidence": {
+            "kind": "document",
+            "rcept_no": "MOCK-CURRENT-001",
+            "document_path": null,
+            "section": null,
+            "quote": "투자금액 | 1,300억원",
+            "db_row": null,
+            "field": null
+          }
+        },
+        "previous": {
+          "value": "100000000000",
+          "unit": "원",
+          "currency": "KRW",
+          "raw_value": "1,000억원",
+          "evidence": {
+            "kind": "document",
+            "rcept_no": "MOCK-PREVIOUS-001",
+            "document_path": null,
+            "section": null,
+            "quote": "투자금액 | 1,000억원",
+            "db_row": null,
+            "field": null
+          }
+        },
+        "change_rate": 0.3,
+        "threshold": 0.2,
+        "dimensions": null
+      }
+    ],
+    "financial_changes": [],
+    "keywords": [
+      {
+        "keyword": "합병",
+        "evidence": {
+          "kind": "document",
+          "rcept_no": "MOCK-CURRENT-001",
+          "document_path": null,
+          "section": null,
+          "quote": "현재 합병 계획은 없습니다.",
+          "db_row": null,
+          "field": null
+        }
+      }
+    ]
+  },
+  "past_cases": [
+    {
+      "rcept_no": "MOCK-PREVIOUS-001",
+      "report_nm": "개발용 가상 투자 공시",
+      "rcept_dt": "20241001",
+      "source": {"source_url": null, "document_paths": []},
+      "excerpt": "[개발용 가상 데이터] 투자금액 | 1,000억원"
+    }
+  ],
+  "history_search": {
+    "match_rule": "same_corp_and_normalized_report_type_unique_events",
+    "search_window_years": 5,
+    "cases_in_three_years": 1,
+    "requested_start": "20201001",
+    "end_exclusive": "20251001",
+    "coverage_status": "unknown",
+    "coverage_note": "가상 사례만 주입했으므로 실제 과거 공시 목록 수집 범위는 확인하지 않았습니다."
+  },
+  "needs_verification": [
+    {
+      "code": "FINANCIAL_DATA_MISSING",
+      "field": "triggers.financial_changes",
+      "message": "이 개발용 예시에는 재무 데이터가 없습니다."
+    },
+    {
+      "code": "HISTORY_COVERAGE_UNKNOWN",
+      "field": "history_search",
+      "message": "실제 5년간의 과거 공시 부재 또는 신규 사건 여부를 판단할 수 없습니다."
+    }
+  ]
+}
