@@ -1,0 +1,21 @@
+# Local credentials and virtual environment
+.env
+.env.*
+!.env.example
+.venv/
+
+# Python and tooling caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cache/
+
+# Collected data (share selected samples separately)
+data/*.db
+data/*.db-*
+data/*.sqlite*
+data/raw/
+
+# Local OS files
+.DS_Store
+Thumbs.db
