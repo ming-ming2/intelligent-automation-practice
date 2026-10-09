@@ -4,8 +4,8 @@
 지능형자동화실습 팀 응소.net의 프로젝트입니다. 개발 환경, 프로젝트 구조와 실행 방법을 안내합니다.
 원본 기획안: [기획안 PPT](docs/기획안.pptx)
 
-역할 B와 C의 입출력 계약: [B → C JSON 규격 v1.0.0](docs/B_TO_C_CONTRACT.md).
-역할 B 구현과 테스트 방법: [원문 정규화·변화 탐지](docs/ROLE_B.md).
+입출력 계약: [B → C JSON 규격 v1.0.0](docs/B_TO_C_CONTRACT.md).
+구현과 테스트 방법: [원문 정규화·변화 탐지](docs/ROLE_B.md).
 [개발용 가상 입력](examples/mock_input.json)은 인터페이스 예시이며 실제 공시 검증 결과가 아닙니다.
 제출용 테스트 3건은 API 복구 후 실제 LG전자 공시로 다시 실행하고 검증해야 합니다.
 
