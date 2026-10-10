@@ -5,7 +5,7 @@
 원본 기획안: [기획안 PPT](docs/기획안.pptx)
 
 입출력 계약: [B → C JSON 규격 v1.0.0](docs/B_TO_C_CONTRACT.md).
-구현과 테스트 방법: [원문 정규화·변화 탐지](docs/ROLE_B.md).
+구현과 테스트 방법: [원문 정규화·변화 탐지](docs/ROLE_B.md), [CrewAI Agent·Task·담당자 검토](docs/ROLE_C.md).
 [개발용 가상 입력](examples/mock_input.json)은 인터페이스 예시이며 실제 공시 검증 결과가 아닙니다.
 제출용 테스트 3건은 API 복구 후 실제 LG전자 공시로 다시 실행하고 검증해야 합니다.
 
@@ -59,6 +59,7 @@ OpenDART 데이터 수집에는 `DART_API_KEY`, OpenAI 기반 Agent 실행에는
 | SQLite DB | `data/dart.db` | `DART_DB_PATH` |
 | 공시 원문 | `data/raw/` | `DART_RAW_DIR` |
 | 실행 결과·보고서 | `results/` | `RESULTS_DIR` |
+| 담당자 검토 이력 | `data/review.db` | - |
 | CrewAI 모델 | `openai/gpt-4o-mini` | `CREWAI_MODEL` |
 
 이 경로는 팀 공통 기본값입니다. 각 모듈에서 변수를 읽고, 상대 경로는
@@ -94,37 +95,66 @@ Agent 실행 코드에서도 `.env` 로딩과 저장 경로 설정을 **CrewAI i
 ```text
 intelligent-automation-practice/
 ├── config.py                   # 환경변수 및 공통 설정
-├── dart_collector.py           # OpenDART 수집·SQLite 저장
+├── dart_collector.py           # OpenDART 수집·SQLite 저장 (역할 A)
+├── normalizer.py               # 공시 원문 정규화 (역할 B)
+├── change_detector.py          # 변화 후보 탐지, C 입력 JSON 생성 (역할 B)
+├── crew.py                     # CrewAI Agent 3개·Task 3개 정의 (역할 C)
+├── main.py                     # 전체 실행, 담당자 검토, 결과·이력 저장 (역할 C)
 ├── requirements.txt            # 공통 패키지
 ├── .env.example                # 환경변수 템플릿
 ├── scripts/
 │   └── check_environment.py    # 개발 환경 점검
+├── examples/
+│   └── mock_input.json         # 개발용 가상 입력
+├── schemas/
+│   └── b_to_c.schema.json      # B → C 입력 JSON 스키마
+├── tests/
+│   ├── test_role_b.py          # 정규화·변화 탐지 테스트
+│   └── test_role_c.py          # Agent·Task 연결 구조 테스트 (가짜 LLM, 비용 없음)
 ├── data/
 │   ├── dart.db                 # 수집 시 생성되는 DB (Git 제외)
+│   ├── review.db               # 담당자 검토 이력 DB (Git 제외)
 │   └── raw/                    # 수집 원문 ZIP·XML (Git 제외)
 ├── results/                    # 실행 결과·보고서
 └── docs/
     ├── 기획안.pptx             # 프로젝트 기획안
     ├── COLLECTOR.md            # 수집 옵션·DB 구조
-    └── API_INTEGRATION_TODO.md # 실제 API 검증 체크리스트
+    ├── API_INTEGRATION_TODO.md # 실제 API 검증 체크리스트
+    ├── B_TO_C_CONTRACT.md      # B → C JSON 규격
+    ├── ROLE_B.md               # 정규화·변화 탐지 안내
+    └── ROLE_C.md               # CrewAI 실행 안내
 ```
 
 원문 정규화(normalizer.py)와 변화 탐지(change_detector.py)는 역할 B에서 구현되었습니다.
-현재는 개발용 가상 데이터로 단위 테스트를 완료했으며,
+CrewAI Agent 실행(crew.py)과 전체 실행 진입점(main.py)은 역할 C에서 구현되었습니다.
+현재는 개발용 가상 데이터로 단위 테스트와 Agent 실행, 담당자 반려·재작업 흐름을 확인했으며,
 OpenDART API 복구 후 실제 LG전자 공시로 추가 검증할 예정입니다.
-
-CrewAI Agent 실행(crew.py)과 전체 실행 진입점(main.py)은 역할 C에서 통합 예정입니다.
 
 ## 실행 방법과 구현 상태
 
-현재 실행 가능한 데이터 수집 명령입니다. `.env` 설정 후 가상환경에서 실행합니다.
+`.env` 설정 후 가상환경에서 실행합니다.
+
+1) 데이터 수집
 
 ```sh
 python dart_collector.py --company LG전자 --start 20220101 --end 20251231
 ```
 
 실행 옵션과 저장 구조는 [수집 모듈 안내](docs/COLLECTOR.md)를 참고하세요.
-데이터 수집부터 분석 보고서 생성까지의 전체 실행은 후속 모듈 통합 후 제공할 예정입니다.
+
+2) 분석 보고서 생성과 담당자 검토 (`OPENAI_API_KEY` 필요)
+
+```sh
+python tests/test_role_c.py                                   # 연결 구조 테스트 (키 불필요)
+python main.py --mock                                         # 개발용 가상 입력으로 실행
+python main.py --mock --quiet                                 # 진행 로그 생략
+python main.py --rcept-no 실제접수번호 --data-origin dart --label test1_일반   # DB의 실제 공시로 실행
+```
+
+실행하면 Agent 3개가 차례로 분석한 뒤 보고서 초안이 출력되고, 담당자가 승인·보류·반려를 선택합니다.
+결과는 `results/<시각>_<라벨>_<접수번호>/` 폴더에, 검토 이력은 `data/review.db`의 `review_history` 테이블에 저장됩니다.
+자세한 내용은 [CrewAI 실행 안내](docs/ROLE_C.md)를 참고하세요.
+
 실제 API 수집 검증은 남아 있으며, 확인 항목은 [API 검증 체크리스트](docs/API_INTEGRATION_TODO.md)에 정리되어 있습니다.
 
 ## 프로젝트 목적
@@ -163,19 +193,29 @@ python dart_collector.py --company LG전자 --start 20220101 --end 20251231
 
 | Agent | 역할 | 주요 입력 | 주요 출력 |
 | --- | --- | --- | --- |
-| Disclosure Analysis Agent | 공시 핵심 사실과 근거 추출 | 공시 원문, 기업정보, 접수번호 | FACT, 원문 근거, 확인 불가 정보 |
-| Business Change Analyst | 변화 맥락·영향과 추가 확인사항 분석 | 첫 Agent 결과, 과거 공시, Program 계산 결과 | CHANGE, INTERPRETATION, NEEDS_VERIFICATION |
-| Intelligence Report Agent | 검토용 보고서 초안 작성 | 앞선 Agent 결과, 변화 탐지 기준 | 요약 보고서, 출처, 후속 확인사항 |
+| Disclosure Analysis Agent | 공시 핵심 사실과 근거 추출 | 공시 원문, 기업정보, 접수번호, 키워드 등장 문맥 | FACT, 원문 근거, 키워드 실제 사건 여부, 확인 불가 정보 |
+| Business Change Analyst | 변화 맥락·영향과 추가 확인사항 분석 | 첫 Agent 결과, 과거 공시, Program 계산 결과(변화 탐지 기준 적용) | CHANGE, INTERPRETATION, NEEDS_VERIFICATION |
+| Intelligence Report Agent | 검토용 보고서 초안 작성 | 앞선 Agent 결과(변화 탐지 결과 포함) | 요약 보고서, 출처, 후속 확인사항 |
 
 API 호출과 수치 계산은 Program이 수행하고, 문서 이해와 맥락 설명은 Agent가 담당합니다. 접수번호와 원문 근거를 단계 사이에 전달하고 분석 이력을 유지합니다.
+
+Agent 출력의 신뢰성을 위해 Program이 다음을 검증합니다.
+
+- Agent가 붙인 근거 문장이 실제 원문과 Program 근거에 있는지 대조하고, 없으면 담당자에게 경고합니다.
+- Program이 넘긴 확인 필요 항목이 분석 결과에서 빠지면 Agent에게 재작성시킵니다.
+- 신뢰도가 낮은 해석과 원문으로 확인할 수 없는 항목은 Agent가 누락해도 확인 필요 항목으로 자동 추가합니다.
+- 변화율은 Agent가 계산하지 않고 Program 계산값을 그대로 사용합니다.
 
 ## 사람의 검토와 재작업
 
 전략기획 담당자가 원문 근거의 일치 여부, 사실과 해석의 구분, 과도한 추론 여부를 검토합니다. 최종 중요도는 높음·중간·낮음·보류로 판단합니다.
 
 - 근거 오류: 첫 번째 Agent부터 재작업
-- 비교·해석 오류: 두 번째 Agent부터 재작업
-- 보고서 형식 오류: 세 번째 Agent 재작업
+- 비교·해석 오류: 두 번째 Agent부터 재작업 (첫 번째 Agent 결과는 재사용)
+- 보고서 형식 오류: 세 번째 Agent만 재작업
+
+반려 시 담당자가 입력한 수정 지시가 해당 Agent에게 전달되며, 재작업은 최대 3회까지 진행합니다.
+회차별 결과와 판단 이력은 모두 저장되어 반려 전후를 비교할 수 있습니다.
 
 ## 최종 산출물과 성공 기준
 
@@ -188,6 +228,6 @@ API 호출과 수치 계산은 Program이 수행하고, 문서 이해와 맥락 
 - 공시 유형별 추출할 금액·일자·사업 항목과 과거 유사 공시의 매칭 기준
 - 변화 계산에 필요한 구조화 데이터의 확보 방법과 Agent 사실 추출의 실행 순서
 - 비교 기준값이 0이거나 자료가 부족한 경우의 처리
-- 보고서 형식, 승인·반려 입력 방식, 재작업 시 후속 Agent 실행 범위
+- ~~보고서 형식, 승인·반려 입력 방식, 재작업 시 후속 Agent 실행 범위~~ (역할 C에서 구현 완료)
 
 이 문서는 기획 요약이며, 구현 완료를 의미하지 않습니다.
