@@ -1,0 +1,86 @@
+{
+  "rcept_no": "20251014800001",
+  "changes": [
+    {
+      "change_id": "C1",
+      "metric": "처분금액",
+      "previous": null,
+      "current": null,
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "비교 불가 (CORRECTION_LINK_UNCONFIRMED)",
+      "related_fact_ids": [
+        "F3"
+      ]
+    }
+  ],
+  "interpretations": [
+    {
+      "statement": "LG전자의 처분금액이 정정되었으나, 비교가 불가능하여 삼성전자 DX 생활가전·전자 사업에 미치는 영향은 불확실하다.",
+      "impact_area": "재무",
+      "based_on": [
+        "F3",
+        "C1"
+      ],
+      "confidence": "낮음"
+    }
+  ],
+  "needs_verification": [
+    {
+      "code": "HISTORY_COVERAGE_UNKNOWN",
+      "field": "history_search",
+      "item": "검색 기간 전체의 공시 목록 수집을 확인할 필요가 있다.",
+      "why": "정확한 과거 사례를 확인하기 위해",
+      "origin": "program"
+    },
+    {
+      "code": "CORRECTION_LINK_UNCONFIRMED",
+      "field": "past_cases",
+      "item": "정정공시가 원공시와 연결되어 있는지 확인해야 한다.",
+      "why": "정확한 비교를 위해",
+      "origin": "program"
+    },
+    {
+      "code": "AMOUNT_UNRESOLVED",
+      "field": "triggers.amount_changes",
+      "item": "처분금액의 단위·값·표 구조가 불명확하다.",
+      "why": "정확한 금액을 확인하기 위해",
+      "origin": "program"
+    },
+    {
+      "code": "FINANCIAL_DATA_MISSING",
+      "field": "triggers.financial_changes",
+      "item": "현재 접수번호에 직접 연결된 재무 계정이 없다.",
+      "why": "재무 데이터의 정확성을 확인하기 위해",
+      "origin": "program"
+    },
+    {
+      "code": "AMOUNT_UNRESOLVED",
+      "field": "triggers.amount_changes",
+      "item": "처분금액의 단위·값·표 구조가 불명확하다.",
+      "why": "정확한 금액을 확인하기 위해",
+      "origin": "agent"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": null,
+      "item": "처분금액의 단위·값·표 구조를 확인해야 한다.",
+      "why": "정확한 비교를 위해",
+      "origin": "agent"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": "interpretations",
+      "item": "해석 검증: LG전자의 처분금액이 정정되었으나, 비교가 불가능하여 삼성전자 DX 생활가전·전자 사업에 미치는 영향은 불확실하다.",
+      "why": "근거(F3, C1)만으로는 신뢰도가 낮아 추가 자료로 확인이 필요합니다.",
+      "origin": "agent"
+    }
+  ],
+  "follow_up_checks": [
+    "정정된 처분금액의 정확한 수치를 확인할 수 있는 방법은 무엇인가?",
+    "과거 공시와의 연결성을 어떻게 확인할 수 있는가?",
+    "정정 공시의 내용이 실제로 반영되었는지 확인할 수 있는 방법은 무엇인가?",
+    "처분금액의 단위와 구조를 명확히 하기 위해 어떤 추가 자료가 필요한가?",
+    "LG전자의 IPO 관련 전략이 삼성전자에 미치는 영향은 무엇인가?"
+  ]
+}

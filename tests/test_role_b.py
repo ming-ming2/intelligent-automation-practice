@@ -86,6 +86,34 @@ class RoleBTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             self.assertEqual(normalize_xml(Path(directory) / 'absent.xml')['normalization']['status'], 'missing')
 
+    def test_real_dart_documents_are_read(self):
+        # 실제 DART 원문: 이스케이프 안 된 &, euc-kr HTML(닫히지 않은 meta 태그)
+        xml = '<?xml version="1.0" encoding="utf-8"?><DOCUMENT><TABLE><TR><TD>가산 R&D 캠퍼스</TD></TR></TABLE></DOCUMENT>'
+        norm = normalize_xml(xml.encode('utf-8'))
+        self.assertEqual(norm['normalization']['status'], 'ok')
+        self.assertIn('가산 R&D 캠퍼스', norm['full_text'])
+        html = ('<html><head><meta http-equiv="Content-Type" content="text/html; charset=euc-kr">'
+                '<STYLE>.x{color:red}</STYLE></head><body><table><tr><td>처분금액(원)</td><td>-</td></tr>'
+                '</table></body></html>')
+        norm = normalize_xml(html.encode('cp949'))
+        self.assertEqual(norm['normalization']['status'], 'ok')
+        self.assertIn('처분금액(원) | -', norm['full_text'])
+        self.assertNotIn('color', norm['full_text'])
+
+    def test_quarterly_income_uses_cumulative_amount(self):
+        current = disclosure()
+        raw = {'thstrm_dt': '2025.01.01 ~ 2025.09.30', 'frmtrm_dt': '2024.01.01 ~ 2024.09.30',
+               'thstrm_amount': '688,918', 'frmtrm_amount': '751,880',
+               'thstrm_add_amount': '2,587,381', 'frmtrm_add_amount': '3,284,344'}
+        row = financial(current, reprt_code='11014', account_nm='영업이익', thstrm_amount='688,918',
+                        frmtrm_amount='751,880', raw_json=json.dumps(raw))
+        items = detect_financial_changes(current, [row, dict(row, row_no=1)])
+        self.assertEqual(len(items), 1)  # 중복 계정 제거
+        self.assertEqual(items[0]['current']['value'], '2587381')
+        self.assertEqual(items[0]['current']['evidence']['field'], 'thstrm_add_amount')
+        self.assertEqual(items[0]['dimensions']['period_basis'], 'cumulative')
+        self.assertTrue(items[0]['triggered'])
+
     def test_parent_section_and_empty_cells(self):
         body = '<P>' + '서론' * 8000 + '</P><SECTION><TITLE>사업의 내용</TITLE><SECTION><TITLE>제품</TITLE><P>보존할 문장</P></SECTION></SECTION><TABLE><TR><TD>A</TD><TD></TD><TD>B</TD></TR></TABLE>'
         norm = normalize_xml(('<DOCUMENT>' + body + '</DOCUMENT>').encode())

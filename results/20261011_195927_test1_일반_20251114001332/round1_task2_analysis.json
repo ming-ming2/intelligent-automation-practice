@@ -1,0 +1,364 @@
+{
+  "rcept_no": "20251114001332",
+  "changes": [
+    {
+      "change_id": "C1",
+      "metric": "유동자산",
+      "previous": "33923517000000",
+      "current": "34764672000000",
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "비교 불가",
+      "related_fact_ids": []
+    },
+    {
+      "change_id": "C2",
+      "metric": "비유동자산",
+      "previous": "31706072000000",
+      "current": "32405463000000",
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "비교 불가",
+      "related_fact_ids": []
+    },
+    {
+      "change_id": "C3",
+      "metric": "자산총계",
+      "previous": "65629589000000",
+      "current": "67170135000000",
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "비교 불가",
+      "related_fact_ids": []
+    },
+    {
+      "change_id": "C4",
+      "metric": "유동부채",
+      "previous": "27307439000000",
+      "current": "27597279000000",
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "비교 불가",
+      "related_fact_ids": []
+    },
+    {
+      "change_id": "C5",
+      "metric": "비유동부채",
+      "previous": "13110486000000",
+      "current": "12653265000000",
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "비교 불가",
+      "related_fact_ids": []
+    },
+    {
+      "change_id": "C6",
+      "metric": "부채총계",
+      "previous": "40417925000000",
+      "current": "40250544000000",
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "비교 불가",
+      "related_fact_ids": []
+    },
+    {
+      "change_id": "C7",
+      "metric": "자본금",
+      "previous": "904169000000",
+      "current": "904169000000",
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "비교 불가",
+      "related_fact_ids": []
+    },
+    {
+      "change_id": "C8",
+      "metric": "이익잉여금",
+      "previous": "16352773000000",
+      "current": "18025792000000",
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "비교 불가",
+      "related_fact_ids": []
+    },
+    {
+      "change_id": "C9",
+      "metric": "자본총계",
+      "previous": "25211664000000",
+      "current": "26919591000000",
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "비교 불가",
+      "related_fact_ids": []
+    },
+    {
+      "change_id": "C10",
+      "metric": "매출액",
+      "previous": "22176370000000",
+      "current": "21873774000000",
+      "change_rate": "-1.4%",
+      "triggered": false,
+      "description": "매출액 감소",
+      "related_fact_ids": []
+    },
+    {
+      "change_id": "C11",
+      "metric": "영업이익",
+      "previous": "751880000000",
+      "current": "688918000000",
+      "change_rate": "-8.4%",
+      "triggered": false,
+      "description": "영업이익 감소",
+      "related_fact_ids": []
+    },
+    {
+      "change_id": "C12",
+      "metric": "법인세차감전 순이익",
+      "previous": "534922000000",
+      "current": "567379000000",
+      "change_rate": "+6.1%",
+      "triggered": false,
+      "description": "법인세차감전 순이익 증가",
+      "related_fact_ids": []
+    },
+    {
+      "change_id": "C13",
+      "metric": "당기순이익(손실)",
+      "previous": "90234000000",
+      "current": "461074000000",
+      "change_rate": "+411.0%",
+      "triggered": true,
+      "description": "당기순이익 증가",
+      "related_fact_ids": []
+    },
+    {
+      "change_id": "C14",
+      "metric": "총포괄손익",
+      "previous": "-735902000000",
+      "current": "1143520000000",
+      "change_rate": "+255.4%",
+      "triggered": true,
+      "description": "총포괄손익 증가",
+      "related_fact_ids": []
+    }
+  ],
+  "interpretations": [
+    {
+      "statement": "LG전자의 매출액 감소는 삼성전자 DX 생활가전·전자 사업에 부정적인 영향을 미칠 가능성이 있다.",
+      "impact_area": "재무",
+      "based_on": [
+        "C10"
+      ],
+      "confidence": "낮음"
+    },
+    {
+      "statement": "영업이익 감소는 삼성전자 DX 생활가전·전자 사업의 경쟁력에 부정적인 영향을 미칠 가능성이 있다.",
+      "impact_area": "재무",
+      "based_on": [
+        "C11"
+      ],
+      "confidence": "낮음"
+    },
+    {
+      "statement": "법인세차감전 순이익 증가가 삼성전자 DX 생활가전·전자 사업에 긍정적인 영향을 미칠 가능성이 있다.",
+      "impact_area": "재무",
+      "based_on": [
+        "C12"
+      ],
+      "confidence": "낮음"
+    },
+    {
+      "statement": "당기순이익의 큰 증가가 삼성전자 DX 생활가전·전자 사업에 긍정적인 영향을 미칠 가능성이 있다.",
+      "impact_area": "재무",
+      "based_on": [
+        "C13"
+      ],
+      "confidence": "낮음"
+    },
+    {
+      "statement": "총포괄손익의 큰 증가가 삼성전자 DX 생활가전·전자 사업에 긍정적인 영향을 미칠 가능성이 있다.",
+      "impact_area": "재무",
+      "based_on": [
+        "C14"
+      ],
+      "confidence": "낮음"
+    }
+  ],
+  "needs_verification": [
+    {
+      "code": "XML_PARSE_ERROR",
+      "field": "normalized_text",
+      "item": "원문이 없거나 정상적으로 읽히지 않았습니다.",
+      "why": "원문을 확인해야 정확한 정보를 파악할 수 있다.",
+      "origin": "program"
+    },
+    {
+      "code": "DOCUMENT_MISSING",
+      "field": "triggers.amount_changes",
+      "item": "직전 공시 원문을 읽지 못했습니다.",
+      "why": "직전 공시의 원문을 확인해야 정확한 비교가 가능하다.",
+      "origin": "program"
+    },
+    {
+      "code": "CURRENT_VALUE_MISSING",
+      "field": "triggers.amount_changes",
+      "item": "현재 공시에서 비교할 금액 항목을 찾지 못했습니다.",
+      "why": "현재 공시의 금액 항목을 확인해야 정확한 비교가 가능하다.",
+      "origin": "program"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "item": "유동자산: 비교 불가 (PERIOD_UNVERIFIED)",
+      "why": "기간이 확인되지 않아 비교가 불가능하다.",
+      "origin": "program"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "item": "비유동자산: 비교 불가 (PERIOD_UNVERIFIED)",
+      "why": "기간이 확인되지 않아 비교가 불가능하다.",
+      "origin": "program"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "item": "자산총계: 비교 불가 (PERIOD_UNVERIFIED)",
+      "why": "기간이 확인되지 않아 비교가 불가능하다.",
+      "origin": "program"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "item": "유동부채: 비교 불가 (PERIOD_UNVERIFIED)",
+      "why": "기간이 확인되지 않아 비교가 불가능하다.",
+      "origin": "program"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "item": "비유동부채: 비교 불가 (PERIOD_UNVERIFIED)",
+      "why": "기간이 확인되지 않아 비교가 불가능하다.",
+      "origin": "program"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "item": "부채총계: 비교 불가 (PERIOD_UNVERIFIED)",
+      "why": "기간이 확인되지 않아 비교가 불가능하다.",
+      "origin": "program"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "item": "자본금: 비교 불가 (PERIOD_UNVERIFIED)",
+      "why": "기간이 확인되지 않아 비교가 불가능하다.",
+      "origin": "program"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "item": "이익잉여금: 비교 불가 (PERIOD_UNVERIFIED)",
+      "why": "기간이 확인되지 않아 비교가 불가능하다.",
+      "origin": "program"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "item": "자본총계: 비교 불가 (PERIOD_UNVERIFIED)",
+      "why": "기간이 확인되지 않아 비교가 불가능하다.",
+      "origin": "program"
+    },
+    {
+      "code": "NEGATIVE_BASE",
+      "field": "triggers.financial_changes",
+      "item": "총포괄손익: 음수 기저의 변화율 해석이 필요합니다.",
+      "why": "음수 기저의 변화율 해석이 필요하다.",
+      "origin": "program"
+    },
+    {
+      "code": "SIGN_CHANGE",
+      "field": "triggers.financial_changes",
+      "item": "총포괄손익: 부호가 전환되었습니다.",
+      "why": "부호 전환에 따른 해석이 필요하다.",
+      "origin": "program"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": null,
+      "item": "원문이 없으므로 사건, 금액, 일자, 대상에 대한 정보를 확인할 수 없음.",
+      "why": "원문을 확인해야 정확한 정보를 파악할 수 있다.",
+      "origin": "agent"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": null,
+      "item": "직전 공시 원문을 읽지 못했습니다.",
+      "why": "직전 공시의 원문을 확인해야 정확한 비교가 가능하다.",
+      "origin": "agent"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": null,
+      "item": "현재 공시에서 비교할 금액 항목을 찾지 못했습니다.",
+      "why": "현재 공시의 금액 항목을 확인해야 정확한 비교가 가능하다.",
+      "origin": "agent"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": null,
+      "item": "영업이익 감소에 대한 해석을 확인할 필요가 있다.",
+      "why": "영업이익 감소의 원인을 확인해야 정확한 해석이 가능하다.",
+      "origin": "agent"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": null,
+      "item": "법인세차감전 순이익 증가에 대한 해석을 확인할 필요가 있다.",
+      "why": "법인세차감전 순이익 증가의 원인을 확인해야 정확한 해석이 가능하다.",
+      "origin": "agent"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": "interpretations",
+      "item": "해석 검증: LG전자의 매출액 감소는 삼성전자 DX 생활가전·전자 사업에 부정적인 영향을 미칠 가능성이 있다.",
+      "why": "근거(C10)만으로는 신뢰도가 낮아 추가 자료로 확인이 필요합니다.",
+      "origin": "agent"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": "interpretations",
+      "item": "해석 검증: 영업이익 감소는 삼성전자 DX 생활가전·전자 사업의 경쟁력에 부정적인 영향을 미칠 가능성이 있다.",
+      "why": "근거(C11)만으로는 신뢰도가 낮아 추가 자료로 확인이 필요합니다.",
+      "origin": "agent"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": "interpretations",
+      "item": "해석 검증: 법인세차감전 순이익 증가가 삼성전자 DX 생활가전·전자 사업에 긍정적인 영향을 미칠 가능성이 있다.",
+      "why": "근거(C12)만으로는 신뢰도가 낮아 추가 자료로 확인이 필요합니다.",
+      "origin": "agent"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": "interpretations",
+      "item": "해석 검증: 당기순이익의 큰 증가가 삼성전자 DX 생활가전·전자 사업에 긍정적인 영향을 미칠 가능성이 있다.",
+      "why": "근거(C13)만으로는 신뢰도가 낮아 추가 자료로 확인이 필요합니다.",
+      "origin": "agent"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": "interpretations",
+      "item": "해석 검증: 총포괄손익의 큰 증가가 삼성전자 DX 생활가전·전자 사업에 긍정적인 영향을 미칠 가능성이 있다.",
+      "why": "근거(C14)만으로는 신뢰도가 낮아 추가 자료로 확인이 필요합니다.",
+      "origin": "agent"
+    }
+  ],
+  "follow_up_checks": [
+    "LG전자의 매출 감소 원인은 무엇인가?",
+    "영업이익 감소의 주된 원인은 무엇인가?",
+    "법인세차감전 순이익 증가의 원인은 무엇인가?",
+    "당기순이익 증가의 지속 가능성은 어떻게 되는가?",
+    "총포괄손익의 큰 변화가 지속될 가능성은 있는가?"
+  ]
+}

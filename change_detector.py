@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parent
 AMOUNT_THRESHOLD = Decimal('0.20')
 FINANCIAL_THRESHOLD = Decimal('0.15')
 KEYWORDS = ('신규사업', '중단', '양수', '분할', '합병')
+KEYWORD_EVIDENCE_LIMIT = 3  # 정기보고서는 '중단영업' 등으로 수백 건이 걸려 LLM 입력이 넘친다
 AMOUNT_LABELS = ('투자금액', '취득금액', '처분금액', '양수금액', '양도금액', '계약금액')
 UNITS = {'원': 1, '천원': 1000, '백만원': 1000000, '억원': 100000000, '조원': 1000000000000}
 CORRECTION = re.compile(r'^\s*(?:\[(?:기재정정|첨부정정|정정)\]\s*)+')
@@ -142,11 +143,23 @@ def _periods_match(current, previous, year):
 
 def detect_financial_changes(current, financials):
     """현재 접수번호의 계정만 비교한다. 타 공시 재무를 자동 대체하지 않는다."""
-    results = []
+    results, seen = [], set()
     for row in financials:
         if row['corp_code'] != current['corp_code'] or row['rcept_no'] != current['rcept_no']:
             continue
         raw = json.loads(row['raw_json'])
+        # 분기·반기 손익: OpenDART는 thstrm_amount에 3개월치, thstrm_add_amount에 누적치를 준다.
+        # thstrm_dt는 누적 기간(01.01~)으로 표기되므로 누적치를 써야 기간 표기와 값이 일치한다.
+        cumulative = (row['reprt_code'] != '11011' and row['sj_div'] in {'IS', 'CIS'}
+                      and _number(raw.get('thstrm_add_amount')) is not None
+                      and _number(raw.get('frmtrm_add_amount')) is not None)
+        fields = (('thstrm_add_amount', 'frmtrm_add_amount') if cumulative
+                  else ('thstrm_amount', 'frmtrm_amount'))
+        source = raw if cumulative else row
+        key = (row['fs_div'], row['sj_div'], row['account_nm'], source[fields[0]], source[fields[1]])
+        if key in seen:  # OpenDART가 같은 계정을 중복 반환하는 경우
+            continue
+        seen.add(key)
         current_period, previous_period = raw.get('thstrm_dt'), raw.get('frmtrm_dt')
         year = int(row['bsns_year'])
         reason = None if _periods_match(current_period, previous_period, year) else 'PERIOD_UNVERIFIED'
@@ -169,8 +182,8 @@ def detect_financial_changes(current, financials):
                         'section': None, 'quote': None, 'field': field,
                         'db_row': {'table': 'financial_accounts', **{k: row[k] for k in
                                    ('corp_code', 'bsns_year', 'reprt_code', 'row_no')}}}
-            return _value(_number(row[field]), row[field], evidence, '원', row['currency'])
-        results.append(compare_values(row['account_nm'], value('thstrm_amount'), value('frmtrm_amount'),
+            return _value(_number(source[field]), source[field], evidence, '원', row['currency'])
+        results.append(compare_values(row['account_nm'], value(fields[0]), value(fields[1]),
                                       FINANCIAL_THRESHOLD, dims, reason))
     return results
 
@@ -223,9 +236,18 @@ def detect_changes(current, norm, past_disclosures=(), financials=(), cursors=()
                 issues.append(_issue('NEGATIVE_BASE', f'triggers.{field}', f"{item['metric']}: 음수 기저의 변화율 해석이 필요합니다."))
             if prev is not None and cur is not None and prev * cur < 0:
                 issues.append(_issue('SIGN_CHANGE', f'triggers.{field}', f"{item['metric']}: 부호가 전환되었습니다."))
-    keywords = [{'keyword': word, 'evidence': _evidence(current['rcept_no'], record)}
-                for record in norm['records'] for word in KEYWORDS
-                if re.search(r'\s*'.join(map(re.escape, word)), record['text'])]
+    keywords, hits = [], {}
+    for record in norm['records']:
+        for word in KEYWORDS:
+            if re.search(r'\s*'.join(map(re.escape, word)), record['text']):
+                hits[word] = hits.get(word, 0) + 1
+                if hits[word] <= KEYWORD_EVIDENCE_LIMIT:
+                    keywords.append({'keyword': word, 'evidence': _evidence(current['rcept_no'], record)})
+    for word, count in hits.items():
+        if count > KEYWORD_EVIDENCE_LIMIT:
+            issues.append(_issue('KEYWORD_EVIDENCE_TRUNCATED', 'triggers.keywords',
+                                 f"'{word}' 등장 {count}건 중 앞 {KEYWORD_EVIDENCE_LIMIT}건만 전달했습니다."))
+    issues = list({(i['code'], i['field'], i['message']): i for i in issues}.values())  # 동일 경고 중복 제거
     return {'schema_version': '1.0.0', 'data_origin': data_origin,
             **{k: current[k] for k in ('rcept_no', 'corp_code', 'corp_name', 'report_nm', 'rcept_dt')},
             'normalized_text': norm['normalized_text'], 'normalization': norm['normalization'],

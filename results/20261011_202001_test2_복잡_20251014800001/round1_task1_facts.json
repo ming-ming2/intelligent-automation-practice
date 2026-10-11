@@ -1,0 +1,72 @@
+{
+  "rcept_no": "20251014800001",
+  "corp_name": "LG전자",
+  "report_nm": "[기재정정]타법인주식및출자증권처분결정",
+  "facts": [
+    {
+      "fact_id": "F1",
+      "statement": "정정일자는 2025년 10월 13일이다.",
+      "category": "기타",
+      "amount_raw": null,
+      "date": "2025-10-13",
+      "evidence_quote": "정정일자 | 2025-10-13",
+      "evidence_rcept_no": "20251014800001"
+    },
+    {
+      "fact_id": "F2",
+      "statement": "정정관련 공시서류 제출일은 2025년 10월 1일이다.",
+      "category": "기타",
+      "amount_raw": null,
+      "date": "2025-10-01",
+      "evidence_quote": "정정관련 공시서류제출일 | 2025-10-01",
+      "evidence_rcept_no": "20251014800001"
+    },
+    {
+      "fact_id": "F3",
+      "statement": "처분금액은 1,856,757,000,000원이다.",
+      "category": "재무",
+      "amount_raw": "1,856,757,000,000",
+      "date": null,
+      "evidence_quote": "처분내역_처분금액(원) | 1,856,757,000,000",
+      "evidence_rcept_no": "20251014800001"
+    },
+    {
+      "fact_id": "F4",
+      "statement": "자기자본대비 비율은 7.36%이다.",
+      "category": "재무",
+      "amount_raw": "7.36",
+      "date": null,
+      "evidence_quote": "처분내역_자기자본대비(%) | 7.36",
+      "evidence_rcept_no": "20251014800001"
+    },
+    {
+      "fact_id": "F5",
+      "statement": "처분주식수는 101,815,859주이다.",
+      "category": "재무",
+      "amount_raw": "101,815,859",
+      "date": null,
+      "evidence_quote": "처분주식수(주) | 101,815,859",
+      "evidence_rcept_no": "20251014800001"
+    },
+    {
+      "fact_id": "F6",
+      "statement": "처분예정일자는 2025년 10월 13일이다.",
+      "category": "기타",
+      "amount_raw": null,
+      "date": "2025-10-13",
+      "evidence_quote": "처분예정일자 | 2025-10-13",
+      "evidence_rcept_no": "20251014800001"
+    },
+    {
+      "fact_id": "F7",
+      "statement": "이사회 결의일은 2025년 9월 30일이다.",
+      "category": "기타",
+      "amount_raw": null,
+      "date": "2025-09-30",
+      "evidence_quote": "이사회결의일(결정일) | 2025-09-30",
+      "evidence_rcept_no": "20251014800001"
+    }
+  ],
+  "keyword_checks": [],
+  "unverifiable": []
+}

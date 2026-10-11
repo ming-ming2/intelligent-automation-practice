@@ -17,6 +17,40 @@ def _text(node):
     return re.sub(r'\s+', ' ', ''.join(node.itertext())).strip()
 
 
+_HTML_HEAD = re.compile(rb'<html[\s>]', re.I)
+_DART_XML = re.compile(rb'^\s*(<\?xml[^>]*>\s*)?<DOCUMENT[\s>].*</DOCUMENT>\s*$', re.S)
+
+
+def _decode(content):
+    try:
+        return content.decode('utf-8')
+    except UnicodeDecodeError:
+        return content.decode('cp949', errors='replace')
+
+
+def _parse_dart_lenient(content):
+    """실제 DART 원문 전용 대체 파서.
+
+    DART 원문은 이스케이프되지 않은 &, 잘못된 인코딩 선언, 닫히지 않은 HTML 태그가 흔해
+    엄격 XML 파서로는 전부 실패한다. 완결된 <DOCUMENT>…</DOCUMENT> 또는 <html> 문서로
+    보이는 경우에만 HTML 파서로 읽고, 그 밖의 손상 입력은 계속 오류로 처리한다.
+    """
+    if not content or not (_DART_XML.match(content) or _HTML_HEAD.search(content[:4096])):
+        return None
+    text = re.sub(r'^\s*<\?xml[^>]*>', '', _decode(content))
+    text = re.sub(r'<meta[^>]*charset[^>]*>', '', text, flags=re.I)
+    try:
+        root = etree.fromstring(text.encode('utf-8'), etree.HTMLParser(
+            encoding='utf-8', no_network=True, remove_comments=True, huge_tree=True))
+    except (etree.XMLSyntaxError, ValueError):
+        return None
+    if root is None:
+        return None
+    for node in root.xpath('//style|//script'):
+        node.getparent().remove(node)
+    return root
+
+
 def summarize_records(records, max_chars=MAX_CHARS, status='ok'):
     """여러 XML도 전체 기록을 합친 뒤 한 번만 길이를 제한한다."""
     if not 1 <= max_chars <= MAX_CHARS:
@@ -56,7 +90,9 @@ def normalize_xml(source, max_chars=MAX_CHARS):
     except FileNotFoundError:
         return summarize_records([], max_chars, 'missing')
     except (OSError, etree.XMLSyntaxError, ValueError):
-        return summarize_records([], max_chars, 'error')
+        root = _parse_dart_lenient(content) if 'content' in locals() else None
+        if root is None:
+            return summarize_records([], max_chars, 'error')
     records = []
 
     def walk(node, section=None):

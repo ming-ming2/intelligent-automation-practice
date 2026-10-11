@@ -1,0 +1,87 @@
+{
+  "rcept_no": "20251014800001",
+  "changes": [
+    {
+      "change_id": "C1",
+      "metric": "처분금액",
+      "previous": null,
+      "current": null,
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "비교 불가 (CORRECTION_LINK_UNCONFIRMED)",
+      "related_fact_ids": [
+        "F1",
+        "F2"
+      ]
+    }
+  ],
+  "interpretations": [
+    {
+      "statement": "LG전자가 인도법인 IPO 구주 매출로 약 1.86조원 현금을 확보했으며, 이는 삼성전자 DX 생활가전 사업에 대한 투자 여력을 확대할 가능성이 있다. 또한, 인도 가전 시장에서의 경쟁 심화가 우려된다.",
+      "impact_area": "경쟁환경",
+      "based_on": [
+        "F2",
+        "F5"
+      ],
+      "confidence": "낮음"
+    }
+  ],
+  "needs_verification": [
+    {
+      "code": "HISTORY_COVERAGE_UNKNOWN",
+      "field": "history_search",
+      "item": "검색 기간 전체의 공시 목록 수집을 확인할 필요가 있다.",
+      "why": "정확한 과거 사례 분석을 위해 필요하다.",
+      "origin": "program"
+    },
+    {
+      "code": "CORRECTION_LINK_UNCONFIRMED",
+      "field": "past_cases",
+      "item": "정정공시를 사례 수에서 제외했습니다.",
+      "why": "원공시 연결과 비교 대상을 확인해야 한다.",
+      "origin": "program"
+    },
+    {
+      "code": "AMOUNT_UNRESOLVED",
+      "field": "triggers.amount_changes",
+      "item": "처분금액의 단위·값·표 구조가 불명확하다.",
+      "why": "정확한 금액 비교를 위해 확인이 필요하다.",
+      "origin": "program"
+    },
+    {
+      "code": "FINANCIAL_DATA_MISSING",
+      "field": "triggers.financial_changes",
+      "item": "현재 접수번호에 직접 연결된 재무 계정이 없다.",
+      "why": "재무 데이터의 확인이 필요하다.",
+      "origin": "program"
+    },
+    {
+      "code": "AMOUNT_UNRESOLVED",
+      "field": "triggers.amount_changes",
+      "item": "처분금액의 단위·값·표 구조가 불명확하다.",
+      "why": "정확한 금액 비교를 위해 확인이 필요하다.",
+      "origin": "agent"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": null,
+      "item": "처분금액의 사용처를 확인해야 한다.",
+      "why": "매각대금 사용처에 대한 정보가 공시에 없다.",
+      "origin": "agent"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": "interpretations",
+      "item": "해석 검증: LG전자가 인도법인 IPO 구주 매출로 약 1.86조원 현금을 확보했으며, 이는 삼성전자 DX 생활가전 사업에 대한 투자 여력을 확대할 가능성이 있다. 또한, 인도 가전 시장에서의 경쟁 심화가 우려된다.",
+      "why": "근거(F2, F5)만으로는 신뢰도가 낮아 추가 자료로 확인이 필요합니다.",
+      "origin": "agent"
+    }
+  ],
+  "follow_up_checks": [
+    "정정된 처분금액의 사용처를 확인할 필요가 있다.",
+    "과거 공시 목록 수집의 정확성을 확인해야 한다.",
+    "정정공시와 원공시의 연결 관계를 명확히 해야 한다.",
+    "인도 가전 시장의 경쟁 상황을 분석할 필요가 있다.",
+    "LG전자의 향후 투자 계획에 대한 정보를 확인해야 한다."
+  ]
+}

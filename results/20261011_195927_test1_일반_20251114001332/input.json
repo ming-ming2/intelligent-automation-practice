@@ -1,0 +1,2053 @@
+{
+  "schema_version": "1.0.0",
+  "data_origin": "dart",
+  "rcept_no": "20251114001332",
+  "corp_code": "00401731",
+  "corp_name": "LG전자",
+  "report_nm": "분기보고서 (2025.09)",
+  "rcept_dt": "20251114",
+  "normalized_text": "",
+  "normalization": {
+    "status": "error",
+    "original_length": 0,
+    "truncated": false,
+    "selected_sections": []
+  },
+  "source": {
+    "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251114001332",
+    "document_paths": [
+      "data/raw/20251114001332/20251114001332.xml"
+    ]
+  },
+  "triggers": {
+    "amount_changes": [],
+    "financial_changes": [
+      {
+        "metric": "유동자산",
+        "status": "not_comparable",
+        "triggered": null,
+        "reason": "PERIOD_UNVERIFIED",
+        "current": {
+          "value": "34764672000000",
+          "raw_value": "34,764,672,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 0
+            }
+          }
+        },
+        "previous": {
+          "value": "33923517000000",
+          "raw_value": "33,923,517,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 0
+            }
+          }
+        },
+        "change_rate": null,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "CFS",
+          "sj_div": "BS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.09.30 현재",
+          "previous_period": "2024.12.31 현재",
+          "period_basis": "instant"
+        }
+      },
+      {
+        "metric": "비유동자산",
+        "status": "not_comparable",
+        "triggered": null,
+        "reason": "PERIOD_UNVERIFIED",
+        "current": {
+          "value": "32405463000000",
+          "raw_value": "32,405,463,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 1
+            }
+          }
+        },
+        "previous": {
+          "value": "31706072000000",
+          "raw_value": "31,706,072,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 1
+            }
+          }
+        },
+        "change_rate": null,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "CFS",
+          "sj_div": "BS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.09.30 현재",
+          "previous_period": "2024.12.31 현재",
+          "period_basis": "instant"
+        }
+      },
+      {
+        "metric": "자산총계",
+        "status": "not_comparable",
+        "triggered": null,
+        "reason": "PERIOD_UNVERIFIED",
+        "current": {
+          "value": "67170135000000",
+          "raw_value": "67,170,135,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 2
+            }
+          }
+        },
+        "previous": {
+          "value": "65629589000000",
+          "raw_value": "65,629,589,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 2
+            }
+          }
+        },
+        "change_rate": null,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "CFS",
+          "sj_div": "BS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.09.30 현재",
+          "previous_period": "2024.12.31 현재",
+          "period_basis": "instant"
+        }
+      },
+      {
+        "metric": "유동부채",
+        "status": "not_comparable",
+        "triggered": null,
+        "reason": "PERIOD_UNVERIFIED",
+        "current": {
+          "value": "27597279000000",
+          "raw_value": "27,597,279,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 3
+            }
+          }
+        },
+        "previous": {
+          "value": "27307439000000",
+          "raw_value": "27,307,439,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 3
+            }
+          }
+        },
+        "change_rate": null,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "CFS",
+          "sj_div": "BS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.09.30 현재",
+          "previous_period": "2024.12.31 현재",
+          "period_basis": "instant"
+        }
+      },
+      {
+        "metric": "비유동부채",
+        "status": "not_comparable",
+        "triggered": null,
+        "reason": "PERIOD_UNVERIFIED",
+        "current": {
+          "value": "12653265000000",
+          "raw_value": "12,653,265,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 4
+            }
+          }
+        },
+        "previous": {
+          "value": "13110486000000",
+          "raw_value": "13,110,486,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 4
+            }
+          }
+        },
+        "change_rate": null,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "CFS",
+          "sj_div": "BS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.09.30 현재",
+          "previous_period": "2024.12.31 현재",
+          "period_basis": "instant"
+        }
+      },
+      {
+        "metric": "부채총계",
+        "status": "not_comparable",
+        "triggered": null,
+        "reason": "PERIOD_UNVERIFIED",
+        "current": {
+          "value": "40250544000000",
+          "raw_value": "40,250,544,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 5
+            }
+          }
+        },
+        "previous": {
+          "value": "40417925000000",
+          "raw_value": "40,417,925,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 5
+            }
+          }
+        },
+        "change_rate": null,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "CFS",
+          "sj_div": "BS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.09.30 현재",
+          "previous_period": "2024.12.31 현재",
+          "period_basis": "instant"
+        }
+      },
+      {
+        "metric": "자본금",
+        "status": "not_comparable",
+        "triggered": null,
+        "reason": "PERIOD_UNVERIFIED",
+        "current": {
+          "value": "904169000000",
+          "raw_value": "904,169,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 6
+            }
+          }
+        },
+        "previous": {
+          "value": "904169000000",
+          "raw_value": "904,169,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 6
+            }
+          }
+        },
+        "change_rate": null,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "CFS",
+          "sj_div": "BS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.09.30 현재",
+          "previous_period": "2024.12.31 현재",
+          "period_basis": "instant"
+        }
+      },
+      {
+        "metric": "이익잉여금",
+        "status": "not_comparable",
+        "triggered": null,
+        "reason": "PERIOD_UNVERIFIED",
+        "current": {
+          "value": "18025792000000",
+          "raw_value": "18,025,792,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 7
+            }
+          }
+        },
+        "previous": {
+          "value": "16352773000000",
+          "raw_value": "16,352,773,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 7
+            }
+          }
+        },
+        "change_rate": null,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "CFS",
+          "sj_div": "BS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.09.30 현재",
+          "previous_period": "2024.12.31 현재",
+          "period_basis": "instant"
+        }
+      },
+      {
+        "metric": "자본총계",
+        "status": "not_comparable",
+        "triggered": null,
+        "reason": "PERIOD_UNVERIFIED",
+        "current": {
+          "value": "26919591000000",
+          "raw_value": "26,919,591,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 8
+            }
+          }
+        },
+        "previous": {
+          "value": "25211664000000",
+          "raw_value": "25,211,664,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 8
+            }
+          }
+        },
+        "change_rate": null,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "CFS",
+          "sj_div": "BS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.09.30 현재",
+          "previous_period": "2024.12.31 현재",
+          "period_basis": "instant"
+        }
+      },
+      {
+        "metric": "매출액",
+        "status": "evaluated",
+        "triggered": false,
+        "reason": null,
+        "current": {
+          "value": "21873774000000",
+          "raw_value": "21,873,774,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 9
+            }
+          }
+        },
+        "previous": {
+          "value": "22176370000000",
+          "raw_value": "22,176,370,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 9
+            }
+          }
+        },
+        "change_rate": -0.013645,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "CFS",
+          "sj_div": "IS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.01.01 ~ 2025.09.30",
+          "previous_period": "2024.01.01 ~ 2024.09.30",
+          "period_basis": "cumulative"
+        }
+      },
+      {
+        "metric": "영업이익",
+        "status": "evaluated",
+        "triggered": false,
+        "reason": null,
+        "current": {
+          "value": "688918000000",
+          "raw_value": "688,918,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 10
+            }
+          }
+        },
+        "previous": {
+          "value": "751880000000",
+          "raw_value": "751,880,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 10
+            }
+          }
+        },
+        "change_rate": -0.083739,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "CFS",
+          "sj_div": "IS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.01.01 ~ 2025.09.30",
+          "previous_period": "2024.01.01 ~ 2024.09.30",
+          "period_basis": "cumulative"
+        }
+      },
+      {
+        "metric": "법인세차감전 순이익",
+        "status": "evaluated",
+        "triggered": false,
+        "reason": null,
+        "current": {
+          "value": "567379000000",
+          "raw_value": "567,379,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 11
+            }
+          }
+        },
+        "previous": {
+          "value": "534922000000",
+          "raw_value": "534,922,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 11
+            }
+          }
+        },
+        "change_rate": 0.060676,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "CFS",
+          "sj_div": "IS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.01.01 ~ 2025.09.30",
+          "previous_period": "2024.01.01 ~ 2024.09.30",
+          "period_basis": "cumulative"
+        }
+      },
+      {
+        "metric": "당기순이익(손실)",
+        "status": "evaluated",
+        "triggered": true,
+        "reason": null,
+        "current": {
+          "value": "461074000000",
+          "raw_value": "461,074,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 12
+            }
+          }
+        },
+        "previous": {
+          "value": "90234000000",
+          "raw_value": "90,234,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 12
+            }
+          }
+        },
+        "change_rate": 4.109759,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "CFS",
+          "sj_div": "IS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.01.01 ~ 2025.09.30",
+          "previous_period": "2024.01.01 ~ 2024.09.30",
+          "period_basis": "cumulative"
+        }
+      },
+      {
+        "metric": "당기순이익(손실)",
+        "status": "evaluated",
+        "triggered": true,
+        "reason": null,
+        "current": {
+          "value": "461074000000",
+          "raw_value": "461,074,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 13
+            }
+          }
+        },
+        "previous": {
+          "value": "90234000000",
+          "raw_value": "90,234,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 13
+            }
+          }
+        },
+        "change_rate": 4.109759,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "CFS",
+          "sj_div": "IS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.01.01 ~ 2025.09.30",
+          "previous_period": "2024.01.01 ~ 2024.09.30",
+          "period_basis": "cumulative"
+        }
+      },
+      {
+        "metric": "총포괄손익",
+        "status": "evaluated",
+        "triggered": true,
+        "reason": null,
+        "current": {
+          "value": "1143520000000",
+          "raw_value": "1,143,520,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 14
+            }
+          }
+        },
+        "previous": {
+          "value": "-735902000000",
+          "raw_value": "-735,902,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 14
+            }
+          }
+        },
+        "change_rate": 2.553903,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "CFS",
+          "sj_div": "IS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.01.01 ~ 2025.09.30",
+          "previous_period": "2024.01.01 ~ 2024.09.30",
+          "period_basis": "cumulative"
+        }
+      },
+      {
+        "metric": "유동자산",
+        "status": "not_comparable",
+        "triggered": null,
+        "reason": "PERIOD_UNVERIFIED",
+        "current": {
+          "value": "10237214000000",
+          "raw_value": "10,237,214,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 15
+            }
+          }
+        },
+        "previous": {
+          "value": "11936997000000",
+          "raw_value": "11,936,997,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 15
+            }
+          }
+        },
+        "change_rate": null,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "OFS",
+          "sj_div": "BS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.09.30 현재",
+          "previous_period": "2024.12.31 현재",
+          "period_basis": "instant"
+        }
+      },
+      {
+        "metric": "비유동자산",
+        "status": "not_comparable",
+        "triggered": null,
+        "reason": "PERIOD_UNVERIFIED",
+        "current": {
+          "value": "24012023000000",
+          "raw_value": "24,012,023,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 16
+            }
+          }
+        },
+        "previous": {
+          "value": "22961485000000",
+          "raw_value": "22,961,485,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 16
+            }
+          }
+        },
+        "change_rate": null,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "OFS",
+          "sj_div": "BS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.09.30 현재",
+          "previous_period": "2024.12.31 현재",
+          "period_basis": "instant"
+        }
+      },
+      {
+        "metric": "자산총계",
+        "status": "not_comparable",
+        "triggered": null,
+        "reason": "PERIOD_UNVERIFIED",
+        "current": {
+          "value": "34249237000000",
+          "raw_value": "34,249,237,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 17
+            }
+          }
+        },
+        "previous": {
+          "value": "34898482000000",
+          "raw_value": "34,898,482,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 17
+            }
+          }
+        },
+        "change_rate": null,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "OFS",
+          "sj_div": "BS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.09.30 현재",
+          "previous_period": "2024.12.31 현재",
+          "period_basis": "instant"
+        }
+      },
+      {
+        "metric": "유동부채",
+        "status": "not_comparable",
+        "triggered": null,
+        "reason": "PERIOD_UNVERIFIED",
+        "current": {
+          "value": "13952149000000",
+          "raw_value": "13,952,149,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 18
+            }
+          }
+        },
+        "previous": {
+          "value": "14608535000000",
+          "raw_value": "14,608,535,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 18
+            }
+          }
+        },
+        "change_rate": null,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "OFS",
+          "sj_div": "BS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.09.30 현재",
+          "previous_period": "2024.12.31 현재",
+          "period_basis": "instant"
+        }
+      },
+      {
+        "metric": "비유동부채",
+        "status": "not_comparable",
+        "triggered": null,
+        "reason": "PERIOD_UNVERIFIED",
+        "current": {
+          "value": "8541038000000",
+          "raw_value": "8,541,038,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 19
+            }
+          }
+        },
+        "previous": {
+          "value": "8812896000000",
+          "raw_value": "8,812,896,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 19
+            }
+          }
+        },
+        "change_rate": null,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "OFS",
+          "sj_div": "BS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.09.30 현재",
+          "previous_period": "2024.12.31 현재",
+          "period_basis": "instant"
+        }
+      },
+      {
+        "metric": "부채총계",
+        "status": "not_comparable",
+        "triggered": null,
+        "reason": "PERIOD_UNVERIFIED",
+        "current": {
+          "value": "22493187000000",
+          "raw_value": "22,493,187,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 20
+            }
+          }
+        },
+        "previous": {
+          "value": "23421431000000",
+          "raw_value": "23,421,431,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 20
+            }
+          }
+        },
+        "change_rate": null,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "OFS",
+          "sj_div": "BS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.09.30 현재",
+          "previous_period": "2024.12.31 현재",
+          "period_basis": "instant"
+        }
+      },
+      {
+        "metric": "자본금",
+        "status": "not_comparable",
+        "triggered": null,
+        "reason": "PERIOD_UNVERIFIED",
+        "current": {
+          "value": "904169000000",
+          "raw_value": "904,169,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 21
+            }
+          }
+        },
+        "previous": {
+          "value": "904169000000",
+          "raw_value": "904,169,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 21
+            }
+          }
+        },
+        "change_rate": null,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "OFS",
+          "sj_div": "BS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.09.30 현재",
+          "previous_period": "2024.12.31 현재",
+          "period_basis": "instant"
+        }
+      },
+      {
+        "metric": "이익잉여금",
+        "status": "not_comparable",
+        "triggered": null,
+        "reason": "PERIOD_UNVERIFIED",
+        "current": {
+          "value": "7772452000000",
+          "raw_value": "7,772,452,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 22
+            }
+          }
+        },
+        "previous": {
+          "value": "7539176000000",
+          "raw_value": "7,539,176,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 22
+            }
+          }
+        },
+        "change_rate": null,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "OFS",
+          "sj_div": "BS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.09.30 현재",
+          "previous_period": "2024.12.31 현재",
+          "period_basis": "instant"
+        }
+      },
+      {
+        "metric": "자본총계",
+        "status": "not_comparable",
+        "triggered": null,
+        "reason": "PERIOD_UNVERIFIED",
+        "current": {
+          "value": "11756050000000",
+          "raw_value": "11,756,050,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 23
+            }
+          }
+        },
+        "previous": {
+          "value": "11477051000000",
+          "raw_value": "11,477,051,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 23
+            }
+          }
+        },
+        "change_rate": null,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "OFS",
+          "sj_div": "BS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.09.30 현재",
+          "previous_period": "2024.12.31 현재",
+          "period_basis": "instant"
+        }
+      },
+      {
+        "metric": "매출액",
+        "status": "evaluated",
+        "triggered": false,
+        "reason": null,
+        "current": {
+          "value": "7530075000000",
+          "raw_value": "7,530,075,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 24
+            }
+          }
+        },
+        "previous": {
+          "value": "7482191000000",
+          "raw_value": "7,482,191,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 24
+            }
+          }
+        },
+        "change_rate": 0.0064,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "OFS",
+          "sj_div": "IS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.01.01 ~ 2025.09.30",
+          "previous_period": "2024.01.01 ~ 2024.09.30",
+          "period_basis": "cumulative"
+        }
+      },
+      {
+        "metric": "영업이익",
+        "status": "evaluated",
+        "triggered": true,
+        "reason": null,
+        "current": {
+          "value": "-227755000000",
+          "raw_value": "-227,755,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 25
+            }
+          }
+        },
+        "previous": {
+          "value": "-153748000000",
+          "raw_value": "-153,748,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 25
+            }
+          }
+        },
+        "change_rate": -0.481353,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "OFS",
+          "sj_div": "IS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.01.01 ~ 2025.09.30",
+          "previous_period": "2024.01.01 ~ 2024.09.30",
+          "period_basis": "cumulative"
+        }
+      },
+      {
+        "metric": "법인세차감전 순이익",
+        "status": "evaluated",
+        "triggered": true,
+        "reason": null,
+        "current": {
+          "value": "-303877000000",
+          "raw_value": "-303,877,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 26
+            }
+          }
+        },
+        "previous": {
+          "value": "-214145000000",
+          "raw_value": "-214,145,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 26
+            }
+          }
+        },
+        "change_rate": -0.419024,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "OFS",
+          "sj_div": "IS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.01.01 ~ 2025.09.30",
+          "previous_period": "2024.01.01 ~ 2024.09.30",
+          "period_basis": "cumulative"
+        }
+      },
+      {
+        "metric": "당기순이익(손실)",
+        "status": "evaluated",
+        "triggered": true,
+        "reason": null,
+        "current": {
+          "value": "-227218000000",
+          "raw_value": "-227,218,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 27
+            }
+          }
+        },
+        "previous": {
+          "value": "-431560000000",
+          "raw_value": "-431,560,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 27
+            }
+          }
+        },
+        "change_rate": 0.473496,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "OFS",
+          "sj_div": "IS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.01.01 ~ 2025.09.30",
+          "previous_period": "2024.01.01 ~ 2024.09.30",
+          "period_basis": "cumulative"
+        }
+      },
+      {
+        "metric": "당기순이익(손실)",
+        "status": "evaluated",
+        "triggered": true,
+        "reason": null,
+        "current": {
+          "value": "-227218000000",
+          "raw_value": "-227,218,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 28
+            }
+          }
+        },
+        "previous": {
+          "value": "-431560000000",
+          "raw_value": "-431,560,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 28
+            }
+          }
+        },
+        "change_rate": 0.473496,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "OFS",
+          "sj_div": "IS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.01.01 ~ 2025.09.30",
+          "previous_period": "2024.01.01 ~ 2024.09.30",
+          "period_basis": "cumulative"
+        }
+      },
+      {
+        "metric": "총포괄손익",
+        "status": "evaluated",
+        "triggered": true,
+        "reason": null,
+        "current": {
+          "value": "-194934000000",
+          "raw_value": "-194,934,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "thstrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 29
+            }
+          }
+        },
+        "previous": {
+          "value": "-528480000000",
+          "raw_value": "-528,480,000,000",
+          "unit": "원",
+          "currency": "KRW",
+          "evidence": {
+            "kind": "financial_account",
+            "rcept_no": "20251114001332",
+            "document_path": null,
+            "section": null,
+            "quote": null,
+            "field": "frmtrm_amount",
+            "db_row": {
+              "table": "financial_accounts",
+              "corp_code": "00401731",
+              "bsns_year": "2025",
+              "reprt_code": "11014",
+              "row_no": 29
+            }
+          }
+        },
+        "change_rate": 0.631142,
+        "threshold": 0.15,
+        "dimensions": {
+          "fs_div": "OFS",
+          "sj_div": "IS",
+          "reprt_code": "11014",
+          "current_year": "2025",
+          "previous_year": "2024",
+          "current_period": "2025.01.01 ~ 2025.09.30",
+          "previous_period": "2024.01.01 ~ 2024.09.30",
+          "period_basis": "cumulative"
+        }
+      }
+    ],
+    "keywords": []
+  },
+  "past_cases": [
+    {
+      "rcept_no": "20250515001401",
+      "report_nm": "분기보고서 (2025.03)",
+      "rcept_dt": "20250515",
+      "source": {
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250515001401",
+        "document_paths": [
+          "data/raw/20250515001401/20250515001401.xml"
+        ]
+      },
+      "excerpt": null
+    },
+    {
+      "rcept_no": "20241114001247",
+      "report_nm": "분기보고서 (2024.09)",
+      "rcept_dt": "20241114",
+      "source": {
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20241114001247",
+        "document_paths": [
+          "data/raw/20241114001247/20241114001247.xml"
+        ]
+      },
+      "excerpt": null
+    },
+    {
+      "rcept_no": "20240516000752",
+      "report_nm": "분기보고서 (2024.03)",
+      "rcept_dt": "20240516",
+      "source": {
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20240516000752",
+        "document_paths": [
+          "data/raw/20240516000752/20240516000752.xml"
+        ]
+      },
+      "excerpt": null
+    },
+    {
+      "rcept_no": "20231114001391",
+      "report_nm": "분기보고서 (2023.09)",
+      "rcept_dt": "20231114",
+      "source": {
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20231114001391",
+        "document_paths": [
+          "data/raw/20231114001391/20231114001391.xml"
+        ]
+      },
+      "excerpt": null
+    },
+    {
+      "rcept_no": "20230515001288",
+      "report_nm": "분기보고서 (2023.03)",
+      "rcept_dt": "20230515",
+      "source": {
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20230515001288",
+        "document_paths": [
+          "data/raw/20230515001288/20230515001288.xml"
+        ]
+      },
+      "excerpt": null
+    },
+    {
+      "rcept_no": "20221114001014",
+      "report_nm": "분기보고서 (2022.09)",
+      "rcept_dt": "20221114",
+      "source": {
+        "source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20221114001014",
+        "document_paths": [
+          "data/raw/20221114001014/20221114001014.xml"
+        ]
+      },
+      "excerpt": null
+    }
+  ],
+  "history_search": {
+    "match_rule": "same_corp_and_normalized_report_type_unique_events",
+    "search_window_years": 3,
+    "cases_in_three_years": 6,
+    "requested_start": "20221114",
+    "end_exclusive": "20251114",
+    "coverage_status": "complete",
+    "coverage_note": null
+  },
+  "needs_verification": [
+    {
+      "code": "XML_PARSE_ERROR",
+      "field": "normalized_text",
+      "message": "원문이 없거나 정상적으로 읽히지 않았습니다."
+    },
+    {
+      "code": "DOCUMENT_MISSING",
+      "field": "triggers.amount_changes",
+      "message": "직전 공시 원문을 읽지 못했습니다."
+    },
+    {
+      "code": "CURRENT_VALUE_MISSING",
+      "field": "triggers.amount_changes",
+      "message": "현재 공시에서 비교할 금액 항목을 찾지 못했습니다."
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "message": "유동자산: 비교 불가 (PERIOD_UNVERIFIED)"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "message": "비유동자산: 비교 불가 (PERIOD_UNVERIFIED)"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "message": "자산총계: 비교 불가 (PERIOD_UNVERIFIED)"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "message": "유동부채: 비교 불가 (PERIOD_UNVERIFIED)"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "message": "비유동부채: 비교 불가 (PERIOD_UNVERIFIED)"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "message": "부채총계: 비교 불가 (PERIOD_UNVERIFIED)"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "message": "자본금: 비교 불가 (PERIOD_UNVERIFIED)"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "message": "이익잉여금: 비교 불가 (PERIOD_UNVERIFIED)"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "message": "자본총계: 비교 불가 (PERIOD_UNVERIFIED)"
+    },
+    {
+      "code": "NEGATIVE_BASE",
+      "field": "triggers.financial_changes",
+      "message": "총포괄손익: 음수 기저의 변화율 해석이 필요합니다."
+    },
+    {
+      "code": "SIGN_CHANGE",
+      "field": "triggers.financial_changes",
+      "message": "총포괄손익: 부호가 전환되었습니다."
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "message": "유동자산: 비교 불가 (PERIOD_UNVERIFIED)"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "message": "비유동자산: 비교 불가 (PERIOD_UNVERIFIED)"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "message": "자산총계: 비교 불가 (PERIOD_UNVERIFIED)"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "message": "유동부채: 비교 불가 (PERIOD_UNVERIFIED)"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "message": "비유동부채: 비교 불가 (PERIOD_UNVERIFIED)"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "message": "부채총계: 비교 불가 (PERIOD_UNVERIFIED)"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "message": "자본금: 비교 불가 (PERIOD_UNVERIFIED)"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "message": "이익잉여금: 비교 불가 (PERIOD_UNVERIFIED)"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "message": "자본총계: 비교 불가 (PERIOD_UNVERIFIED)"
+    },
+    {
+      "code": "NEGATIVE_BASE",
+      "field": "triggers.financial_changes",
+      "message": "영업이익: 음수 기저의 변화율 해석이 필요합니다."
+    },
+    {
+      "code": "NEGATIVE_BASE",
+      "field": "triggers.financial_changes",
+      "message": "법인세차감전 순이익: 음수 기저의 변화율 해석이 필요합니다."
+    },
+    {
+      "code": "NEGATIVE_BASE",
+      "field": "triggers.financial_changes",
+      "message": "당기순이익(손실): 음수 기저의 변화율 해석이 필요합니다."
+    },
+    {
+      "code": "NEGATIVE_BASE",
+      "field": "triggers.financial_changes",
+      "message": "당기순이익(손실): 음수 기저의 변화율 해석이 필요합니다."
+    },
+    {
+      "code": "NEGATIVE_BASE",
+      "field": "triggers.financial_changes",
+      "message": "총포괄손익: 음수 기저의 변화율 해석이 필요합니다."
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "rcept_no": "20251014800001",
+  "corp_name": "LG전자",
+  "report_nm": "[기재정정]타법인주식및출자증권처분결정",
+  "facts": [
+    {
+      "fact_id": "F1",
+      "statement": "정정 전 처분금액은 1,738,485,000,000원이다.",
+      "category": "자금조달",
+      "amount_raw": "1,738,485,000,000",
+      "date": null,
+      "evidence_quote": "정정항목 | 정정전 | 정정후 2. 처분내역_처분금액(원) | 1,738,485,000,000 | 1,856,757,000,000",
+      "evidence_rcept_no": "20251014800001"
+    },
+    {
+      "fact_id": "F2",
+      "statement": "정정 후 처분금액은 1,856,757,000,000원이다.",
+      "category": "자금조달",
+      "amount_raw": "1,856,757,000,000",
+      "date": null,
+      "evidence_quote": "정정항목 | 정정전 | 정정후 2. 처분내역_처분금액(원) | 1,738,485,000,000 | 1,856,757,000,000",
+      "evidence_rcept_no": "20251014800001"
+    },
+    {
+      "fact_id": "F3",
+      "statement": "정정 후 자기자본대비 비율은 7.36%이다.",
+      "category": "자금조달",
+      "amount_raw": "7.36",
+      "date": null,
+      "evidence_quote": "정정항목 | 정정전 | 정정후 2. 처분내역_자기자본대비(%) | 6.90 | 7.36",
+      "evidence_rcept_no": "20251014800001"
+    },
+    {
+      "fact_id": "F4",
+      "statement": "처분 후 지분 비율은 85.0%이다.",
+      "category": "자금조달",
+      "amount_raw": "85.0",
+      "date": null,
+      "evidence_quote": "지분비율(%) | 85.0",
+      "evidence_rcept_no": "20251014800001"
+    },
+    {
+      "fact_id": "F5",
+      "statement": "처분 목적은 당사 인도법인의 인도시장 IPO에 따른 당사 보유 구주 매출이다.",
+      "category": "자금조달",
+      "amount_raw": null,
+      "date": null,
+      "evidence_quote": "처분목적 | 당사 인도법인의 인도시장 IPO에 따른 당사 보유 구주 매출",
+      "evidence_rcept_no": "20251014800001"
+    },
+    {
+      "fact_id": "F6",
+      "statement": "처분 예정일자는 2025-10-13이다.",
+      "category": "자금조달",
+      "amount_raw": null,
+      "date": "2025-10-13",
+      "evidence_quote": "처분예정일자 | 2025-10-13",
+      "evidence_rcept_no": "20251014800001"
+    }
+  ],
+  "keyword_checks": [],
+  "unverifiable": []
+}
