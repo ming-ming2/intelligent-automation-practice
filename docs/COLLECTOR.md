@@ -98,12 +98,15 @@ API 필드 보존 위치:
 
 ```python
 import json
+import os
 import sqlite3
 from pathlib import Path
-from config import ROOT, load_settings
+from dotenv import load_dotenv
+from config import ROOT, project_path
 
-settings = load_settings()
-with sqlite3.connect(settings.db_path) as db:
+load_dotenv(ROOT / '.env', override=False)
+db_path = project_path(os.getenv('DART_DB_PATH', 'data/dart.db'))
+with sqlite3.connect(f'{db_path.as_uri()}?mode=ro', uri=True) as db:
     db.row_factory = sqlite3.Row
     rows = db.execute('''
         SELECT d.rcept_no, d.report_nm, d.rcept_dt, d.source_url, f.files_json
@@ -124,14 +127,27 @@ with sqlite3.connect(settings.db_path) as db:
 데이터를 공유할 때는 `data/dart.db`와 `data/raw/`를 함께 전달하고 같은 상대 폴더 구조를 유지하세요.
 수집 중에는 DB를 복사하지 말고 실행이 종료된 뒤 복사합니다. API 키는 전달하지 않습니다.
 환경변수에 외부 절대 경로를 지정했다면 데이터를 받는 환경에 맞춰 경로를 조정해야 합니다.
+이미 수집된 DB·원문을 읽는 데에는 API 키가 필요하지 않습니다.
+
+실제 원문 `20250317001029`와 두 첨부 XML에서 이스케이프되지 않은 엔티티 표현 때문에
+엄격한 XML 파싱 오류가 발생했습니다. ZIP 해시와 해제 파일의 원본 bytes 일치는 확인했습니다.
+원문 정규화 모듈은 이러한 입력을 처리하고, 복구 파싱을 사용한다면 오류 로그와 추출 결과를
+실제 본문과 대조해야 합니다. 저장된 원문은 수정하지 않습니다.
 
 ## 현재 검증 상태
 
-2026-10-09 기준 실제 수집은 `corpCode.xml`이 `800`을 반환하여 중단되었습니다.
-별도의 `company.json` 조회에서는 LG전자 고유번호 `00401731`, 종목코드 `066570`과 정상 응답을 확인했습니다.
-실제 공시 목록·원문·재무 전체 수집 성공은 아직 검증하지 못했습니다.
-OpenDART 공식 공지의 점검 예정 종료는 **2026-10-11 18:00 KST**이며 고유번호·공시 원문 API가 중단 대상입니다.
-서비스 재개 후 최소 검증용 명령을 두 번 실행해 DB 건수와 원문을 확인하고, 그 다음 전체 수집을 실행해야 합니다.
+2026-10-11 실제 API 수집과 같은 범위 재실행을 확인했습니다.
+
+- 대상: LG전자 `00401731`, 기간 `20220101~20251231`, 공시유형 A·B·I
+- 공시 목록: 153건
+- 원문: 149건, 해제 파일 157개 (XML 본문·첨부 포함)
+- 재무: 2022~2025년, 연도별 4개 보고서, 총 468개 계정 행
+- 재실행: 신규 공시·원문·재무 저장 0건, 기존 원문 149건과 정상 재무 조회 16개 건너뜀
+- 원문 미제공: 거래소공시 4건에서 `014` 응답. 목록과 실패 상태를 보존하고 재실행에서도 재시도
+
+따라서 전체 결과는 `completed_with_errors`이며, 원문 4건은 확보되지 않았습니다.
+SQLite 무결성, 중복 접수번호 없음, 모든 ZIP 해시와 해제 파일의 원본 bytes 일치를 확인했습니다.
+실행 결과와 제한 사항은 [실제 수집 검증 결과](../results/API_COLLECTION_VALIDATION.md)를 참고하세요.
 실제 공시 3건·CrewAI 실행 평가는 전체 워크플로 통합 후 수행합니다.
 
 공식 문서:
