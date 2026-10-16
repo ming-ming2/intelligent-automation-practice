@@ -1,0 +1,169 @@
+<html>
+ <head> 
+  <meta content="gdi" http-equiv="X-UA-TextLayoutMetrics"> 
+  <meta content="text/html; charset=euc-kr" http-equiv="Content-Type"> 
+  <STYLE>
+.xforms * { font-family: 돋움체;}
+.xforms_title * { font-size: 13pt; padding : 0 0 10 0;}
+
+.xforms table {
+    font-size: 10px;
+    padding:0px;
+    border-collapse:collapse;
+    color: #3D3D3D;
+}
+.xforms td {
+    padding-left:0px;
+    padding-top:0px;
+    border-collapse:collapse;
+    line-height:22px;
+    color: #3D3D3D;
+    /*text-align:right;*/
+    vertical-align:middle;
+    border: 1px solid #7f7f7f;
+}
+
+.xforms span {
+    /*display: inline-block;*/
+    padding-left:3px;
+    padding-right: 1px;
+    line-height:22px;
+    padding-top:0px;
+    padding-bottom:0px;
+    text-align:left;
+    vertical-align:middle;
+    border: 0px solid #DBDBDB;
+}
+
+.xforms.img{
+    border : 0px;
+}
+
+.xforms a:link {
+
+    color: #194866;
+    text-decoration: none;
+}
+.xforms a:active {
+
+    color: #194866;
+    text-decoration: none;
+}
+.xforms a:visited {
+    color: #194866;
+    text-decoration: none;
+}
+
+.xforms A:hover {
+    color:008BE3;
+    text-decoration: none;
+}
+
+.xforms_input{
+    border: 0px solid #DBDBDB;
+    padding-left:3px;
+    padding-right: 1px;
+    height:22px;
+    padding-top:0px;
+    padding-bottom:0px;
+    text-align:left;
+}
+</STYLE> 
+  <title>LG전자/영업정지(자율공시)/(2022.02.23)영업정지(자율공시)</title> 
+ </head> 
+ <body> 
+  <div class="xforms"> 
+   <div> 
+    <span class="noprint" style="display:none;width:600px;font-size:10pt;"> </span> 
+    <div class="xforms_title"> 
+     <div> 
+      <span style="width:598px;font-weight:bold;text-align:center;">영업정지(자율공시)</span> 
+     </div> 
+    </div> 
+    <span class="noprint" style="display:none;width:600px;font-size:10pt;"> </span> 
+    <table border="1" bordercolordark="white" bordercolorlight="#666666" cellpadding="1" cellspacing="0" id="XFormD6_Form0_Table0" style="margin:0px 0px 20px 0px;width:600px;font-size:10pt;border:1px solid #7f7f7f;"> 
+     <tbody> 
+      <tr> 
+       <td colspan="2" width="270"> <span style="width:270px;font-size:10pt;">1. 영업정지분야</span> </td> 
+       <td colspan="2" width="330"> <span class="xforms_input" style="width:330px;font-size:10pt;">태양광 패널 사업</span> </td> 
+      </tr> 
+      <tr> 
+       <td rowspan="4" width="143"> <span style="width:143px;font-size:10pt;">2. 영업정지내역</span> </td> 
+       <td width="127"> <span style="width:127px;font-size:10pt;">영업정지금액(원)</span> </td> 
+       <td colspan="2" width="330"> <span class="xforms_input" style="width:330px;font-size:10pt;text-align:right;">881,738,236,476</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="127"> <span style="width:127px;font-size:10pt;">최근매출총액(원)</span> </td> 
+       <td colspan="2" width="330"> <span class="xforms_input" style="width:330px;font-size:10pt;text-align:right;">58,057,908,244,984</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="127"> <span style="width:127px;font-size:10pt;">매출액 대비(%)</span> </td> 
+       <td colspan="2" width="330"> <span class="xforms_input" style="width:330px;font-size:10pt;text-align:right;">1.5</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="127"> <span style="width:127px;font-size:10pt;">대규모법인여부</span> </td> 
+       <td colspan="2" width="330"> <span class="xforms_input" style="width:330px;font-size:10pt;">해당</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="270"> <span style="width:270px;font-size:10pt;">3. 영업정지내용</span> </td> 
+       <td colspan="2" width="330"> <span class="xforms_input" style="width:330px;font-size:10pt;">태양광 패널 사업 생산 및 판매 종료</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="270"> <span style="width:270px;font-size:10pt;">4. 영업정지사유</span> </td> 
+       <td colspan="2" width="330"> <span class="xforms_input" style="width:330px;font-size:10pt;">- 태양광 패널 사업 경쟁심화 및 지속적인 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp;사업부진 <br xmlns:java="http://xml.apache.org/xalan/java">- 내부자원 효율화를 통해 핵심사업으로의 역량 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp;집중 및 사업구조 개선</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="270"> <span style="width:270px;font-size:10pt;">5. 향후대책</span> </td> 
+       <td colspan="2" width="330"> <span class="xforms_input" style="width:330px;font-size:10pt;">선택과 집중을 통한 전사 사업 포트폴리오 개선</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="270"> <span style="width:270px;font-size:10pt;">6. 영업정지영향</span> </td> 
+       <td colspan="2" width="330"> <span class="xforms_input" style="width:330px;font-size:10pt;">태양광 패널 사업의 종료로 단기적으로는 전사 <br xmlns:java="http://xml.apache.org/xalan/java">매출액의 감소가 일부 있을 수 있으나, 중장기적으로는 사업체질 및 재무구조 개선 효과가 기대됨</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="270"> <span style="width:270px;font-size:10pt;">7. 영업정지일자</span> </td> 
+       <td colspan="2" width="330"> <span class="xforms_input" style="width:330px;font-size:10pt;">2022-06-30</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="270"> <span style="width:270px;font-size:10pt;">8. 이사회결의일(결정일)</span> </td> 
+       <td colspan="2" width="330"> <span class="xforms_input" style="width:330px;font-size:10pt;">2022-02-22</span> </td> 
+      </tr> 
+      <tr> 
+       <td rowspan="2" width="143"> <span style="width:143px;font-size:10pt;">- 사외이사 참석여부</span> </td> 
+       <td width="127"> <span style="width:127px;font-size:10pt;text-align:center;">참석(명)</span> </td> 
+       <td colspan="2" width="330"> <span class="xforms_input" style="width:330px;font-size:10pt;text-align:right;">4</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="127"> <span style="width:127px;font-size:10pt;text-align:center;">불참(명)</span> </td> 
+       <td colspan="2" width="330"> <span class="xforms_input" style="width:330px;font-size:10pt;text-align:right;">0</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="270"> <span style="width:270px;font-size:10pt;">- 감사(사외이사가 아닌 감사위원) 참석여부</span> </td> 
+       <td colspan="2" width="330"> <span class="xforms_input" style="width:330px;font-size:10pt;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" rowspan="2" width="270"> <span style="width:270px;font-size:10pt;">9. 기타 투자판단과 관련한 중요사항</span> </td> 
+       <td colspan="2" width="330"> <span class="xforms_input" style="width:330px;font-size:10pt;">1) 상기 2. 영업정지내역 중 "영업정지금액" 및 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp; "최근매출총액"은 2020년 연결재무제표 기준 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp; 금액임 <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">2) 상기 7."영업정지일자"는 해당 사업의 영업 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp; 제반사항 등을 고려한 시점이며 판매, 재고 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp; 소진 등 상황에 따라 변경될 수 있음 <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">3) 상기 사항은 진행절차에 따라 변동될 수 있음</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="108"> <span style="width:108px;font-size:10pt;">※ 관련공시</span> </td> 
+       <td width="222"> <span class="xforms_input" style="width:222px;font-size:10pt;">-</span> </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+  </div>  
+ </body>
+</html>

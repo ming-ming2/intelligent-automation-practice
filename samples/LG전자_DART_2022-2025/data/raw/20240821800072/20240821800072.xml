@@ -1,0 +1,109 @@
+<html>
+ <head> 
+  <meta content="gdi" http-equiv="X-UA-TextLayoutMetrics"> 
+  <meta content="text/html; charset=euc-kr" http-equiv="Content-Type"> 
+  <STYLE>
+.xforms * { font-family: 돋움체;}
+.xforms_title * { font-size: 13pt; padding : 0 0 10 0;}
+
+.xforms table {
+    font-size: 10px;
+    padding:0px;
+    border-collapse:collapse;
+    color: #3D3D3D;
+}
+.xforms td {
+    padding-left:0px;
+    padding-top:0px;
+    border-collapse:collapse;
+    line-height:22px;
+    color: #3D3D3D;
+    /*text-align:right;*/
+    vertical-align:middle;
+    border: 1px solid #7f7f7f;
+}
+
+.xforms span {
+    /*display: inline-block;*/
+    padding-left:3px;
+    padding-right: 1px;
+    line-height:22px;
+    padding-top:0px;
+    padding-bottom:0px;
+    text-align:left;
+    vertical-align:middle;
+    border: 0px solid #DBDBDB;
+}
+
+.xforms.img{
+    border : 0px;
+}
+
+.xforms a:link {
+
+    color: #194866;
+    text-decoration: none;
+}
+.xforms a:active {
+
+    color: #194866;
+    text-decoration: none;
+}
+.xforms a:visited {
+    color: #194866;
+    text-decoration: none;
+}
+
+.xforms A:hover {
+    color:008BE3;
+    text-decoration: none;
+}
+
+.xforms_input{
+    border: 0px solid #DBDBDB;
+    padding-left:3px;
+    padding-right: 1px;
+    height:22px;
+    padding-top:0px;
+    padding-bottom:0px;
+    text-align:left;
+}
+</STYLE> 
+  <title>LG전자/기업가치 제고 계획 예고(안내공시)/(2024.08.21)기업가치 제고 계획 예고(안내공시)</title> 
+ </head> 
+ <body> 
+  <div class="xforms"> 
+   <div> 
+    <span class="noprint" style="display:none;width:600px;font-size:10pt;"> </span> 
+    <div class="xforms_title"> 
+     <div> 
+      <span style="width:596px;font-weight:bold;text-align:center;">기업가치 제고 계획 예고(안내공시)</span> 
+     </div> 
+    </div> 
+    <table border="1" bordercolordark="white" bordercolorlight="#666666" cellpadding="1" cellspacing="0" id="XFormD2_Form0_Table0" style="margin:0px 0px 20px 0px;width:594px;border:1px solid #7f7f7f;"> 
+     <tbody> 
+      <tr> 
+       <td colspan="3" width="594"> <span style="width:594px;font-size:10pt;">※ 동 정보는 장래 계획사항으로 향후 변경될 수 있음.</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="245"> <span style="width:245px;font-size:10pt;">1. 기업가치 제고 계획 공시예정일</span> </td> 
+       <td colspan="2" width="349"> <span class="xforms_input" style="width:349px;font-size:10pt;">2024년 4분기</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="245"> <span style="width:245px;font-size:10pt;">2. 결정일자</span> </td> 
+       <td colspan="2" width="349"> <span class="xforms_input" style="width:349px;font-size:10pt;">2024-08-21</span> </td> 
+      </tr> 
+      <tr> 
+       <td rowspan="2" width="245"> <span style="width:245px;font-size:10pt;">3. 기타 투자판단과 관련한 중요사항</span> </td> 
+       <td colspan="2" width="349"> <span class="xforms_input" style="width:349px;font-size:10pt;">당사는 기업가치 제고를 위해 지속 노력하고 있으며, 상세한 기업가치 제고계획은 2024년 4분기 중 공시 예정입니다.</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="99"> <span style="width:99px;font-size:10pt;">※ 관련공시</span> </td> 
+       <td width="250"> <span class="xforms_input" style="width:250px;font-size:10pt;">-</span> </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+  </div>  
+ </body>
+</html>

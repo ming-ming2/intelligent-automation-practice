@@ -1,0 +1,115 @@
+<html>
+ <head> 
+  <meta content="gdi" http-equiv="X-UA-TextLayoutMetrics"> 
+  <meta content="text/html; charset=euc-kr" http-equiv="Content-Type"> 
+  <STYLE>
+.xforms * { font-family: 돋움체;}
+.xforms_title * { font-size: 13pt; padding : 0 0 10 0;}
+
+.xforms table {
+    font-size: 10px;
+    padding:0px;
+    border-collapse:collapse;
+    color: #3D3D3D;
+}
+.xforms td {
+    padding-left:0px;
+    padding-top:0px;
+    border-collapse:collapse;
+    line-height:22px;
+    color: #3D3D3D;
+    /*text-align:right;*/
+    vertical-align:middle;
+    border: 1px solid #7f7f7f;
+}
+
+.xforms span {
+    /*display: inline-block;*/
+    padding-left:3px;
+    padding-right: 1px;
+    line-height:22px;
+    padding-top:0px;
+    padding-bottom:0px;
+    text-align:left;
+    vertical-align:middle;
+    border: 0px solid #DBDBDB;
+}
+
+.xforms.img{
+    border : 0px;
+}
+
+.xforms a:link {
+
+    color: #194866;
+    text-decoration: none;
+}
+.xforms a:active {
+
+    color: #194866;
+    text-decoration: none;
+}
+.xforms a:visited {
+    color: #194866;
+    text-decoration: none;
+}
+
+.xforms A:hover {
+    color:008BE3;
+    text-decoration: none;
+}
+
+.xforms_input{
+    border: 0px solid #DBDBDB;
+    padding-left:3px;
+    padding-right: 1px;
+    height:22px;
+    padding-top:0px;
+    padding-bottom:0px;
+    text-align:left;
+}
+</STYLE> 
+  <title>LG전자/주주명부폐쇄기간 또는 기준일 설정/(2024.12.13)주주명부폐쇄기간 또는 기준일 설정</title> 
+ </head> 
+ <body> 
+  <div class="xforms"> 
+   <div> 
+    <span class="noprint" style="display:none;width:600px;font-size:10pt;"> </span> 
+    <div class="xforms_title"> 
+     <div> 
+      <span style="width:600px;font-weight:bold;text-align:center;">주주명부폐쇄기간 또는 기준일 설정</span> 
+     </div> 
+    </div> 
+    <table border="1" bordercolordark="white" bordercolorlight="#666666" cellpadding="1" cellspacing="0" id="XFormD5_Form0_Table0" style="margin:0px 0px 20px 0px;width:599px;font-size:10pt;border:1px solid #7f7f7f;"> 
+     <tbody> 
+      <tr> 
+       <td colspan="2" width="231"> <span style="width:231px;font-size:10pt;">1. 기준일</span> </td> 
+       <td colspan="2" width="368"> <span class="xforms_input" style="width:368px;font-size:10pt;">2024-12-31</span> </td> 
+      </tr> 
+      <tr> 
+       <td rowspan="2" width="141"> <span style="width:141px;font-size:10pt;">2. 명의개서정지기간</span> </td> 
+       <td width="90"> <span style="width:90px;font-size:10pt;text-align:center;">시작일</span> </td> 
+       <td colspan="2" width="368"> <span class="xforms_input" style="width:368px;font-size:10pt;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="90"> <span style="width:90px;font-size:10pt;text-align:center;">종료일</span> </td> 
+       <td colspan="2" width="368"> <span class="xforms_input" style="width:368px;font-size:10pt;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="231"> <span style="width:231px;font-size:10pt;">3. 설정사유</span> </td> 
+       <td colspan="2" width="368"> <span class="xforms_input" style="width:368px;font-size:10pt;">제23기 정기주주총회 주주권행사 권리주주 확정</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" rowspan="2" width="231"> <span style="width:231px;font-size:10pt;">4. 기타 투자판단에 참고할 사항</span> </td> 
+       <td colspan="2" width="368"> <span class="xforms_input" style="width:368px;font-size:10pt;">- 상기 '1. 기준일'은 당사 정관 제21조(기준일)에 의거하여 제23기 정기주주총회 주주권행사 권리주주 확정을 위한 기준일입니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">- 전자증권제도 시행으로 주주명부폐쇄기간은 적용하지 않습니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">- 당사의 배당기준일은 당사 정관 제44조(주주배당금)에 의거하여 향후 이사회 결의로 정하여 별도로 공시할 예정입니다.</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="90"> <span style="width:90px;font-size:10pt;">※ 관련 공시</span> </td> 
+       <td width="278"> <span class="xforms_input" style="width:278px;font-size:10pt;">-</span> </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+  </div>  
+ </body>
+</html>

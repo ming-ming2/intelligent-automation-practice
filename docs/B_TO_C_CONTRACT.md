@@ -32,7 +32,7 @@ JSON 스키마 통과는 형식 검증일 뿐 실제 데이터 정확성이나 �
 | source | 공시 URL, XML 경로 목록. 경로는 프로젝트 루트 기준 상대 경로를 권장한다. |
 | triggers.amount_changes | 금액 항목별 비교 배열. 투자금액·양수금액 등을 따로 담는다. |
 | triggers.financial_changes | 재무 계정별 비교 배열. 연결·별도 등을 섞지 않는다. |
-| triggers.keywords | 키워드 등장 근거 배열. 부정문도 문맥 그대로 전달한다. |
+| triggers.keywords | 키워드 등장 근거 배열. 명백한 회계 항목명·과거 연혁은 제외하고, 부정문 등은 문맥 그대로 전달한다. |
 | past_cases | 대상 공시 이전 동일 유형 사례. 과거 공시의 근거·금액 요약을 포함한다. |
 | history_search | 3→5년 검색 범위, 3년 사례 수, 목록 수집 범위 충족 여부. |
 | needs_verification | 기계 처리용 code, 대상 field, 사람이 읽는 message. |
@@ -102,7 +102,7 @@ needs_verification 사유로 처리한다. `original_length`는 전체 정규화
 `DOCUMENT_MISSING`, `XML_PARSE_ERROR`, `CURRENT_VALUE_MISSING`, `PREVIOUS_VALUE_MISSING`,
 `PREVIOUS_VALUE_ZERO`, `UNIT_UNKNOWN`, `COMPARISON_MISMATCH`, `NEGATIVE_BASE`,
 `SIGN_CHANGE`, `FINANCIAL_DATA_MISSING`, `HISTORY_COVERAGE_INCOMPLETE`,
-`HISTORY_COVERAGE_UNKNOWN`, `CORRECTION_LINK_UNCONFIRMED`.
+`HISTORY_COVERAGE_UNKNOWN`, `CORRECTION_LINK_UNCONFIRMED`, `KEYWORD_EXCLUDED`.
 
 예: 금액이 없으면 value=null, change_rate=null, triggered=null로 반환하고
 needs_verification에 원인을 추가한다. 비교 대상으로 선택할 재무 계정 자체가 없으면

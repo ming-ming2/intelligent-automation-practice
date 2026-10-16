@@ -1,0 +1,25 @@
+{
+  "rcept_no": "MOCK-CURRENT-001",
+  "corp_name": "LG전자",
+  "report_nm": "개발용 가상 투자 공시",
+  "facts": [
+    {
+      "fact_id": "F1",
+      "statement": "투자금액은 1,300억원이다.",
+      "category": "투자",
+      "amount_raw": "1,300억원",
+      "date": null,
+      "evidence_quote": "투자금액 | 1,300억원",
+      "evidence_rcept_no": "MOCK-CURRENT-001"
+    }
+  ],
+  "keyword_checks": [
+    {
+      "keyword": "합병",
+      "quote": "현재 합병 계획은 없습니다.",
+      "is_actual_event": false,
+      "note": ""
+    }
+  ],
+  "unverifiable": []
+}

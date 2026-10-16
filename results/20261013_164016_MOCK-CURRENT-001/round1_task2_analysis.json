@@ -1,0 +1,57 @@
+{
+  "rcept_no": "MOCK-CURRENT-001",
+  "changes": [
+    {
+      "change_id": "C1",
+      "metric": "투자금액",
+      "previous": "1,000억원",
+      "current": "1,300억원",
+      "change_rate": "+30.0%",
+      "triggered": true,
+      "description": "투자금액이 증가하였습니다.",
+      "related_fact_ids": [
+        "F1"
+      ]
+    }
+  ],
+  "interpretations": [
+    {
+      "statement": "LG전자의 투자금액 증가가 삼성전자 DX 생활가전·전자 사업에 미치는 영향은 경쟁 압력 증가일 가능성이 있다.",
+      "impact_area": "경쟁환경",
+      "based_on": [
+        "F1",
+        "C1"
+      ],
+      "confidence": "낮음"
+    }
+  ],
+  "needs_verification": [
+    {
+      "code": "FINANCIAL_DATA_MISSING",
+      "field": "triggers.financial_changes",
+      "item": "재무 데이터",
+      "why": "이 개발용 예시에는 재무 데이터가 없습니다.",
+      "origin": "program"
+    },
+    {
+      "code": "HISTORY_COVERAGE_UNKNOWN",
+      "field": "history_search",
+      "item": "과거 공시",
+      "why": "실제 5년간의 과거 공시 부재 또는 신규 사건 여부를 판단할 수 없습니다.",
+      "origin": "program"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": "interpretations",
+      "item": "해석 검증: LG전자의 투자금액 증가가 삼성전자 DX 생활가전·전자 사업에 미치는 영향은 경쟁 압력 증가일 가능성이 있다.",
+      "why": "근거(F1, C1)만으로는 신뢰도가 낮아 추가 자료로 확인이 필요합니다.",
+      "origin": "agent"
+    }
+  ],
+  "follow_up_checks": [
+    "LG전자의 향후 투자 계획은 무엇인지 확인할 필요가 있다.",
+    "경쟁사인 LG전자의 투자 증가가 시장에 미치는 영향은 무엇인지 분석해야 한다.",
+    "삼성전자의 대응 전략은 무엇인지 검토해야 한다.",
+    "과거 5년간 LG전자의 투자 패턴을 분석할 필요가 있다."
+  ]
+}

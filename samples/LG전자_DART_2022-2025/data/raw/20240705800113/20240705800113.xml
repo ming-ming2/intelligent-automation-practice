@@ -1,0 +1,243 @@
+<html>
+ <head> 
+  <meta content="gdi" http-equiv="X-UA-TextLayoutMetrics"> 
+  <meta content="text/html; charset=euc-kr" http-equiv="Content-Type"> 
+  <STYLE>
+.xforms * { font-family: 돋움체;}
+.xforms_title * { font-size: 13pt; padding : 0 0 10 0;}
+
+.xforms table {
+    font-size: 10px;
+    padding:0px;
+    border-collapse:collapse;
+    color: #3D3D3D;
+}
+.xforms td {
+    padding-left:0px;
+    padding-top:0px;
+    border-collapse:collapse;
+    line-height:22px;
+    color: #3D3D3D;
+    /*text-align:right;*/
+    vertical-align:middle;
+    border: 1px solid #7f7f7f;
+}
+
+.xforms span {
+    /*display: inline-block;*/
+    padding-left:3px;
+    padding-right: 1px;
+    line-height:22px;
+    padding-top:0px;
+    padding-bottom:0px;
+    text-align:left;
+    vertical-align:middle;
+    border: 0px solid #DBDBDB;
+}
+
+.xforms.img{
+    border : 0px;
+}
+
+.xforms a:link {
+
+    color: #194866;
+    text-decoration: none;
+}
+.xforms a:active {
+
+    color: #194866;
+    text-decoration: none;
+}
+.xforms a:visited {
+    color: #194866;
+    text-decoration: none;
+}
+
+.xforms A:hover {
+    color:008BE3;
+    text-decoration: none;
+}
+
+.xforms_input{
+    border: 0px solid #DBDBDB;
+    padding-left:3px;
+    padding-right: 1px;
+    height:22px;
+    padding-top:0px;
+    padding-bottom:0px;
+    text-align:left;
+}
+</STYLE> 
+  <title>LG전자/연결재무제표기준영업(잠정)실적(공정공시)/(2024.07.05)연결재무제표기준영업(잠정)실적(공정공시)</title> 
+ </head> 
+ <body> 
+  <div class="xforms"> 
+   <div> 
+    <span class="noprint" style="display:none;width:600px;font-size:10pt;"> </span> 
+    <div class="xforms_title"> 
+     <div> 
+      <span style="width:596px;font-weight:bold;text-align:center;">연결재무제표 기준 영업(잠정)실적(공정공시)</span> 
+     </div> 
+    </div> 
+    <span class="noprint" style="display:none;width:600px;font-size:10pt;"> </span> 
+    <table border="1" bordercolordark="white" bordercolorlight="#666666" cellpadding="1" cellspacing="0" id="XFormD1_Form0_RepeatTable0" style="margin:0px 0px 20px 0px;width:602px;font-size:10pt;border:1px solid #7f7f7f;"> 
+     <tbody> 
+      <tr> 
+       <td colspan="7" width="602"> <span style="width:602px;font-size:10pt;">※ 동 정보는 잠정치로서 향후 확정치와는 다를 수 있음.</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="4" width="330"> <span style="width:330px;font-size:10pt;">1. 연결실적내용</span> </td> 
+       <td colspan="3" width="272"> <span class="xforms_input" style="width:272px;font-size:10pt;text-align:right;">단위 : 억원, %</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" rowspan="2" width="158"> <span style="width:158px;font-size:10pt;text-align:center;">구분</span> </td> 
+       <td width="87"> <span style="width:87px;font-size:10pt;text-align:center;">당기실적</span> </td> 
+       <td width="85"> <span style="width:85px;font-size:10pt;text-align:center;">전기실적</span> </td> 
+       <td rowspan="2" width="94"> <span style="width:94px;font-size:10pt;text-align:center;">전기대비증감율(%)</span> </td> 
+       <td width="92"> <span style="width:92px;font-size:10pt;text-align:center;">전년동기실적</span> </td> 
+       <td rowspan="2" width="86"> <span style="width:86px;font-size:10pt;text-align:center;">전년동기대비증감율(%)</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="87"> <span class="xforms_input" style="width:87px;font-size:10pt;text-align:center;">(`24.2Q)</span> </td> 
+       <td width="85"> <span class="xforms_input" style="width:85px;font-size:10pt;text-align:center;">(`24.1Q)</span> </td> 
+       <td width="92"> <span class="xforms_input" style="width:92px;font-size:10pt;text-align:center;">(`23.2Q)</span> </td> 
+      </tr> 
+      <tr> 
+       <td rowspan="2" width="86"> <span style="width:86px;font-size:10pt;text-align:center;">매출액</span> </td> 
+       <td width="72"> <span style="width:72px;font-size:10pt;text-align:center;">당해실적</span> </td> 
+       <td width="87"> <span class="xforms_input" style="width:87px;font-size:10pt;text-align:right;">217,009</span> </td> 
+       <td width="85"> <span class="xforms_input" style="width:85px;font-size:10pt;text-align:right;">210,959</span> </td> 
+       <td width="94"> <span class="xforms_input" style="width:94px;font-size:10pt;text-align:right;">2.9%</span> </td> 
+       <td width="92"> <span class="xforms_input" style="width:92px;font-size:10pt;text-align:right;">199,984</span> </td> 
+       <td width="86"> <span class="xforms_input" style="width:86px;font-size:10pt;text-align:right;">8.5%</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="72"> <span style="width:72px;font-size:10pt;text-align:center;">누계실적</span> </td> 
+       <td width="87"> <span class="xforms_input" style="width:87px;font-size:10pt;text-align:right;">427,968</span> </td> 
+       <td width="85"> <span class="xforms_input" style="width:85px;font-size:10pt;text-align:right;">210,959</span> </td> 
+       <td width="94"> <span class="xforms_input" style="width:94px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="92"> <span class="xforms_input" style="width:92px;font-size:10pt;text-align:right;">404,143</span> </td> 
+       <td width="86"> <span class="xforms_input" style="width:86px;font-size:10pt;text-align:right;">5.9%</span> </td> 
+      </tr> 
+      <tr> 
+       <td rowspan="2" width="86"> <span style="width:86px;font-size:10pt;text-align:center;">영업이익</span> </td> 
+       <td width="72"> <span style="width:72px;font-size:10pt;text-align:center;">당해실적</span> </td> 
+       <td width="87"> <span class="xforms_input" style="width:87px;font-size:10pt;text-align:right;">11,961</span> </td> 
+       <td width="85"> <span class="xforms_input" style="width:85px;font-size:10pt;text-align:right;">13,354</span> </td> 
+       <td width="94"> <span class="xforms_input" style="width:94px;font-size:10pt;text-align:right;">-10.4%</span> </td> 
+       <td width="92"> <span class="xforms_input" style="width:92px;font-size:10pt;text-align:right;">7,419</span> </td> 
+       <td width="86"> <span class="xforms_input" style="width:86px;font-size:10pt;text-align:right;">61.2%</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="72"> <span style="width:72px;font-size:10pt;text-align:center;">누계실적</span> </td> 
+       <td width="87"> <span class="xforms_input" style="width:87px;font-size:10pt;text-align:right;">25,315</span> </td> 
+       <td width="85"> <span class="xforms_input" style="width:85px;font-size:10pt;text-align:right;">13,354</span> </td> 
+       <td width="94"> <span class="xforms_input" style="width:94px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="92"> <span class="xforms_input" style="width:92px;font-size:10pt;text-align:right;">22,393</span> </td> 
+       <td width="86"> <span class="xforms_input" style="width:86px;font-size:10pt;text-align:right;">13.0%</span> </td> 
+      </tr> 
+      <tr> 
+       <td rowspan="2" width="86"> <span style="width:86px;font-size:10pt;text-align:center;">법인세비용차감전계속사업이익</span> </td> 
+       <td width="72"> <span style="width:72px;font-size:10pt;text-align:center;">당해실적</span> </td> 
+       <td width="87"> <span class="xforms_input" style="width:87px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="85"> <span class="xforms_input" style="width:85px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="94"> <span class="xforms_input" style="width:94px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="92"> <span class="xforms_input" style="width:92px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="86"> <span class="xforms_input" style="width:86px;font-size:10pt;text-align:right;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="72"> <span style="width:72px;font-size:10pt;text-align:center;">누계실적</span> </td> 
+       <td width="87"> <span class="xforms_input" style="width:87px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="85"> <span class="xforms_input" style="width:85px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="94"> <span class="xforms_input" style="width:94px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="92"> <span class="xforms_input" style="width:92px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="86"> <span class="xforms_input" style="width:86px;font-size:10pt;text-align:right;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td rowspan="2" width="86"> <span style="width:86px;font-size:10pt;text-align:center;">당기순이익</span> </td> 
+       <td width="72"> <span style="width:72px;font-size:10pt;text-align:center;">당해실적</span> </td> 
+       <td width="87"> <span class="xforms_input" style="width:87px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="85"> <span class="xforms_input" style="width:85px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="94"> <span class="xforms_input" style="width:94px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="92"> <span class="xforms_input" style="width:92px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="86"> <span class="xforms_input" style="width:86px;font-size:10pt;text-align:right;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="72"> <span style="width:72px;font-size:10pt;text-align:center;">누계실적</span> </td> 
+       <td width="87"> <span class="xforms_input" style="width:87px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="85"> <span class="xforms_input" style="width:85px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="94"> <span class="xforms_input" style="width:94px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="92"> <span class="xforms_input" style="width:92px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="86"> <span class="xforms_input" style="width:86px;font-size:10pt;text-align:right;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td rowspan="2" width="86"> <span style="width:86px;font-size:10pt;text-align:center;">지배기업 소유주지분 순이익</span> </td> 
+       <td width="72"> <span style="width:72px;font-size:10pt;text-align:center;">당해실적</span> </td> 
+       <td width="87"> <span class="xforms_input" style="width:87px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="85"> <span class="xforms_input" style="width:85px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="94"> <span class="xforms_input" style="width:94px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="92"> <span class="xforms_input" style="width:92px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="86"> <span class="xforms_input" style="width:86px;font-size:10pt;text-align:right;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="72"> <span style="width:72px;font-size:10pt;text-align:center;">누계실적</span> </td> 
+       <td width="87"> <span class="xforms_input" style="width:87px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="85"> <span class="xforms_input" style="width:85px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="94"> <span class="xforms_input" style="width:94px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="92"> <span class="xforms_input" style="width:92px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="86"> <span class="xforms_input" style="width:86px;font-size:10pt;text-align:right;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="158"> <span class="xforms_input" style="width:158px;font-size:10pt;">-</span> </td> 
+       <td width="87"> <span class="xforms_input" style="width:87px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="85"> <span class="xforms_input" style="width:85px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="94"> <span class="xforms_input" style="width:94px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="92"> <span class="xforms_input" style="width:92px;font-size:10pt;text-align:right;">-</span> </td> 
+       <td width="86"> <span class="xforms_input" style="width:86px;font-size:10pt;text-align:right;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" rowspan="4" width="158"> <span style="width:158px;font-size:10pt;">2. 정보제공내역</span> </td> 
+       <td colspan="2" width="172"> <span style="width:172px;font-size:10pt;">정보제공자</span> </td> 
+       <td colspan="3" width="272"> <span class="xforms_input" style="width:272px;font-size:10pt;">LG전자 IR팀</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="172"> <span style="width:172px;font-size:10pt;">정보제공대상자</span> </td> 
+       <td colspan="3" width="272"> <span class="xforms_input" style="width:272px;font-size:10pt;">기관투자자, 증권사 Analyst 및 언론</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="172"> <span style="width:172px;font-size:10pt;">정보제공(예정)일시</span> </td> 
+       <td colspan="3" width="272"> <span class="xforms_input" style="width:272px;font-size:10pt;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="172"> <span style="width:172px;font-size:10pt;">행사명(장소)</span> </td> 
+       <td colspan="3" width="272"> <span class="xforms_input" style="width:272px;font-size:10pt;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="4" width="330"> <span style="width:330px;font-size:10pt;">3. 연락처(관련부서/전화번호)</span> </td> 
+       <td colspan="3" width="272"> <span class="xforms_input" style="width:272px;font-size:10pt;">IR 담당 (02-3777-3432)</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="7" width="602"> <span style="width:602px;font-size:10pt;">4. 기타 투자판단과 관련한 중요사항</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="7" width="602"> <span class="xforms_input" style="width:602px;font-size:10pt;"> <br xmlns:java="http://xml.apache.org/xalan/java">- 한국채택국제회계기준에 따라 작성된 연결기준의 잠정 영업실적입니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">- 상기 실적 전망치는 LG전자 본사, 자회사 및 관계사 등에 대한 외부감사인의 회계검토가 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?--> 
+         <!--?javax.xml.transform.enable-output-escaping?-->  완료되지 않은 상태에서 투자자들의 편의를 위해 제공되는 전망 정보로서, <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?--> 
+         <!--?javax.xml.transform.enable-output-escaping?-->  실제 실적과는 차이가 발생할 수 있음을 양지하시기 바랍니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">- 2024년 2분기 기업설명회 시점에 관련 내용을 재공시할 예정이며, <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?--> 
+         <!--?javax.xml.transform.enable-output-escaping?-->  기업설명회 일자는 추후 안내공시를 통해 알려드리겠습니다. <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?--> 
+         <!--?javax.xml.transform.enable-output-escaping?--></span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="158"> <span style="width:158px;font-size:10pt;">※ 관련공시</span> </td> 
+       <td colspan="5" width="444"> <span class="xforms_input" style="width:444px;font-size:10pt;">-</span> </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+  </div>  
+ </body>
+</html>

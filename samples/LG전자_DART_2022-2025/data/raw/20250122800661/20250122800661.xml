@@ -1,0 +1,200 @@
+<html>
+ <head> 
+  <meta content="gdi" http-equiv="X-UA-TextLayoutMetrics"> 
+  <meta content="text/html; charset=euc-kr" http-equiv="Content-Type"> 
+  <STYLE>
+.xforms * { font-family: 돋움체;}
+.xforms_title * { font-size: 13pt; padding : 0 0 10 0;}
+
+.xforms table {
+    font-size: 10px;
+    padding:0px;
+    border-collapse:collapse;
+    color: #3D3D3D;
+}
+.xforms td {
+    padding-left:0px;
+    padding-top:0px;
+    border-collapse:collapse;
+    line-height:22px;
+    color: #3D3D3D;
+    /*text-align:right;*/
+    vertical-align:middle;
+    border: 1px solid #7f7f7f;
+}
+
+.xforms span {
+    /*display: inline-block;*/
+    padding-left:3px;
+    padding-right: 1px;
+    line-height:22px;
+    padding-top:0px;
+    padding-bottom:0px;
+    text-align:left;
+    vertical-align:middle;
+    border: 0px solid #DBDBDB;
+}
+
+.xforms.img{
+    border : 0px;
+}
+
+.xforms a:link {
+
+    color: #194866;
+    text-decoration: none;
+}
+.xforms a:active {
+
+    color: #194866;
+    text-decoration: none;
+}
+.xforms a:visited {
+    color: #194866;
+    text-decoration: none;
+}
+
+.xforms A:hover {
+    color:008BE3;
+    text-decoration: none;
+}
+
+.xforms_input{
+    border: 0px solid #DBDBDB;
+    padding-left:3px;
+    padding-right: 1px;
+    height:22px;
+    padding-top:0px;
+    padding-bottom:0px;
+    text-align:left;
+}
+</STYLE> 
+  <title>LG전자/현금ㆍ현물 배당 결정/(2025.01.22)현금ㆍ현물 배당 결정</title> 
+ </head> 
+ <body> 
+  <div class="xforms"> 
+   <div> 
+    <span class="noprint" style="display:none;width:600px;font-size:10pt;"> </span> 
+    <div class="xforms_title"> 
+     <div> 
+      <span style="width:592px;font-weight:bold;text-align:center;">현금ㆍ현물배당 결정</span> 
+     </div> 
+    </div> 
+    <span class="noprint" style="display:none;width:600px;font-size:10pt;"> </span> 
+    <table border="1" bordercolordark="white" bordercolorlight="#666666" cellpadding="1" cellspacing="0" id="XFormD1_Form0_Table0" style="margin:0px 0px 20px 0px;width:594px;font-size:10pt;border:1px solid #7f7f7f;"> 
+     <tbody> 
+      <tr> 
+       <td colspan="2" width="242"> <span style="width:242px;font-size:10pt;">1. 배당구분</span> </td> 
+       <td colspan="2" width="352"> <span class="xforms_input" style="width:352px;font-size:10pt;">결산배당</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="242"> <span style="width:242px;font-size:10pt;">2. 배당종류</span> </td> 
+       <td colspan="2" width="352"> <span class="xforms_input" style="width:352px;font-size:10pt;">현금배당</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="242"> <span style="width:242px;font-size:10pt;">- 현물자산의 상세내역</span> </td> 
+       <td colspan="2" width="352"> <span class="xforms_input" style="width:352px;font-size:10pt;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td rowspan="2" width="165"> <span style="width:165px;font-size:10pt;">3. 1주당 배당금(원)</span> </td> 
+       <td width="77"> <span style="width:77px;font-size:10pt;text-align:center;">보통주식</span> </td> 
+       <td colspan="2" width="352"> <span class="xforms_input" style="width:352px;font-size:10pt;text-align:right;">500</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="77"> <span style="width:77px;font-size:10pt;text-align:center;">종류주식</span> </td> 
+       <td colspan="2" width="352"> <span class="xforms_input" style="width:352px;font-size:10pt;text-align:right;">550</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="242"> <span style="width:242px;font-size:10pt;">- 차등배당 여부</span> </td> 
+       <td colspan="2" width="352"> <span class="xforms_input" style="width:352px;font-size:10pt;">미해당</span> </td> 
+      </tr> 
+      <tr> 
+       <td rowspan="2" width="165"> <span style="width:165px;font-size:10pt;">4. 시가배당율(%)</span> </td> 
+       <td width="77"> <span style="width:77px;font-size:10pt;text-align:center;">보통주식</span> </td> 
+       <td colspan="2" width="352"> <span class="xforms_input" style="width:352px;font-size:10pt;text-align:right;">0.6</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="77"> <span style="width:77px;font-size:10pt;text-align:center;">종류주식</span> </td> 
+       <td colspan="2" width="352"> <span class="xforms_input" style="width:352px;font-size:10pt;text-align:right;">1.4</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="242"> <span style="width:242px;font-size:10pt;">5. 배당금총액(원)</span> </td> 
+       <td colspan="2" width="352"> <span class="xforms_input" style="width:352px;font-size:10pt;text-align:right;">90,892,033,450</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="242"> <span style="width:242px;font-size:10pt;">6. 배당기준일</span> </td> 
+       <td colspan="2" width="352"> <span class="xforms_input" style="width:352px;font-size:10pt;">2025-03-31</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="242"> <span style="width:242px;font-size:10pt;">7. 배당금지급 예정일자</span> </td> 
+       <td colspan="2" width="352"> <span class="xforms_input" style="width:352px;font-size:10pt;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="242"> <span style="width:242px;font-size:10pt;">8. 주주총회 개최여부</span> </td> 
+       <td colspan="2" width="352"> <span class="xforms_input" style="width:352px;font-size:10pt;">개최</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="242"> <span style="width:242px;font-size:10pt;">9. 주주총회 예정일자</span> </td> 
+       <td colspan="2" width="352"> <span class="xforms_input" style="width:352px;font-size:10pt;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="242"> <span style="width:242px;font-size:10pt;">10. 이사회결의일(결정일)</span> </td> 
+       <td colspan="2" width="352"> <span class="xforms_input" style="width:352px;font-size:10pt;">2025-01-22</span> </td> 
+      </tr> 
+      <tr> 
+       <td rowspan="2" width="165"> <span style="width:165px;font-size:10pt;">- 사외이사 참석여부</span> </td> 
+       <td width="77"> <span style="width:77px;font-size:10pt;text-align:center;">참석(명)</span> </td> 
+       <td colspan="2" width="352"> <span class="xforms_input" style="width:352px;font-size:10pt;text-align:right;">4</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="77"> <span style="width:77px;font-size:10pt;text-align:center;">불참(명)</span> </td> 
+       <td colspan="2" width="352"> <span class="xforms_input" style="width:352px;font-size:10pt;text-align:right;">0</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="242"> <span style="width:242px;font-size:10pt;">- 감사(사외이사가 아닌 감사위원) 참석여부</span> </td> 
+       <td colspan="2" width="352"> <span class="xforms_input" style="width:352px;font-size:10pt;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="4" width="594"> <span style="width:594px;font-size:10pt;">11. 기타 투자판단과 관련한 중요사항</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="4" width="594"> <span class="xforms_input" style="width:594px;font-size:10pt;"> <br xmlns:java="http://xml.apache.org/xalan/java">- 상기 내용은 외부감사인의 감사결과 및 주주총회 승인과정에서 변경될 수 있습니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">- 당사는 2024년 3월 26일 제22기 정기주총에서 배당 절차 개선(先 배당액 확정, 後 배당기준일 설정)을 반영하여 정관을 개정하였습니다. 이에 따라 2024 회계연도 결산 배당기준일은 최종 배당금이 확정되는 주주총회 예정일 이후의 날짜로 확정하였고, 해당 배당기준일에 당사 주식을 보유한 주주에게 주총일 이후 1개월 이내 배당금을 지급할 예정입니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">- 당사는 연결 재무제표 기준 당기순이익(지배기업 소유주지분)의 25% 이상을 배당하고 있으며, 연간 최소 1,000원 이상을 주주에게 환원하고 있습니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">- 2024 회계연도의 총 주당 배당금은 보통주 1,000원, 우선주 1,050원이며, 이 중 보통주 및 우선주 동일하게 주당 500원은 상반기 배당금으로 기 지급하였고, 금번 결산 배당금은 보통주 500원, 우선주 550원을 지급할 예정입니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">- 2024 회계연도의 총 주당 배당금 기준 시가배당율은 보통주 1.2%, 우선주 2.6%입니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">- 상기 3,4항의 종류주식은 우선주를 의미합니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">- 상기 '4. 시가배당율(%)'은 2024년 중 기지급된 주당 반기배당금 500원을 제외하고 산정하였으며, 상기 '10. 이사회결의일(결정일)'의 직전 매매거래일부터 과거 1주일간의 유가증권시장에서 형성된 최종가격의 산술평균가격에 대한 주당 배당금의 비율을 백분율로 산정한 것입니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">- 상기 7,9항의 배당금지급 예정일자는 상법 제464조의2에 의거, 주주총회일로부터 1개월 이내에 지급 예정이며, 주주총회 예정일자는 미정입니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">- 당사의 감사위원회는 전원 사외이사로 구성되어 있습니다. <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?--> 
+         <!--?javax.xml.transform.enable-output-escaping?--></span> </td> 
+      </tr> 
+      <tr> 
+       <td width="165"> <span style="width:165px;font-size:10pt;">※ 관련공시</span> </td> 
+       <td colspan="3" width="429"> <span class="xforms_input" style="width:429px;font-size:10pt;">-</span> </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+    <div id="LIB_L9079" style="width:600px;font-size:10pt;;padding:0 0 20 0"> 
+     <div> 
+      <div> 
+       <span style="width:600px;font-size:11pt;font-weight:bold;">【종류주식에 대한 배당 관련 사항】</span> 
+       <table border="1" bordercolordark="white" bordercolorlight="#666666" cellpadding="1" cellspacing="0" id="XFormG1_Form0_RepeatTable0" style="margin:0px 0px 20px 0px;width:598px;font-size:10pt;border:1px solid #7f7f7f;"> 
+        <tbody> 
+         <tr> 
+          <td width="119"> <span style="width:119px;font-size:10pt;text-align:center;">종류주식명</span> </td> 
+          <td width="119"> <span style="width:119px;font-size:10pt;text-align:center;">종류주식구분</span> </td> 
+          <td width="119"> <span style="width:119px;font-size:10pt;text-align:center;">1주당 배당금(원)</span> </td> 
+          <td width="119"> <span style="width:119px;font-size:10pt;text-align:center;">시가배당율(%)</span> </td> 
+          <td width="122"> <span style="width:122px;font-size:10pt;text-align:center;">배당금총액(원)</span> </td> 
+         </tr> 
+         <tr> 
+          <td width="119"> <span class="xforms_input" style="width:119px;font-size:10pt;">LG전자우</span> </td> 
+          <td width="119"> <span class="xforms_input" style="width:119px;font-size:10pt;">우선주</span> </td> 
+          <td width="119"> <span class="xforms_input" style="width:119px;font-size:10pt;text-align:right;">550</span> </td> 
+          <td width="119"> <span class="xforms_input" style="width:119px;font-size:10pt;text-align:right;">1.4</span> </td> 
+          <td width="122"> <span class="xforms_input" style="width:122px;font-size:10pt;text-align:right;">9,449,714,450</span> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
+     </div> 
+    </div> 
+    <span class="noprint" style="display:none;width:600px;font-size:10pt;"> </span> 
+   </div> 
+  </div>  
+ </body>
+</html>

@@ -1,0 +1,8 @@
+# Team runtime: Python 3.12. Direct dependencies pinned after local verification.
+crewai==1.15.23
+requests==2.34.2
+python-dotenv==1.2.4
+beautifulsoup4==4.15.0
+lxml==6.1.3
+pydantic==2.12.5
+PyYAML==6.0.3

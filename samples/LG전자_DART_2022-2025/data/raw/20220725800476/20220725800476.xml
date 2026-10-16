@@ -1,0 +1,133 @@
+<html>
+ <head> 
+  <meta content="gdi" http-equiv="X-UA-TextLayoutMetrics"> 
+  <meta content="text/html; charset=euc-kr" http-equiv="Content-Type"> 
+  <STYLE>
+.xforms * { font-family: 돋움체;}
+.xforms_title * { font-size: 13pt; padding : 0 0 10 0;}
+
+.xforms table {
+    font-size: 10px;
+    padding:0px;
+    border-collapse:collapse;
+    color: #3D3D3D;
+}
+.xforms td {
+    padding-left:0px;
+    padding-top:0px;
+    border-collapse:collapse;
+    line-height:22px;
+    color: #3D3D3D;
+    /*text-align:right;*/
+    vertical-align:middle;
+    border: 1px solid #7f7f7f;
+}
+
+.xforms span {
+    /*display: inline-block;*/
+    padding-left:3px;
+    padding-right: 1px;
+    line-height:22px;
+    padding-top:0px;
+    padding-bottom:0px;
+    text-align:left;
+    vertical-align:middle;
+    border: 0px solid #DBDBDB;
+}
+
+.xforms.img{
+    border : 0px;
+}
+
+.xforms a:link {
+
+    color: #194866;
+    text-decoration: none;
+}
+.xforms a:active {
+
+    color: #194866;
+    text-decoration: none;
+}
+.xforms a:visited {
+    color: #194866;
+    text-decoration: none;
+}
+
+.xforms A:hover {
+    color:008BE3;
+    text-decoration: none;
+}
+
+.xforms_input{
+    border: 0px solid #DBDBDB;
+    padding-left:3px;
+    padding-right: 1px;
+    height:22px;
+    padding-top:0px;
+    padding-bottom:0px;
+    text-align:left;
+}
+</STYLE> 
+  <title>LG전자/기타 경영사항(자율공시)/(2022.07.25)기타 경영사항(자율공시)</title> 
+ </head> 
+ <body> 
+  <div class="xforms"> 
+   <div> 
+    <span class="noprint" style="display:none;width:600px;font-size:10pt;"> </span> 
+    <div class="xforms_title"> 
+     <div> 
+      <span style="width:598px;font-weight:bold;text-align:center;">기타 경영사항(자율공시)</span> 
+     </div> 
+    </div> 
+    <span class="noprint" style="display:none;width:600px;font-size:10pt;"> </span> 
+    <table border="1" bordercolordark="white" bordercolorlight="#666666" cellpadding="1" cellspacing="0" id="XFormD25_Form0_Table0" style="margin:0px 0px 20px 0px;width:600px;font-size:10pt;border:1px solid #7f7f7f;"> 
+     <tbody> 
+      <tr> 
+       <td width="225"> <span style="width:225px;font-size:10pt;">1. 제목</span> </td> 
+       <td colspan="2" width="375"> <span class="xforms_input" style="width:375px;font-size:10pt;">GM Bolt EV 리콜 비용 관련 LG에너지솔루션과 <br xmlns:java="http://xml.apache.org/xalan/java">분담비율 합의</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="225"> <span style="width:225px;font-size:10pt;">2. 주요내용</span> </td> 
+       <td colspan="2" width="375"> <span class="xforms_input" style="width:375px;font-size:10pt;">1) 개요 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->- 제너럴모터스(이하 GM) Bolt EV 차량용 배터리와 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp; 관련하여 발생하는 리콜 관련 제반 비용의 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp; 귀책 분담비율에 대해 LG에너지솔루션과 상호 합의함 <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">2) 주요 진행사항 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->- LG전자와 GM의 합의에 따라 GM이 LG전자에 청구하는 &nbsp; &nbsp; &nbsp;비용에 대한 LG전자와 LG에너지솔루션 사이의 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp; 객관적인 분담 비율 산정을 위해 다수 외부 전문가의 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp; 검토 및 분석 결과에 따라 분담비율을 산정하였음 <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">3) 주요 합의 내용 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->- LG전자와 LG에너지솔루션간 분담비율을 50:50으로 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp; 최종 합의함 <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">4) 합의 당사자 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->- LG전자, LG에너지솔루션</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="225"> <span style="width:225px;font-size:10pt;">3. 결정(확인)일자</span> </td> 
+       <td colspan="2" width="375"> <span class="xforms_input" style="width:375px;font-size:10pt;">2022-07-25</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="3" width="600"> <span style="width:600px;font-size:10pt;">4. 기타 투자판단과 관련한 중요사항</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="3" width="600"> <span class="xforms_input" style="width:600px;font-size:10pt;">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp; - 상기 '3.결정(확인)일자'는 LG전자의 이사회 결의일임</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="225"> <span style="width:225px;font-size:10pt;">※ 관련공시</span> </td> 
+       <td colspan="2" width="375"> <span class="xforms_input" style="width:375px;font-size:10pt;">-</span> </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+  </div>  
+ </body>
+</html>

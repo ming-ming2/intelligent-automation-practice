@@ -1,0 +1,149 @@
+<html>
+ <head> 
+  <meta content="gdi" http-equiv="X-UA-TextLayoutMetrics"> 
+  <meta content="text/html; charset=euc-kr" http-equiv="Content-Type"> 
+  <STYLE>
+.xforms * { font-family: 돋움체;}
+.xforms_title * { font-size: 13pt; padding : 0 0 10 0;}
+
+.xforms table {
+    font-size: 10px;
+    padding:0px;
+    border-collapse:collapse;
+    color: #3D3D3D;
+}
+.xforms td {
+    padding-left:0px;
+    padding-top:0px;
+    border-collapse:collapse;
+    line-height:22px;
+    color: #3D3D3D;
+    /*text-align:right;*/
+    vertical-align:middle;
+    border: 1px solid #7f7f7f;
+}
+
+.xforms span {
+    /*display: inline-block;*/
+    padding-left:3px;
+    padding-right: 1px;
+    line-height:22px;
+    padding-top:0px;
+    padding-bottom:0px;
+    text-align:left;
+    vertical-align:middle;
+    border: 0px solid #DBDBDB;
+}
+
+.xforms.img{
+    border : 0px;
+}
+
+.xforms a:link {
+
+    color: #194866;
+    text-decoration: none;
+}
+.xforms a:active {
+
+    color: #194866;
+    text-decoration: none;
+}
+.xforms a:visited {
+    color: #194866;
+    text-decoration: none;
+}
+
+.xforms A:hover {
+    color:008BE3;
+    text-decoration: none;
+}
+
+.xforms_input{
+    border: 0px solid #DBDBDB;
+    padding-left:3px;
+    padding-right: 1px;
+    height:22px;
+    padding-top:0px;
+    padding-bottom:0px;
+    text-align:left;
+}
+</STYLE> 
+  <title>LG전자/지속가능경영보고서 등 관련사항(자율공시)/(2022.07.22)지속가능경영보고서 등 관련사항(자율공시)</title> 
+ </head> 
+ <body> 
+  <div class="xforms"> 
+   <div> 
+    <span class="noprint" style="display:none;width:600px;font-size:10pt;"> </span> 
+    <div class="xforms_title"> 
+     <div> 
+      <span style="width:588px;font-weight:bold;text-align:center;">지속가능경영보고서 등 관련사항(자율공시)</span> 
+     </div> 
+    </div> 
+    <span class="noprint" style="display:none;width:600px;font-size:10pt;"> </span> 
+    <table border="1" bordercolordark="white" bordercolorlight="#666666" cellpadding="1" cellspacing="0" id="XFormD2_Form0_Table2" style="margin:0px 0px 20px 0px;width:601px;border:1px solid #7f7f7f;"> 
+     <tbody> 
+      <tr> 
+       <td width="228"> <span style="width:228px;font-size:10pt;">1. 보고서 명칭</span> </td> 
+       <td colspan="3" width="373"> <span class="xforms_input" style="width:373px;font-size:10pt;">2021-2022 LG전자 지속가능경영보고서</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="228"> <span style="width:228px;font-size:10pt;">2. 검증기관</span> </td> 
+       <td width="140"> <span class="xforms_input" style="width:140px;font-size:10pt;">한국경영인증원</span> </td> 
+       <td width="83"> <span style="width:83px;font-size:10pt;">영문</span> </td> 
+       <td width="150"> <span class="xforms_input" style="width:150px;font-size:10pt;">KMR(Korea Management Registrar)</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="228"> <span style="width:228px;font-size:10pt;">3. 작성기준</span> </td> 
+       <td colspan="3" width="373"> <span class="xforms_input" style="width:373px;font-size:10pt;">[보고서 작성 기준] <br xmlns:java="http://xml.apache.org/xalan/java">본 보고서는 국제 표준 가이드라인인 <br xmlns:java="http://xml.apache.org/xalan/java">GRI(Global Reporting Initiative) Standards의 <br xmlns:java="http://xml.apache.org/xalan/java">'핵심적 부합방법(Core Option)’을 준용하였으며, <br xmlns:java="http://xml.apache.org/xalan/java">SASB(Sustainability Accounting Standards Board) 및 <br xmlns:java="http://xml.apache.org/xalan/java">TCFD(Task Force on Climate-related Financial <br xmlns:java="http://xml.apache.org/xalan/java">Disclosures)에서 제시하는 보고 기준 및 프레임워크를 <br xmlns:java="http://xml.apache.org/xalan/java">반영하고 있습니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">[보고 기간] <br xmlns:java="http://xml.apache.org/xalan/java">본 보고서는 2021년 1월부터 2021년 12월까지의 활동을 바탕으로 작성되었으며, 일부 주요 활동에 대해서는 <br xmlns:java="http://xml.apache.org/xalan/java">2022년 상반기까지의 활동을 포함하였습니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">[보고 범위] <br xmlns:java="http://xml.apache.org/xalan/java">본 보고서는 LG전자가 운영하고 있는 본사, 국내외 <br xmlns:java="http://xml.apache.org/xalan/java">생산사업장 및 판매법인 전체를 보고 범위에 포함하고 <br xmlns:java="http://xml.apache.org/xalan/java">있습니다.</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="228"> <span style="width:228px;font-size:10pt;">4. 제출처</span> </td> 
+       <td colspan="3" width="373"> <span class="xforms_input" style="width:373px;font-size:10pt;">LG전자 국/영문 홈페이지 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->https://www.lge.co.kr <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->https://www.lg.com/global</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="228"> <span style="width:228px;font-size:10pt;">5. 주요내용</span> </td> 
+       <td colspan="3" width="373"> <span class="xforms_input" style="width:373px;font-size:10pt;">LG전자는 지속가능한 성장과 모두의 더 나은 삶을 <br xmlns:java="http://xml.apache.org/xalan/java">구현하기 위한 변화의 의지를 표명하고 <br xmlns:java="http://xml.apache.org/xalan/java">이를 실현하기 위해 노력하고 있으며, <br xmlns:java="http://xml.apache.org/xalan/java">이번 지속가능경영보고서를 ESG STORY BOOK과 <br xmlns:java="http://xml.apache.org/xalan/java">ESG FACT BOOK으로 구성하였습니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">ESG STORY BOOK은 ESG 경영에 대한 LG전자의 진정성있는이야기를 스토리텔링 형식으로 담았으며, <br xmlns:java="http://xml.apache.org/xalan/java">ESG FACT BOOK은 LG전자의 주요 활동과 성과를 중심으로 작성하였습니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">LG전자는 중대성 평가를 통해 도출된 중요 이슈와 <br xmlns:java="http://xml.apache.org/xalan/java">LG전자의 ESG 6대 전략과제를 연계하여 <br xmlns:java="http://xml.apache.org/xalan/java">환경, 사회, 지배구조 영역별 추진과제에 대해 <br xmlns:java="http://xml.apache.org/xalan/java">경영접근방식(MA: Management Approach), 목표, <br xmlns:java="http://xml.apache.org/xalan/java">추진활동, 진척현황 및 성과를 지속가능경영보고서 <br xmlns:java="http://xml.apache.org/xalan/java">ESG FACT BOOK에 수록하고 있습니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">[보고서 목차] (ESG FACT BOOK 기준) <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">-CORPORATE OVERVIEW <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp;경영철학 / CEO 메시지 / 기업개요 / 사업현황 <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">-ENVIRONMENTAL <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp;탄소중립 / 자원순환 / 제품 전과정 책임 <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">-SOCIAL <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->공급망 관리 / 안전·환경 / 고객 / 구성원 / 사회공헌 <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">-GOVERNANCE <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->지배구조 / 정도경영 / 준법경영 / 정보보호 <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">-APPENDIX <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp;지속가능경영 데이터 / SHEE·품질 인증현황/ <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp;소속단체·수상경력/ 중대성 평가 / <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp;GRI Standards Index / SASB Index / TCFD Report / <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp;기업지배구조 Index / 제3자 검증의견서</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="228"> <span style="width:228px;font-size:10pt;">6. 제출(확인)일자</span> </td> 
+       <td colspan="3" width="373"> <span class="xforms_input" style="width:373px;font-size:10pt;">2022-07-22</span> </td> 
+      </tr> 
+      <tr> 
+       <td rowspan="2" width="228"> <span style="width:228px;font-size:10pt;">7. 기타 투자판단과 관련한 중요사항</span> </td> 
+       <td colspan="3" width="373"> <span class="xforms_input" style="width:373px;font-size:10pt;">※ 상세내용은 기타공개첨부서류에 첨부되어 있는 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp; '2021-2022 LG전자 지속가능경영보고서'를 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp; 참조하시기 바랍니다.</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="140"> <span style="width:140px;font-size:10pt;">※관련공시</span> </td> 
+       <td colspan="2" width="233"> <span class="xforms_input" style="width:233px;font-size:10pt;">-</span> </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+  </div>  
+ </body>
+</html>

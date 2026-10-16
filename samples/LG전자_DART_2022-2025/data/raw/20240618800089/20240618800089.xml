@@ -1,0 +1,145 @@
+<html>
+ <head> 
+  <meta content="gdi" http-equiv="X-UA-TextLayoutMetrics"> 
+  <meta content="text/html; charset=euc-kr" http-equiv="Content-Type"> 
+  <STYLE>
+.xforms * { font-family: 돋움체;}
+.xforms_title * { font-size: 13pt; padding : 0 0 10 0;}
+
+.xforms table {
+    font-size: 10px;
+    padding:0px;
+    border-collapse:collapse;
+    color: #3D3D3D;
+}
+.xforms td {
+    padding-left:0px;
+    padding-top:0px;
+    border-collapse:collapse;
+    line-height:22px;
+    color: #3D3D3D;
+    /*text-align:right;*/
+    vertical-align:middle;
+    border: 1px solid #7f7f7f;
+}
+
+.xforms span {
+    /*display: inline-block;*/
+    padding-left:3px;
+    padding-right: 1px;
+    line-height:22px;
+    padding-top:0px;
+    padding-bottom:0px;
+    text-align:left;
+    vertical-align:middle;
+    border: 0px solid #DBDBDB;
+}
+
+.xforms.img{
+    border : 0px;
+}
+
+.xforms a:link {
+
+    color: #194866;
+    text-decoration: none;
+}
+.xforms a:active {
+
+    color: #194866;
+    text-decoration: none;
+}
+.xforms a:visited {
+    color: #194866;
+    text-decoration: none;
+}
+
+.xforms A:hover {
+    color:008BE3;
+    text-decoration: none;
+}
+
+.xforms_input{
+    border: 0px solid #DBDBDB;
+    padding-left:3px;
+    padding-right: 1px;
+    height:22px;
+    padding-top:0px;
+    padding-bottom:0px;
+    text-align:left;
+}
+</STYLE> 
+  <title>LG전자/수시공시의무관련사항(공정공시)/(2024.06.18)수시공시의무관련사항(공정공시)</title> 
+ </head> 
+ <body> 
+  <div class="xforms"> 
+   <div> 
+    <span class="noprint" style="display:none;width:600px;font-size:10pt;"> </span> 
+    <div class="xforms_title"> 
+     <div> 
+      <span style="width:598px;font-weight:bold;text-align:center;">수시공시의무관련사항(공정공시)</span> 
+     </div> 
+    </div> 
+    <span class="noprint" style="display:none;width:600px;font-size:10pt;"> </span> 
+    <table border="1" bordercolordark="white" bordercolorlight="#666666" cellpadding="1" cellspacing="0" id="XFormD29_Form0_Table6" style="margin:0px 0px 20px 0px;width:600px;font-size:10pt;border:1px solid #7f7f7f;"> 
+     <tbody> 
+      <tr> 
+       <td rowspan="3" width="110"> <span style="width:110px;font-size:10pt;">1. 정보내용</span> </td> 
+       <td width="132"> <span style="width:132px;font-size:10pt;">공시제목</span> </td> 
+       <td colspan="2" width="358"> <span class="xforms_input" style="width:358px;font-size:10pt;">2024년 반기배당 계획</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="132"> <span style="width:132px;font-size:10pt;">관련 수시공시내용</span> </td> 
+       <td colspan="2" width="358"> <span class="xforms_input" style="width:358px;font-size:10pt;"> <br xmlns:java="http://xml.apache.org/xalan/java">당사는 주주가치 제고 및 배당에 관한 투자자의 예측가능성 제고를 위해 2024 사업연도의 반기배당을 <br xmlns:java="http://xml.apache.org/xalan/java">다음과 같이 계획하고 있음을 알려 드립니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">- 1주당 반기배당금 : 500원 (보통주/우선주 동일) <br xmlns:java="http://xml.apache.org/xalan/java">- 반기배당 기준일 : 2024년 6월 30일 <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">상기 반기배당금은 최종 확정 전 예정금액이므로 향후 진행될 당사 이사회 결과에 따라 변경될 수 있음을 <br xmlns:java="http://xml.apache.org/xalan/java">양지하여 주시기 바랍니다. <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?--> 
+         <!--?javax.xml.transform.enable-output-escaping?--></span> </td> 
+      </tr> 
+      <tr> 
+       <td width="132"> <span style="width:132px;font-size:10pt;">예정 공시 일시</span> </td> 
+       <td colspan="2" width="358"> <span class="xforms_input" style="width:358px;font-size:10pt;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td rowspan="4" width="110"> <span style="width:110px;font-size:10pt;">2. 정보제공내역</span> </td> 
+       <td width="132"> <span style="width:132px;font-size:10pt;">정보제공자</span> </td> 
+       <td colspan="2" width="358"> <span class="xforms_input" style="width:358px;font-size:10pt;">IR팀</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="132"> <span style="width:132px;font-size:10pt;">정보제공대상자</span> </td> 
+       <td colspan="2" width="358"> <span class="xforms_input" style="width:358px;font-size:10pt;">투자자 및 언론사 등</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="132"> <span style="width:132px;font-size:10pt;">정보제공(예정)일시</span> </td> 
+       <td colspan="2" width="358"> <span class="xforms_input" style="width:358px;font-size:10pt;">공시 후 수시제공</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="132"> <span style="width:132px;font-size:10pt;">행사명(장소)</span> </td> 
+       <td colspan="2" width="358"> <span class="xforms_input" style="width:358px;font-size:10pt;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="242"> <span style="width:242px;font-size:10pt;">3. 연락처(관련부서/전화번호)</span> </td> 
+       <td colspan="2" width="358"> <span class="xforms_input" style="width:358px;font-size:10pt;">IR팀 (02-3777-3432)</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="4" width="600"> <span style="width:600px;font-size:10pt;">4. 기타 투자판단과 관련한 중요사항</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="4" width="600"> <span class="xforms_input" style="width:600px;font-size:10pt;">- 상기 반기배당의 배당금 등 세부사항은 자본시장과 금융투자업에 관한 법률 제165조의 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?--> 
+         <!--?javax.xml.transform.enable-output-escaping?--> 12에 의거하여 당사 이사회에서 결정될 예정이며, 이사회 결정 후 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?--> 
+         <!--?javax.xml.transform.enable-output-escaping?-->“현금ㆍ현물배당결정” 공시를 통해 최종 알려드리도록 하겠습니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">- 2024년 3월 26일 당사 주주환원정책에서 반기와 결산 배당금을 합한 연간 배당금을 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?--> 
+         <!--?javax.xml.transform.enable-output-escaping?--> 최소 1,000원이상으로 공시한 바 있으며,자사의 주주환원 정책 수립 관련한 자세한 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?--> 
+         <!--?javax.xml.transform.enable-output-escaping?--> 사항은 해당 공시를 참조하여 주시기 바랍니다.</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="110"> <span style="width:110px;font-size:10pt;">※ 관련공시</span> </td> 
+       <td colspan="3" width="490"> <span style="width:490px;font-size:10pt;"> <a href="http://kind.krx.co.kr/common/disclsviewer.do?method=search&amp;acptno=20240326000039&amp;rcpno=20240326000039&amp;orgid=G&amp;tran=Y&amp;langTpCd=0" target="_blank" xmlns="http://www.w3.org/1999/xhtml" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema">2024-03-26 수시공시의무관련사항(공정공시)</a> <br xmlns:java="http://xml.apache.org/xalan/java"> </span> </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+  </div>  
+ </body>
+</html>

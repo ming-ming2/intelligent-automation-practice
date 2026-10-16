@@ -56,6 +56,28 @@ class RoleBTests(unittest.TestCase):
         self.assertEqual(len(result['past_cases']), 2)  # 윤년 포함 5년 경계
         self.assertEqual(result['triggers']['keywords'][0]['evidence']['quote'], '현재 합병 계획은 없습니다.')
 
+    def test_keyword_exclusion_rules(self):
+        current = disclosure(body=(
+            '<TABLE><TR><TD>중단영업 당기순손실</TD><TD>(5,485)</TD></TR></TABLE>'
+            '<P>회사는 2002년 전자사업을 인적분할하여 설립되었습니다.</P>'
+            '<P>현재 합병 계획은 없습니다.</P>'
+            '<P>2026년 A사업의 영업을 중단하기로 결정했습니다.</P>'
+        ))
+        result = self.run_case(current)
+        keywords = result['triggers']['keywords']
+        quotes = [item['evidence']['quote'] for item in keywords]
+        self.assertNotIn('중단영업 당기순손실 | (5,485)', quotes)
+        self.assertFalse(any(item['keyword'] == '분할' for item in keywords))
+        self.assertTrue(any(item['keyword'] == '합병' and item['evidence']['quote'] == '현재 합병 계획은 없습니다.'
+                            for item in keywords))
+        self.assertTrue(any(item['keyword'] == '중단' and '중단하기로 결정' in item['evidence']['quote']
+                            for item in keywords))
+        excluded = [item for item in result['needs_verification'] if item['code'] == 'KEYWORD_EXCLUDED']
+        self.assertTrue(any("'중단'" in item['message'] and '회계 항목명' in item['message']
+                            for item in excluded))
+        self.assertTrue(any("'분할'" in item['message'] and '과거 회사 연혁' in item['message']
+                            for item in excluded))
+
     def test_ambiguous_case(self):
         result = self.run_case(disclosure(body='<P>투자금액: -</P>'))
         self.assertIsNone(result['triggers']['amount_changes'][0]['triggered'])

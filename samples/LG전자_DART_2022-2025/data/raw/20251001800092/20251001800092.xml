@@ -1,0 +1,314 @@
+<html>
+ <head> 
+  <meta content="gdi" http-equiv="X-UA-TextLayoutMetrics"> 
+  <meta content="text/html; charset=euc-kr" http-equiv="Content-Type"> 
+  <STYLE>
+.xforms * { font-family: 돋움체;}
+.xforms_title * { font-size: 13pt; padding : 0 0 10 0;}
+
+.xforms table {
+    font-size: 10px;
+    padding:0px;
+    border-collapse:collapse;
+    color: #3D3D3D;
+}
+.xforms td {
+    padding-left:0px;
+    padding-top:0px;
+    border-collapse:collapse;
+    line-height:22px;
+    color: #3D3D3D;
+    /*text-align:right;*/
+    vertical-align:middle;
+    border: 1px solid #7f7f7f;
+}
+
+.xforms span {
+    /*display: inline-block;*/
+    padding-left:3px;
+    padding-right: 1px;
+    line-height:22px;
+    padding-top:0px;
+    padding-bottom:0px;
+    text-align:left;
+    vertical-align:middle;
+    border: 0px solid #DBDBDB;
+}
+
+.xforms.img{
+    border : 0px;
+}
+
+.xforms a:link {
+
+    color: #194866;
+    text-decoration: none;
+}
+.xforms a:active {
+
+    color: #194866;
+    text-decoration: none;
+}
+.xforms a:visited {
+    color: #194866;
+    text-decoration: none;
+}
+
+.xforms A:hover {
+    color:008BE3;
+    text-decoration: none;
+}
+
+.xforms_input{
+    border: 0px solid #DBDBDB;
+    padding-left:3px;
+    padding-right: 1px;
+    height:22px;
+    padding-top:0px;
+    padding-bottom:0px;
+    text-align:left;
+}
+</STYLE> 
+  <title>LG전자/타법인주식및출자증권처분결정/(2025.10.01)타법인주식및출자증권처분결정</title> 
+ </head> 
+ <body> 
+  <div class="xforms"> 
+   <div> 
+    <div id="LIB_LC000" style="width:600px;font-size:10pt;;padding:0 0 20 0"> 
+     <div> 
+      <div> 
+       <span style="width:600px;font-size:10pt;font-weight:bold;text-align:center;">정정신고(보고)</span> 
+       <table border="0" bordercolordark="white" bordercolorlight="#666666" cellpadding="1" cellspacing="0" id="XFormD8_Form0_Table1" style="margin:0px 0px 20px 0px;width:600px;font-size:10pt;"> 
+        <tbody> 
+         <tr> 
+          <td width="434"> <span style="width:434px;font-size:10pt;text-align:right;">정정일자</span> </td> 
+          <td width="166"> <span class="xforms_input" style="width:166px;font-size:10pt;">2025-10-01</span> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table border="1" bordercolordark="white" bordercolorlight="#666666" cellpadding="1" cellspacing="0" id="XFormD8_Form0_RepeatTable0" style="margin:0px 0px 20px 0px;width:600px;font-size:10pt;border:1px solid #7f7f7f;"> 
+        <tbody> 
+         <tr> 
+          <td width="200"> <span style="width:200px;font-size:10pt;">1. 정정관련 공시서류</span> </td> 
+          <td colspan="2" width="400"> <span class="xforms_input" style="width:400px;font-size:10pt;">타법인 주식 및 출자증권 처분결정</span> </td> 
+         </tr> 
+         <tr> 
+          <td width="200"> <span style="width:200px;font-size:10pt;">2. 정정관련 공시서류제출일</span> </td> 
+          <td colspan="2" width="400"> <span class="xforms_input" style="width:400px;font-size:10pt;">2025년 09월 30일</span> </td> 
+         </tr> 
+         <tr> 
+          <td width="200"> <span style="width:200px;font-size:10pt;">3. 정정사유</span> </td> 
+          <td colspan="2" width="400"> <span class="xforms_input" style="width:400px;font-size:10pt;">인도 증권거래위원회(SEBI) 승인에 따른 공모가액 범위 및 처분예정일자 확정에 따른 정정</span> </td> 
+         </tr> 
+         <tr> 
+          <td colspan="3" width="600"> <span style="width:600px;font-size:10pt;">4. 정정사항</span> </td> 
+         </tr> 
+         <tr> 
+          <td width="200"> <span style="width:200px;font-size:10pt;text-align:center;">정정항목</span> </td> 
+          <td width="200"> <span style="width:200px;font-size:10pt;text-align:center;">정정전</span> </td> 
+          <td width="200"> <span style="width:200px;font-size:10pt;text-align:center;">정정후</span> </td> 
+         </tr> 
+         <tr> 
+          <td width="200"> <span class="xforms_input" style="width:200px;font-size:10pt;">2. 처분내역_처분금액(원)</span> </td> 
+          <td width="200"> <span class="xforms_input" style="width:200px;font-size:10pt;">-</span> </td> 
+          <td width="200"> <span class="xforms_input" style="width:200px;font-size:10pt;">1,738,485,000,000</span> </td> 
+         </tr> 
+         <tr> 
+          <td width="200"> <span class="xforms_input" style="width:200px;font-size:10pt;">2. 처분내역_자기자본대비(%)</span> </td> 
+          <td width="200"> <span class="xforms_input" style="width:200px;font-size:10pt;">-</span> </td> 
+          <td width="200"> <span class="xforms_input" style="width:200px;font-size:10pt;">6.90</span> </td> 
+         </tr> 
+         <tr> 
+          <td width="200"> <span class="xforms_input" style="width:200px;font-size:10pt;">5. 처분예정일자</span> </td> 
+          <td width="200"> <span class="xforms_input" style="width:200px;font-size:10pt;">-</span> </td> 
+          <td width="200"> <span class="xforms_input" style="width:200px;font-size:10pt;">2025-10-13</span> </td> 
+         </tr> 
+         <tr> 
+          <td width="200"> <span class="xforms_input" style="width:200px;font-size:10pt;">9. 기타 투자판단과 관련한 중요사항</span> </td> 
+          <td width="200"> <span class="xforms_input" style="width:200px;font-size:10pt;">4. 상기 2항의 처분내역 중 처분금액(원)은 인도 증권거래위원회(SEBI)에 의하여 SEBI의 승인 이전까지 공모가액 범위(Price Band)를 확정할 수 없음에 따라 금액을 기재하지 않았으며, 공모가액 범위가 확정되는 즉시 재공시 예정입니다. <br java="http://xml.apache.org/xalan/java"> <br java="http://xml.apache.org/xalan/java">7. 상기 5항의 처분예정일자는 SEBI의 승인 이전까지 그 일자를 확정할 수 없음에 따라 일자를 기재하지 않았으며, 추후 확정되는 즉시 재공시 예정입니다.</span> </td> 
+          <td width="200"> <span class="xforms_input" style="width:200px;font-size:10pt;">4. 상기 2항의 처분내역 중 처분금액(원)은 9월 30일 하나은행 최초 고시환율의 매매기준율(15.81루피/원)을 적용하여 산출하였고, 공모가액 범위 중 최하단 가격 기준이며 백만원 단위로 반올림한 금액입니다. 공모가액 범위는 1,738,485,000,000원 ~ 1,835,068,000,000원이며, 주당 공모가액 1,080루피 ~ 1,140루피 기준입니다. <br java="http://xml.apache.org/xalan/java"> <br java="http://xml.apache.org/xalan/java">7. 상기 5항의 처분예정일자는 LG ELECTRONICS INDIA LIMITED 상장일의 1영업일 전일이며, 상장과정에 따라 변동될 수 있습니다.</span> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table border="1" bordercolordark="white" bordercolorlight="#666666" cellpadding="1" cellspacing="0" id="XFormD8_Form0_Table0" style="margin:0px 0px 20px 0px;width:599px;font-size:10pt;border:1px solid #7f7f7f;"> 
+        <tbody> 
+         <tr> 
+          <td width="599"> <span class="xforms_input" style="width:599px;font-size:10pt;">-</span> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="xforms_title"> 
+     <div> 
+      <span style="width:598px;font-weight:bold;text-align:center;">타법인 주식 및 출자증권 처분결정</span> 
+     </div> 
+    </div> 
+    <span class="noprint" style="display:none;width:600px;font-size:10pt;"> </span> 
+    <table border="1" bordercolordark="white" bordercolorlight="#666666" cellpadding="1" cellspacing="0" id="XFormD6_Form0_Table0" style="margin:0px 0px 20px 0px;width:600px;font-size:10pt;border:1px solid #7f7f7f;"> 
+     <tbody> 
+      <tr> 
+       <td rowspan="4" width="102"> <span style="width:102px;font-size:10pt;">1. 발행회사</span> </td> 
+       <td width="137"> <span style="width:137px;font-size:10pt;text-align:center;">회사명</span> </td> 
+       <td colspan="3" width="361"> <span class="xforms_input" style="width:361px;font-size:10pt;">LG ELECTRONICS INDIA LIMITED</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="137"> <span style="width:137px;font-size:10pt;text-align:center;">국적</span> </td> 
+       <td width="137"> <span class="xforms_input" style="width:137px;font-size:10pt;">인도(India)</span> </td> 
+       <td width="92"> <span style="width:92px;font-size:10pt;text-align:center;">대표자</span> </td> 
+       <td width="132"> <span class="xforms_input" style="width:132px;font-size:10pt;">전홍주</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="137"> <span style="width:137px;font-size:10pt;text-align:center;">자본금(원)</span> </td> 
+       <td width="137"> <span class="xforms_input" style="width:137px;font-size:10pt;text-align:right;">116,341,587,989</span> </td> 
+       <td width="92"> <span style="width:92px;font-size:10pt;text-align:center;">회사와 관계</span> </td> 
+       <td width="132"> <span class="xforms_input" style="width:132px;font-size:10pt;">계열회사</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="137"> <span style="width:137px;font-size:10pt;text-align:center;">발행주식총수(주)</span> </td> 
+       <td width="137"> <span class="xforms_input" style="width:137px;font-size:10pt;text-align:right;">678,772,392</span> </td> 
+       <td width="92"> <span style="width:92px;font-size:10pt;text-align:center;">주요사업</span> </td> 
+       <td width="132"> <span class="xforms_input" style="width:132px;font-size:10pt;">가전 제품 생산 및 판매</span> </td> 
+      </tr> 
+      <tr> 
+       <td rowspan="5" width="102"> <span style="width:102px;font-size:10pt;">2. 처분내역</span> </td> 
+       <td width="137"> <span style="width:137px;font-size:10pt;text-align:center;">처분주식수(주)</span> </td> 
+       <td colspan="3" width="361"> <span class="xforms_input" style="width:361px;font-size:10pt;text-align:right;">101,815,859</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="137"> <span style="width:137px;font-size:10pt;text-align:center;">처분금액(원)</span> </td> 
+       <td colspan="3" width="361"> <span class="xforms_input" style="width:361px;font-size:10pt;text-align:right;">1,738,485,000,000</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="137"> <span style="width:137px;font-size:10pt;text-align:center;">자기자본(원)</span> </td> 
+       <td colspan="3" width="361"> <span class="xforms_input" style="width:361px;font-size:10pt;text-align:right;">25,211,664,000,000</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="137"> <span style="width:137px;font-size:10pt;text-align:center;">자기자본대비(%)</span> </td> 
+       <td colspan="3" width="361"> <span class="xforms_input" style="width:361px;font-size:10pt;text-align:right;">6.9</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="137"> <span style="width:137px;font-size:10pt;text-align:center;">대규모법인여부</span> </td> 
+       <td colspan="3" width="361"> <span class="xforms_input" style="width:361px;font-size:10pt;">해당</span> </td> 
+      </tr> 
+      <tr> 
+       <td rowspan="2" width="102"> <span style="width:102px;font-size:10pt;">3. 처분후 소유주식수 및 지분비율</span> </td> 
+       <td width="137"> <span style="width:137px;font-size:10pt;text-align:center;">소유주식수(주)</span> </td> 
+       <td colspan="3" width="361"> <span class="xforms_input" style="width:361px;font-size:10pt;text-align:right;">576,956,533</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="137"> <span style="width:137px;font-size:10pt;text-align:center;">지분비율(%)</span> </td> 
+       <td colspan="3" width="361"> <span class="xforms_input" style="width:361px;font-size:10pt;text-align:right;">85.0</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="239"> <span style="width:239px;font-size:10pt;">4. 처분목적</span> </td> 
+       <td colspan="3" width="361"> <span class="xforms_input" style="width:361px;font-size:10pt;">당사 인도법인의 인도시장 IPO에 따른 당사 보유 구주 매출</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="239"> <span style="width:239px;font-size:10pt;">5. 처분예정일자</span> </td> 
+       <td colspan="3" width="361"> <span class="xforms_input" style="width:361px;font-size:10pt;">2025-10-13</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="239"> <span style="width:239px;font-size:10pt;">6. 이사회결의일(결정일)</span> </td> 
+       <td colspan="3" width="361"> <span class="xforms_input" style="width:361px;font-size:10pt;">2025-09-30</span> </td> 
+      </tr> 
+      <tr> 
+       <td rowspan="2" width="102"> <span style="width:102px;font-size:10pt;">-사외이사 참석여부</span> </td> 
+       <td width="137"> <span style="width:137px;font-size:10pt;text-align:center;">참석(명)</span> </td> 
+       <td colspan="3" width="361"> <span class="xforms_input" style="width:361px;font-size:10pt;text-align:right;">4</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="137"> <span style="width:137px;font-size:10pt;text-align:center;">불참(명)</span> </td> 
+       <td colspan="3" width="361"> <span class="xforms_input" style="width:361px;font-size:10pt;text-align:right;">0</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="239"> <span style="width:239px;font-size:10pt;">-감사(사외이사가 아닌 감사위원)참석여부</span> </td> 
+       <td colspan="3" width="361"> <span class="xforms_input" style="width:361px;font-size:10pt;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="239"> <span style="width:239px;font-size:10pt;">7. 공정거래위원회 신고대상 여부</span> </td> 
+       <td colspan="3" width="361"> <span class="xforms_input" style="width:361px;font-size:10pt;">미해당</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="239"> <span style="width:239px;font-size:10pt;">8. 풋옵션 등 계약의 체결여부</span> </td> 
+       <td colspan="3" width="361"> <span class="xforms_input" style="width:361px;font-size:10pt;">아니오</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="239"> <span style="width:239px;font-size:10pt;">-계약내용</span> </td> 
+       <td colspan="3" width="361"> <span class="xforms_input" style="width:361px;font-size:10pt;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="5" width="600"> <span style="width:600px;font-size:10pt;">9. 기타 투자판단과 관련한 중요사항</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="5" width="600"> <span class="xforms_input" style="width:600px;font-size:10pt;">1. 본 건은 당사의 자회사인 LG ELECTRONICS INDIA LIMITED의 인도 증권시장 상장에 따른 구주 매출 관련 사항입니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">2. 상기 1항의 발행회사의 자본금(원)은 2025년 3월말 기준이며, <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?--> 
+         <!--?javax.xml.transform.enable-output-escaping?-->  하나은행 최고 고시환율의 매매기준율(17.14원/루피)로 원화 환산한 금액입니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">3. 상기 2항의 처분내역 중 처분주식수(주)는 LG ELECTRONICS INDIA LIMITED의 상장 과정에 따라 변동될 수 있으며, <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?--> 
+         <!--?javax.xml.transform.enable-output-escaping?-->  그 변동이 있을 경우 재공시 예정입니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">4. 상기 2항의 처분내역 중 처분금액(원)은 9월 30일 하나은행 최초 고시환율의 매매기준율(15.81루피/원)을 적용하여 산출하였고, 공모가액 범위 중 최하단 가격기준이며 백만원 단위로 반올림한 금액입니다. 공모가액 범위는 1,738,485,000,000원 ~ 1,835,068,000,000원이며, 주당 공모가액 1,080루피 ~ 1,140루피 기준입니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">5. 상기 2항의 처분내역 중 자기자본(원)은 당사의 2024년도 말 연결기준 자본총계입니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">6. 상기 3항의 처분후 지분비율은 IPO에 따른 별도 신주발행이 예정되어 있지 않으므로 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?--> 
+         <!--?javax.xml.transform.enable-output-escaping?-->  공모전 발행주식총수(678,772,392주) 기준으로 산정하였습니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">7. 상기 5항의 처분예정일자는 LG ELECTRONICS INDIA LIMITED 상장일의 1영업일 전일이며, 상장 과정에 따라 변동될 수 있습니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">8. 본 건 관련 세부 사항의 결정은 대표이사 또는 대표이사가 지정하는 자에게 위임하였습니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">- 하기 발행회사의 요약 재무상황은 2025년 3월말, 2024년 3월말,2023년 3월말 기준이며, <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?--> 
+         <!--?javax.xml.transform.enable-output-escaping?--> 2025년 3월말 하나은행 최초 고시환율의 매매기준율(17.14원/루피)로 원화 환산한 금액입니다. <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">- 본 공시는 2024년 12월 9일 조회공시 요구(풍문 또는 보도)에 대한 답변(미확정)에 대한 확정 공시입니다.</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="102"> <span style="width:102px;font-size:10pt;">※ 관련공시</span> </td> 
+       <td colspan="4" width="498"> <span style="width:498px;font-size:10pt;"> <a href="http://kind.krx.co.kr/common/disclsviewer.do?method=search&amp;acptno=20241209000079&amp;rcpno=20241209000079&amp;orgid=G&amp;tran=Y&amp;langTpCd=0" target="_blank" xmlns="http://www.w3.org/1999/xhtml" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema">2024-12-09 조회공시 요구(풍문 또는 보도)에 대한 답변(미확정)</a> <br xmlns:java="http://xml.apache.org/xalan/java"> <a href="http://kind.krx.co.kr/common/disclsviewer.do?method=search&amp;acptno=20250108000513&amp;rcpno=20250108000513&amp;orgid=G&amp;tran=Y&amp;langTpCd=0" target="_blank" xmlns="http://www.w3.org/1999/xhtml" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema">2025-01-08 조회공시 요구(풍문 또는 보도)에 대한 답변(미확정)</a> <br xmlns:java="http://xml.apache.org/xalan/java"> <a href="http://kind.krx.co.kr/common/disclsviewer.do?method=search&amp;acptno=20250407001004&amp;rcpno=20250407001004&amp;orgid=G&amp;tran=Y&amp;langTpCd=0" target="_blank" xmlns="http://www.w3.org/1999/xhtml" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema">2025-04-07 조회공시 요구(풍문 또는 보도)에 대한 답변(미확정)</a> <br xmlns:java="http://xml.apache.org/xalan/java"> <a href="http://kind.krx.co.kr/common/disclsviewer.do?method=search&amp;acptno=20250605000302&amp;rcpno=20250605000302&amp;orgid=G&amp;tran=Y&amp;langTpCd=0" target="_blank" xmlns="http://www.w3.org/1999/xhtml" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema">2025-06-05 조회공시 요구(풍문 또는 보도)에 대한 답변(미확정)</a> <br xmlns:java="http://xml.apache.org/xalan/java"> </span> </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+    <span style="width:601px;font-size:11pt;font-weight:bold;">【발행회사의 요약 재무상황】</span> 
+    <span style="width:600px;font-size:10pt;text-align:right;">(단위 : 원)</span> 
+    <table border="1" bordercolordark="white" bordercolorlight="#666666" cellpadding="1" cellspacing="0" id="XFormD6_Form0_Table2" style="margin:0px 0px 20px 0px;width:597px;font-size:10pt;text-align:center;border:1px solid #7f7f7f;"> 
+     <tbody> 
+      <tr> 
+       <td width="71"> <span style="width:71px;font-size:10pt;text-align:center;">구분</span> </td> 
+       <td width="67"> <span style="width:67px;font-size:10pt;text-align:center;">자산총계</span> </td> 
+       <td width="62"> <span style="width:62px;font-size:10pt;text-align:center;">부채총계</span> </td> 
+       <td width="64"> <span style="width:64px;font-size:10pt;text-align:center;">자본총계</span> </td> 
+       <td width="51"> <span style="width:51px;font-size:10pt;text-align:center;">자본금</span> </td> 
+       <td width="56"> <span style="width:56px;font-size:10pt;text-align:center;">매출액</span> </td> 
+       <td width="79"> <span style="width:79px;font-size:10pt;text-align:center;">당기순이익</span> </td> 
+       <td width="70"> <span style="width:70px;font-size:10pt;text-align:center;">감사의견</span> </td> 
+       <td width="77"> <span style="width:77px;font-size:10pt;text-align:center;">외부감사인</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="71"> <span style="width:71px;font-size:10pt;text-align:center;">당해 연도</span> </td> 
+       <td width="67"> <span class="xforms_input" style="width:67px;font-size:10pt;text-align:right;">1,974,023,601,629</span> </td> 
+       <td width="62"> <span class="xforms_input" style="width:62px;font-size:10pt;text-align:right;">950,751,627,644</span> </td> 
+       <td width="64"> <span class="xforms_input" style="width:64px;font-size:10pt;text-align:right;">1,023,271,973,985</span> </td> 
+       <td width="51"> <span class="xforms_input" style="width:51px;font-size:10pt;text-align:right;">116,341,587,989</span> </td> 
+       <td width="56"> <span class="xforms_input" style="width:56px;font-size:10pt;text-align:right;">4,176,441,851,344</span> </td> 
+       <td width="79"> <span class="xforms_input" style="width:79px;font-size:10pt;text-align:right;">377,608,475,683</span> </td> 
+       <td width="70"> <span class="xforms_input" style="width:70px;font-size:10pt;">적정</span> </td> 
+       <td width="77"> <span class="xforms_input" style="width:77px;font-size:10pt;">PwC</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="71"> <span style="width:71px;font-size:10pt;text-align:center;">전년도</span> </td> 
+       <td width="67"> <span class="xforms_input" style="width:67px;font-size:10pt;text-align:right;">1,456,637,745,334</span> </td> 
+       <td width="62"> <span class="xforms_input" style="width:62px;font-size:10pt;text-align:right;">810,044,549,247</span> </td> 
+       <td width="64"> <span class="xforms_input" style="width:64px;font-size:10pt;text-align:right;">646,593,196,086</span> </td> 
+       <td width="51"> <span class="xforms_input" style="width:51px;font-size:10pt;text-align:right;">19,390,264,665</span> </td> 
+       <td width="56"> <span class="xforms_input" style="width:56px;font-size:10pt;text-align:right;">3,659,742,336,919</span> </td> 
+       <td width="79"> <span class="xforms_input" style="width:79px;font-size:10pt;text-align:right;">258,988,446,481</span> </td> 
+       <td width="70"> <span class="xforms_input" style="width:70px;font-size:10pt;">적정</span> </td> 
+       <td width="77"> <span class="xforms_input" style="width:77px;font-size:10pt;">PwC</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="71"> <span style="width:71px;font-size:10pt;text-align:center;">전전년도</span> </td> 
+       <td width="67"> <span class="xforms_input" style="width:67px;font-size:10pt;text-align:right;">1,541,296,101,101</span> </td> 
+       <td width="62"> <span class="xforms_input" style="width:62px;font-size:10pt;text-align:right;">794,586,498,167</span> </td> 
+       <td width="64"> <span class="xforms_input" style="width:64px;font-size:10pt;text-align:right;">746,709,602,934</span> </td> 
+       <td width="51"> <span class="xforms_input" style="width:51px;font-size:10pt;text-align:right;">19,390,264,665</span> </td> 
+       <td width="56"> <span class="xforms_input" style="width:56px;font-size:10pt;text-align:right;">3,405,398,231,566</span> </td> 
+       <td width="79"> <span class="xforms_input" style="width:79px;font-size:10pt;text-align:right;">230,523,696,288</span> </td> 
+       <td width="70"> <span class="xforms_input" style="width:70px;font-size:10pt;">적정</span> </td> 
+       <td width="77"> <span class="xforms_input" style="width:77px;font-size:10pt;">PwC</span> </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+  </div>  
+ </body>
+</html>

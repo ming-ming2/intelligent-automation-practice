@@ -12,8 +12,20 @@ ROOT = Path(__file__).resolve().parent
 AMOUNT_THRESHOLD = Decimal('0.20')
 FINANCIAL_THRESHOLD = Decimal('0.15')
 KEYWORDS = ('신규사업', '중단', '양수', '분할', '합병')
-KEYWORD_EVIDENCE_LIMIT = 3  # 정기보고서는 '중단영업' 등으로 수백 건이 걸려 LLM 입력이 넘친다
+KEYWORD_EVIDENCE_LIMIT = 3
 AMOUNT_LABELS = ('투자금액', '취득금액', '처분금액', '양수금액', '양도금액', '계약금액')
+
+# 키워드는 변화 후보를 찾기 위한 신호다. 명백한 회계 항목명과 회사 연혁은
+# 실제 사건 후보로 보내지 않고 제외 건수만 needs_verification에 남긴다.
+CURRENT_EVENT_PATTERNS = (
+    r'(?:영업|사업|생산|판매|서비스|계약|거래)\s*(?:을|를)?\s*중단(?:하|했|하기로|할|을\s*결정)',
+    r'(?:분할|합병|양수)\s*(?:을|를)?\s*(?:결정|승인|계약|완료|추진|진행)',
+    r'(?:분할|합병|양수)(?:하였|했|한다|하기로)',
+)
+HISTORY_SECTION_PATTERN = re.compile(r'(?:일반사항|회사(?:의)?\s*개요|연혁|납입자본)')
+HISTORY_CONTEXT_PATTERN = re.compile(
+    r'(?:설립|인적\s*분할|분할\s*전|회사\s*분할|분할회사|유상증자|전환권행사)'
+)
 UNITS = {'원': 1, '천원': 1000, '백만원': 1000000, '억원': 100000000, '조원': 1000000000000}
 CORRECTION = re.compile(r'^\s*(?:\[(?:기재정정|첨부정정|정정)\]\s*)+')
 
@@ -188,6 +200,66 @@ def detect_financial_changes(current, financials):
     return results
 
 
+
+def _keyword_pattern(word):
+    return re.compile(r'\s*'.join(map(re.escape, word)))
+
+
+def _has_current_event_language(text):
+    return any(re.search(pattern, text) for pattern in CURRENT_EVENT_PATTERNS)
+
+
+def _keyword_exclusion_reason(record, word, match, current_year):
+    """명백한 비사건 키워드만 Program 단계에서 제외한다.
+
+    - '중단'이 재무표의 계정명/열 이름에 쓰인 경우
+    - '분할/합병'이 과거 설립·연혁 또는 납입자본 설명에 쓰인 경우
+
+    부정문과 일반 사업 설명은 여기서 버리지 않는다. Task 1이 문맥을 보고
+    실제 사건 여부를 false/null로 판정할 수 있도록 근거를 남긴다.
+    """
+    text = record.get('text') or ''
+    section = record.get('section') or ''
+    cells = record.get('cells') or []
+    left, right = max(0, match.start() - 180), min(len(text), match.end() + 180)
+    context = text[left:right]
+
+    if word == '중단':
+        # 실제로 "사업을 중단하였다/중단하기로 결정" 같은 문장이 있으면
+        # 재무 주석 안에 있더라도 사건 문맥을 보존한다.
+        if _has_current_event_language(context):
+            return None
+        # 재무제표·주석의 표 행에서 '중단영업 당기순손실',
+        # '중단사업손익', '중단영업 매출액'처럼 계정/열 이름으로 쓰인 경우.
+        if cells and re.search(
+                r'중단\s*(?:영업|사업)?[^|]{0,24}'
+                r'(?:손익|손실|이익|매출|비용|현금흐름|주당|법인세|리스|퇴직|자산|금융|계속영업|포함)',
+                text):
+            return '회계 항목명'
+        # '| 계속영업 | 중단영업' 같은 짧은 표 머리글도 계정 문맥이다.
+        if cells and re.search(r'중단\s*영업', text) and len(text) <= 120:
+            return '회계 항목명'
+        # 재무 주석의 짧은 섹션 제목 자체도 사건이 아니다.
+        if not cells and '재무' in section and re.search(r'중단\s*영업', text) and len(text) <= 80:
+            return '회계 항목명'
+
+    if word in {'분할', '합병'}:
+        years = [int(y) for y in re.findall(r'(?<!\d)(20\d{2})(?=년|\D)', context)]
+        has_old_year = any(y < current_year for y in years)
+        # "2002년 ... 인적분할하여 설립" 등 회사 설립·연혁 설명.
+        if HISTORY_CONTEXT_PATTERN.search(context) and (
+                '설립' in context or has_old_year or HISTORY_SECTION_PATTERN.search(section)):
+            return '과거 회사 연혁'
+        # 납입자본 표의 과거 회사분할·합병/유상증자 이력.
+        if '납입자본' in section:
+            all_years = [int(y) for y in re.findall(r'(?<!\d)(20\d{2})(?=년|\D)', text)]
+            if any(y < current_year for y in all_years):
+                return '과거 회사 연혁'
+
+    return None
+
+
+
 def detect_changes(current, norm, past_disclosures=(), financials=(), cursors=(), *, data_origin):
     """순수 Python 입력 → v1 JSON dict. 과거 공시는 norm/source를 포함한다."""
     if data_origin not in {'dart', 'synthetic', 'mixed'}:
@@ -236,17 +308,33 @@ def detect_changes(current, norm, past_disclosures=(), financials=(), cursors=()
                 issues.append(_issue('NEGATIVE_BASE', f'triggers.{field}', f"{item['metric']}: 음수 기저의 변화율 해석이 필요합니다."))
             if prev is not None and cur is not None and prev * cur < 0:
                 issues.append(_issue('SIGN_CHANGE', f'triggers.{field}', f"{item['metric']}: 부호가 전환되었습니다."))
-    keywords, hits = [], {}
+    keywords, hits, excluded = [], {}, {}
+    current_year = int(current['rcept_dt'][:4])
     for record in norm['records']:
         for word in KEYWORDS:
-            if re.search(r'\s*'.join(map(re.escape, word)), record['text']):
+            matches = list(_keyword_pattern(word).finditer(record['text']))
+            if not matches:
+                continue
+            included = False
+            for match in matches:
+                reason = _keyword_exclusion_reason(record, word, match, current_year)
+                if reason:
+                    key = (word, reason)
+                    excluded[key] = excluded.get(key, 0) + 1
+                else:
+                    included = True
+            # 같은 record에 포함 가능한 등장 문맥이 하나라도 있으면 근거는 한 번만 전달한다.
+            if included:
                 hits[word] = hits.get(word, 0) + 1
                 if hits[word] <= KEYWORD_EVIDENCE_LIMIT:
                     keywords.append({'keyword': word, 'evidence': _evidence(current['rcept_no'], record)})
+    for (word, reason), count in sorted(excluded.items()):
+        issues.append(_issue('KEYWORD_EXCLUDED', 'triggers.keywords',
+                             f"'{word}' 등장 {count}건을 {reason}으로 제외했습니다."))
     for word, count in hits.items():
         if count > KEYWORD_EVIDENCE_LIMIT:
             issues.append(_issue('KEYWORD_EVIDENCE_TRUNCATED', 'triggers.keywords',
-                                 f"'{word}' 등장 {count}건 중 앞 {KEYWORD_EVIDENCE_LIMIT}건만 전달했습니다."))
+                                 f"'{word}' 유효 후보 {count}건 중 앞 {KEYWORD_EVIDENCE_LIMIT}건만 전달했습니다."))
     issues = list({(i['code'], i['field'], i['message']): i for i in issues}.values())  # 동일 경고 중복 제거
     return {'schema_version': '1.0.0', 'data_origin': data_origin,
             **{k: current[k] for k in ('rcept_no', 'corp_code', 'corp_name', 'report_nm', 'rcept_dt')},

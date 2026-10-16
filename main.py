@@ -20,6 +20,7 @@ import sqlite3
 import sys
 from datetime import datetime
 from pathlib import Path
+from dotenv import load_dotenv
 
 from crew import (ROOT, DisclosureCrew, build_inputs,  # crew가 .env와 CrewAI 경로를 먼저 설정한다
                   required_program_codes)
@@ -29,6 +30,16 @@ RESULTS_DIR = RESULTS_DIR if RESULTS_DIR.is_absolute() else ROOT / RESULTS_DIR
 REVIEW_DB = ROOT / 'data' / 'review.db'   # A의 dart.db는 건드리지 않고 별도 파일에 이력 저장
 MAX_ROUNDS = 3
 STAGE_LABELS = {1: '공시 사실 추출', 2: '사업 변화·영향 분석', 3: '경쟁사 분석 보고서 작성'}
+
+
+# main.py와 같은 폴더에 있는 .env 파일 지정
+env_path = Path(__file__).resolve().parent / ".env"
+
+# 기존 시스템 환경변수보다 .env 파일을 우선 적용
+load_dotenv(
+    dotenv_path=env_path,
+    override=True
+)
 
 
 def _rel(path: Path) -> str:

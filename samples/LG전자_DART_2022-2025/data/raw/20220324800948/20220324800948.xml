@@ -1,0 +1,447 @@
+<html>
+ <head> 
+  <meta content="gdi" http-equiv="X-UA-TextLayoutMetrics"> 
+  <meta content="text/html; charset=euc-kr" http-equiv="Content-Type"> 
+  <STYLE>
+.xforms * { font-family: 돋움체;}
+.xforms_title * { font-size: 13pt; padding : 0 0 10 0;}
+
+.xforms table {
+    font-size: 10px;
+    padding:0px;
+    border-collapse:collapse;
+    color: #3D3D3D;
+}
+.xforms td {
+    padding-left:0px;
+    padding-top:0px;
+    border-collapse:collapse;
+    line-height:22px;
+    color: #3D3D3D;
+    /*text-align:right;*/
+    vertical-align:middle;
+    border: 1px solid #7f7f7f;
+}
+
+.xforms span {
+    /*display: inline-block;*/
+    padding-left:3px;
+    padding-right: 1px;
+    line-height:22px;
+    padding-top:0px;
+    padding-bottom:0px;
+    text-align:left;
+    vertical-align:middle;
+    border: 0px solid #DBDBDB;
+}
+
+.xforms.img{
+    border : 0px;
+}
+
+.xforms a:link {
+
+    color: #194866;
+    text-decoration: none;
+}
+.xforms a:active {
+
+    color: #194866;
+    text-decoration: none;
+}
+.xforms a:visited {
+    color: #194866;
+    text-decoration: none;
+}
+
+.xforms A:hover {
+    color:008BE3;
+    text-decoration: none;
+}
+
+.xforms_input{
+    border: 0px solid #DBDBDB;
+    padding-left:3px;
+    padding-right: 1px;
+    height:22px;
+    padding-top:0px;
+    padding-bottom:0px;
+    text-align:left;
+}
+</STYLE> 
+  <title>LG전자/정기주주총회결과/(2022.03.24)정기주주총회결과</title> 
+ </head> 
+ <body> 
+  <div class="xforms"> 
+   <div> 
+    <span class="noprint" style="display:none;width:600px;font-size:10pt;"> </span> 
+    <div class="xforms_title"> 
+     <div> 
+      <span style="width:592px;font-weight:bold;text-align:center;">정기주주총회 결과</span> 
+     </div> 
+    </div> 
+    <span class="noprint" style="display:none;width:600px;font-size:10pt;"> </span> 
+    <table border="1" bordercolordark="white" bordercolorlight="#666666" cellpadding="1" cellspacing="0" id="XFormD1_Form0_Table0" style="margin:0px 0px 20px 0px;width:600px;font-size:10pt;border:1px solid #7f7f7f;"> 
+     <tbody> 
+      <tr> 
+       <td colspan="3" width="220"> <span style="width:220px;font-size:10pt;">1. 재무제표</span> </td> 
+       <td colspan="3" width="380"> <span class="xforms_input" style="width:380px;font-size:10pt;">승인</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="6" width="600"> <span class="xforms_input" style="width:600px;font-size:10pt;text-align:center;">제20기</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="6" width="600"> <span style="width:600px;font-size:10pt;text-align:right;">(단위 : 백만원)</span> </td> 
+      </tr> 
+      <tr> 
+       <td rowspan="4" width="92"> <span style="width:92px;font-size:10pt;">가. 연결</span> </td> 
+       <td colspan="2" width="128"> <span style="width:128px;font-size:10pt;">- 자산총계</span> </td> 
+       <td width="121"> <span class="xforms_input" style="width:121px;font-size:10pt;text-align:right;">53,481,478</span> </td> 
+       <td width="114"> <span style="width:114px;font-size:10pt;">- 매출액</span> </td> 
+       <td width="145"> <span class="xforms_input" style="width:145px;font-size:10pt;text-align:right;">74,721,629</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="128"> <span style="width:128px;font-size:10pt;">- 부채총계</span> </td> 
+       <td width="121"> <span class="xforms_input" style="width:121px;font-size:10pt;text-align:right;">33,383,445</span> </td> 
+       <td width="114"> <span style="width:114px;font-size:10pt;">- 영업이익</span> </td> 
+       <td width="145"> <span class="xforms_input" style="width:145px;font-size:10pt;text-align:right;">3,863,774</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="128"> <span style="width:128px;font-size:10pt;">- 자본금</span> </td> 
+       <td width="121"> <span class="xforms_input" style="width:121px;font-size:10pt;text-align:right;">904,169</span> </td> 
+       <td width="114"> <span style="width:114px;font-size:10pt;">- 당기순이익</span> </td> 
+       <td width="145"> <span class="xforms_input" style="width:145px;font-size:10pt;text-align:right;">1,414,972</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="128"> <span style="width:128px;font-size:10pt;">- 자본총계</span> </td> 
+       <td width="121"> <span class="xforms_input" style="width:121px;font-size:10pt;text-align:right;">20,098,033</span> </td> 
+       <td width="114"> <span style="width:114px;font-size:10pt;">*주당순이익(원)</span> </td> 
+       <td width="145"> <span class="xforms_input" style="width:145px;font-size:10pt;text-align:right;">5,725</span> </td> 
+      </tr> 
+      <tr> 
+       <td rowspan="4" width="92"> <span style="width:92px;font-size:10pt;">나. 개별(별도)</span> </td> 
+       <td colspan="2" width="128"> <span style="width:128px;font-size:10pt;">- 자산총계</span> </td> 
+       <td width="121"> <span class="xforms_input" style="width:121px;font-size:10pt;text-align:right;">29,593,524</span> </td> 
+       <td width="114"> <span style="width:114px;font-size:10pt;">- 매출액</span> </td> 
+       <td width="145"> <span class="xforms_input" style="width:145px;font-size:10pt;text-align:right;">27,778,047</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="128"> <span style="width:128px;font-size:10pt;">- 부채총계</span> </td> 
+       <td width="121"> <span class="xforms_input" style="width:121px;font-size:10pt;text-align:right;">20,703,269</span> </td> 
+       <td width="114"> <span style="width:114px;font-size:10pt;">- 영업이익</span> </td> 
+       <td width="145"> <span class="xforms_input" style="width:145px;font-size:10pt;text-align:right;">446,426</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="128"> <span style="width:128px;font-size:10pt;">- 자본금</span> </td> 
+       <td width="121"> <span class="xforms_input" style="width:121px;font-size:10pt;text-align:right;">904,169</span> </td> 
+       <td width="114"> <span style="width:114px;font-size:10pt;">- 당기순이익</span> </td> 
+       <td width="145"> <span class="xforms_input" style="width:145px;font-size:10pt;text-align:right;">-913,538</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="128"> <span style="width:128px;font-size:10pt;">- 자본총계</span> </td> 
+       <td width="121"> <span class="xforms_input" style="width:121px;font-size:10pt;text-align:right;">8,890,255</span> </td> 
+       <td width="114"> <span style="width:114px;font-size:10pt;">*주당순이익(원)</span> </td> 
+       <td width="145"> <span class="xforms_input" style="width:145px;font-size:10pt;text-align:right;">-5,078</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="3" rowspan="2" width="220"> <span style="width:220px;font-size:10pt;">*회계감사인 감사의견</span> </td> 
+       <td width="121"> <span style="width:121px;font-size:10pt;text-align:center;">연결</span> </td> 
+       <td colspan="2" width="259"> <span class="xforms_input" style="width:259px;font-size:10pt;">적정</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="121"> <span style="width:121px;font-size:10pt;text-align:center;">개별(별도)</span> </td> 
+       <td colspan="2" width="259"> <span class="xforms_input" style="width:259px;font-size:10pt;">적정</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="3" width="220"> <span style="width:220px;font-size:10pt;">2. 배당</span> </td> 
+       <td colspan="3" width="380"> <span class="xforms_input" style="width:380px;font-size:10pt;">결의</span> </td> 
+      </tr> 
+      <tr> 
+       <td rowspan="9" width="92"> <span style="width:92px;font-size:10pt;">가. 현금ㆍ현물배당</span> </td> 
+       <td colspan="3" width="249"> <span style="width:249px;font-size:10pt;">배당종류</span> </td> 
+       <td colspan="2" width="259"> <span class="xforms_input" style="width:259px;font-size:10pt;">현금배당</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="3" width="249"> <span style="width:249px;font-size:10pt;">- 현물자산의 상세내역</span> </td> 
+       <td colspan="2" width="259"> <span class="xforms_input" style="width:259px;font-size:10pt;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td rowspan="4" width="91"> <span style="width:91px;font-size:10pt;">1주당 배당금(원)</span> </td> 
+       <td rowspan="2" width="37"> <span style="width:37px;font-size:10pt;text-align:center;">보통주식</span> </td> 
+       <td width="121"> <span style="width:121px;font-size:10pt;">기말배당금</span> </td> 
+       <td colspan="2" width="259"> <span class="xforms_input" style="width:259px;font-size:10pt;text-align:right;">850</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="121"> <span style="width:121px;font-size:10pt;">중간ㆍ분기배당금</span> </td> 
+       <td colspan="2" width="259"> <span class="xforms_input" style="width:259px;font-size:10pt;text-align:right;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td rowspan="2" width="37"> <span style="width:37px;font-size:10pt;text-align:center;">종류주식</span> </td> 
+       <td width="121"> <span style="width:121px;font-size:10pt;">기말배당금</span> </td> 
+       <td colspan="2" width="259"> <span class="xforms_input" style="width:259px;font-size:10pt;text-align:right;">900</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="121"> <span style="width:121px;font-size:10pt;">중간ㆍ분기배당금</span> </td> 
+       <td colspan="2" width="259"> <span class="xforms_input" style="width:259px;font-size:10pt;text-align:right;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="3" width="249"> <span style="width:249px;font-size:10pt;">배당금총액(원)</span> </td> 
+       <td colspan="2" width="259"> <span class="xforms_input" style="width:259px;font-size:10pt;text-align:right;">153,915,111,400</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" rowspan="2" width="128"> <span style="width:128px;font-size:10pt;">시가배당률(%)(중간배당 포함)</span> </td> 
+       <td width="121"> <span style="width:121px;font-size:10pt;text-align:center;">보통주식</span> </td> 
+       <td colspan="2" width="259"> <span class="xforms_input" style="width:259px;font-size:10pt;text-align:right;">0.6</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="121"> <span style="width:121px;font-size:10pt;text-align:center;">종류주식</span> </td> 
+       <td colspan="2" width="259"> <span class="xforms_input" style="width:259px;font-size:10pt;text-align:right;">1.4</span> </td> 
+      </tr> 
+      <tr> 
+       <td rowspan="4" width="92"> <span style="width:92px;font-size:10pt;">나. 주식배당</span> </td> 
+       <td colspan="2" rowspan="2" width="128"> <span style="width:128px;font-size:10pt;">주식배당률(%)</span> </td> 
+       <td width="121"> <span style="width:121px;font-size:10pt;text-align:center;">보통주식</span> </td> 
+       <td colspan="2" width="259"> <span class="xforms_input" style="width:259px;font-size:10pt;text-align:right;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="121"> <span style="width:121px;font-size:10pt;text-align:center;">종류주식</span> </td> 
+       <td colspan="2" width="259"> <span class="xforms_input" style="width:259px;font-size:10pt;text-align:right;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" rowspan="2" width="128"> <span style="width:128px;font-size:10pt;">배당주식총수(주)</span> </td> 
+       <td width="121"> <span style="width:121px;font-size:10pt;text-align:center;">보통주식</span> </td> 
+       <td colspan="2" width="259"> <span class="xforms_input" style="width:259px;font-size:10pt;text-align:right;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="121"> <span style="width:121px;font-size:10pt;text-align:center;">종류주식</span> </td> 
+       <td colspan="2" width="259"> <span class="xforms_input" style="width:259px;font-size:10pt;text-align:right;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="6" width="600"> <span style="width:600px;font-size:10pt;">3. 임원 현황(선임일 현재)</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="4" width="341"> <span style="width:341px;font-size:10pt;">가. 임원선임 현황</span> </td> 
+       <td colspan="2" width="259"> <span class="xforms_input" style="width:259px;font-size:10pt;">○ 이사 선임 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp;- 사외이사 1명 재선임 (이상구) <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp;- 사외이사 1명 신규선임 (류충렬) <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">○ 감사위원회 위원 선임 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp;- 감사위원회 위원 1명 신규선임 (이상구) <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp;- 감사위원회 위원 1명 신규선임 (류충렬)</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" rowspan="3" width="183"> <span style="width:183px;font-size:10pt;">나. 선임후 사외이사수(명)</span> </td> 
+       <td colspan="2" width="158"> <span style="width:158px;font-size:10pt;">이사총수</span> </td> 
+       <td colspan="2" width="259"> <span class="xforms_input" style="width:259px;font-size:10pt;text-align:right;">7</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="158"> <span style="width:158px;font-size:10pt;">사외이사총수</span> </td> 
+       <td colspan="2" width="259"> <span class="xforms_input" style="width:259px;font-size:10pt;text-align:right;">4</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="158"> <span style="width:158px;font-size:10pt;">사외이사선임비율(%)</span> </td> 
+       <td colspan="2" width="259"> <span class="xforms_input" style="width:259px;font-size:10pt;text-align:right;">57.1</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" rowspan="2" width="183"> <span style="width:183px;font-size:10pt;">다. 선임후 감사수(명)</span> </td> 
+       <td colspan="2" width="158"> <span style="width:158px;font-size:10pt;">상근감사</span> </td> 
+       <td colspan="2" width="259"> <span class="xforms_input" style="width:259px;font-size:10pt;text-align:right;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="158"> <span style="width:158px;font-size:10pt;">비상근감사</span> </td> 
+       <td colspan="2" width="259"> <span class="xforms_input" style="width:259px;font-size:10pt;text-align:right;">-</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" rowspan="2" width="183"> <span style="width:183px;font-size:10pt;">라. 선임후 감사위원수(명)</span> </td> 
+       <td colspan="2" width="158"> <span style="width:158px;font-size:10pt;">사외이사인 감사위원</span> </td> 
+       <td colspan="2" width="259"> <span class="xforms_input" style="width:259px;font-size:10pt;text-align:right;">4</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="2" width="158"> <span style="width:158px;font-size:10pt;">사외이사가 아닌 감사위원</span> </td> 
+       <td colspan="2" width="259"> <span class="xforms_input" style="width:259px;font-size:10pt;text-align:right;">0</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="4" width="341"> <span style="width:341px;font-size:10pt;">4. 기타 결의내용</span> </td> 
+       <td colspan="2" width="259"> <span class="xforms_input" style="width:259px;font-size:10pt;">제20기 정기주주총회 목적사항 <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">&lt;보고 사항&gt; <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->○ 감사보고 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->○ 영업보고 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->○ 최대주주 등과 거래 보고 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->○ 내부회계관리제도 운영실태 보고 <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">&lt;결의 사항&gt; <br xmlns:java="http://xml.apache.org/xalan/java"> <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->○ 제1호 의안: 제20기 재무제표 승인의 件 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp; &nbsp;☞ 원안대로 승인됨 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->○ 제2호 의안: 정관 변경 승인의 件 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp; &nbsp;☞ 원안대로 승인됨 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->○ 제3호 의안: 이사 선임의 件 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp; &nbsp; - 제3-1호. 사외이사 1명 재선임 (이상구) <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp; &nbsp; &nbsp; ☞ 원안대로 승인됨 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp; &nbsp; - 제3-2호. 사외이사 1명 신규선임 (류충렬) <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp; &nbsp; &nbsp; ☞ 원안대로 승인됨 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->○ 제4호 의안: 감사위원회 위원 선임의 件 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp; &nbsp; - 제4-1호. 감사위원회 위원 1명 신규선임 (이상구) <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp; &nbsp; &nbsp; ☞ 원안대로 승인됨 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp; &nbsp; - 제4-2호. 감사위원회 위원 1명 신규선임 (류충렬) <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp; &nbsp; &nbsp; ☞ 원안대로 승인됨 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->○ 제5호 의안: 이사 보수 한도 승인의 件 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->&nbsp; &nbsp;☞ 원안대로 승인됨</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="4" width="341"> <span style="width:341px;font-size:10pt;">5. 주주총회일자</span> </td> 
+       <td colspan="2" width="259"> <span class="xforms_input" style="width:259px;font-size:10pt;">2022-03-24</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="6" width="600"> <span style="width:600px;font-size:10pt;">6. 기타 투자판단과 관련한 중요사항</span> </td> 
+      </tr> 
+      <tr> 
+       <td colspan="6" width="600"> <span class="xforms_input" style="width:600px;font-size:10pt;">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->- 상기 1항의 주당순이익은 보통주기본주당순이익임 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->- 상기 2항의 종류주식은 우선주를 의미함 <br xmlns:java="http://xml.apache.org/xalan/java">
+         <!--?javax.xml.transform.disable-output-escaping?-->&nbsp;
+         <!--?javax.xml.transform.enable-output-escaping?-->- '시가배당율'은 당해 배당과 관련된 주주명부폐쇄일 2매매거래일 전부터 과거 1주일간의 거래소시장에서 형성된 최종가격의 산술평균가격에 대한 1주당 배당금의 백분율임</span> </td> 
+      </tr> 
+      <tr> 
+       <td width="92"> <span style="width:92px;font-size:10pt;">※ 관련공시</span> </td> 
+       <td colspan="5" width="508"> <span style="width:508px;font-size:10pt;"> <a href="http://kind.krx.co.kr/common/disclsviewer.do?method=search&amp;acptno=20220223000454&amp;rcpno=20220223000454&amp;orgid=G&amp;tran=Y&amp;langTpCd=0" target="_blank" xmlns="http://www.w3.org/1999/xhtml" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema">2022-02-23 주주총회소집결의</a> <br xmlns:java="http://xml.apache.org/xalan/java"> <a href="http://kind.krx.co.kr/common/disclsviewer.do?method=search&amp;acptno=20220302000652&amp;rcpno=20220302000410&amp;orgid=F&amp;tran=Y&amp;langTpCd=0" target="_blank" xmlns="http://www.w3.org/1999/xhtml" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema">2022-03-02 주주총회소집공고</a> <br xmlns:java="http://xml.apache.org/xalan/java"> </span> </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+    <span class="noprint" style="display:none;width:600px;font-size:10pt;"> </span> 
+    <div id="LIB_L9004" style="width:600px;font-size:10pt;;padding:0 0 20 0"> 
+     <div> 
+      <div> 
+       <span style="width:597px;font-size:11pt;font-weight:bold;">[사외이사선임 세부내역]</span> 
+       <table border="1" bordercolordark="white" bordercolorlight="#666666" cellpadding="1" cellspacing="0" id="XFormG3_Form0_RepeatTable0" style="margin:0px 0px 20px 0px;width:599px;font-size:10pt;border:1px solid #7f7f7f;"> 
+        <tbody> 
+         <tr> 
+          <td width="63"> <span style="width:63px;font-size:10pt;text-align:center;">성명</span> </td> 
+          <td width="85"> <span style="width:85px;font-size:10pt;text-align:center;">출생년월</span> </td> 
+          <td width="43"> <span style="width:43px;font-size:10pt;text-align:center;">임기</span> </td> 
+          <td width="69"> <span style="width:69px;font-size:10pt;text-align:center;">신규선임여부</span> </td> 
+          <td width="182"> <span style="width:182px;font-size:10pt;text-align:center;">주요경력(현직포함)</span> </td> 
+          <td width="157"> <span style="width:157px;font-size:10pt;text-align:center;">이사 등으로 재직 중인 다른 법인명(직위)</span> </td> 
+         </tr> 
+         <tr> 
+          <td width="63"> <span class="xforms_input" style="width:63px;font-size:10pt;">이상구</span> </td> 
+          <td width="85"> <span class="xforms_input" style="width:85px;font-size:10pt;">1962-03</span> </td> 
+          <td width="43"> <span class="xforms_input" style="width:43px;font-size:10pt;text-align:right;">3</span> </td> 
+          <td width="69"> <span class="xforms_input" style="width:69px;font-size:10pt;">재선임</span> </td> 
+          <td width="182"> <span class="xforms_input" style="width:182px;font-size:10pt;">'02년~'10년 서울대 e비즈니스 기술연구센터장 <br java="http://xml.apache.org/xalan/java">'10년~'10년 한국전자거래학회장 <br java="http://xml.apache.org/xalan/java">'12년~'14년 서울대 정보화본부장 <br java="http://xml.apache.org/xalan/java">'92년~ 현재 (現)서울대 컴퓨터공학부 교수 <br java="http://xml.apache.org/xalan/java">'18년~ 현재 (現)SK가스 사외이사 <br java="http://xml.apache.org/xalan/java">'19년~ 현재 (現)LG전자 사외이사</span> </td> 
+          <td width="157"> <span class="xforms_input" style="width:157px;font-size:10pt;">(주)SK가스 사외이사</span> </td> 
+         </tr> 
+         <tr> 
+          <td width="63"> <span class="xforms_input" style="width:63px;font-size:10pt;">류충렬</span> </td> 
+          <td width="85"> <span class="xforms_input" style="width:85px;font-size:10pt;">1971-01</span> </td> 
+          <td width="43"> <span class="xforms_input" style="width:43px;font-size:10pt;text-align:right;">3</span> </td> 
+          <td width="69"> <span class="xforms_input" style="width:69px;font-size:10pt;">신규선임</span> </td> 
+          <td width="182"> <span class="xforms_input" style="width:182px;font-size:10pt;">'17년~'18년 대한화섬 사외이사 <br java="http://xml.apache.org/xalan/java">'09년~ 현재 (現)KAIST 금융전문대학원 회계학 부교수 <br java="http://xml.apache.org/xalan/java">'15년~ 현재 (現)한국회계기준원 공시개선 전문위원회 위원장 <br java="http://xml.apache.org/xalan/java">'18년~ 현재 (現)흥국화재해상보험 사외이사/감사위원 <br java="http://xml.apache.org/xalan/java">'19년~ 현재 (現)예금보험공사 자문위원 <br java="http://xml.apache.org/xalan/java">'19년~ 현재 (現)한국공정거래학회 이사</span> </td> 
+          <td width="157"> <span class="xforms_input" style="width:157px;font-size:10pt;">(주)흥국화재해상보험 사외이사/감사위원</span> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
+     </div> 
+    </div> 
+    <div id="LIB_L9002" style="width:600px;font-size:10pt;;padding:0 0 20 0"> 
+     <div> 
+      <div> 
+       <span style="width:597px;font-size:11pt;font-weight:bold;">[감사위원선임 세부내역]</span> 
+       <table border="1" bordercolordark="white" bordercolorlight="#666666" cellpadding="1" cellspacing="0" id="XFormD1_Form0_RepeatTable0" style="margin:0px 0px 20px 0px;width:596px;font-size:10pt;border:1px solid #7f7f7f;"> 
+        <tbody> 
+         <tr> 
+          <td width="62"> <span style="width:62px;font-size:10pt;text-align:center;">성명</span> </td> 
+          <td width="90"> <span style="width:90px;font-size:10pt;text-align:center;">출생년월</span> </td> 
+          <td width="50"> <span style="width:50px;font-size:10pt;text-align:center;">임기</span> </td> 
+          <td width="70"> <span style="width:70px;font-size:10pt;text-align:center;">신규선임여부</span> </td> 
+          <td width="100"> <span style="width:100px;font-size:10pt;text-align:center;">사외이사여부</span> </td> 
+          <td width="224"> <span style="width:224px;font-size:10pt;text-align:center;">주요경력(현직포함)</span> </td> 
+         </tr> 
+         <tr> 
+          <td width="62"> <span class="xforms_input" style="width:62px;font-size:10pt;">이상구</span> </td> 
+          <td width="90"> <span class="xforms_input" style="width:90px;font-size:10pt;">1962-03</span> </td> 
+          <td width="50"> <span class="xforms_input" style="width:50px;font-size:10pt;text-align:right;">3</span> </td> 
+          <td width="70"> <span class="xforms_input" style="width:70px;font-size:10pt;">신규선임</span> </td> 
+          <td width="100"> <span class="xforms_input" style="width:100px;font-size:10pt;">사외이사인 감사위원</span> </td> 
+          <td width="224"> <span class="xforms_input" style="width:224px;font-size:10pt;">'02년~'10년 서울대 e비즈니스 기술연구센터장 <br java="http://xml.apache.org/xalan/java">'10년~'10년 한국전자거래학회장 <br java="http://xml.apache.org/xalan/java">'12년~'14년 서울대 정보화본부장 <br java="http://xml.apache.org/xalan/java">'92년~ 현재 (現)서울대 컴퓨터공학부 교수 <br java="http://xml.apache.org/xalan/java">'18년~ 현재 (現)SK가스 사외이사 <br java="http://xml.apache.org/xalan/java">'19년~ 현재 (現)LG전자 사외이사</span> </td> 
+         </tr> 
+         <tr> 
+          <td width="62"> <span class="xforms_input" style="width:62px;font-size:10pt;">류충렬</span> </td> 
+          <td width="90"> <span class="xforms_input" style="width:90px;font-size:10pt;">1971-01</span> </td> 
+          <td width="50"> <span class="xforms_input" style="width:50px;font-size:10pt;text-align:right;">3</span> </td> 
+          <td width="70"> <span class="xforms_input" style="width:70px;font-size:10pt;">신규선임</span> </td> 
+          <td width="100"> <span class="xforms_input" style="width:100px;font-size:10pt;">사외이사인 감사위원</span> </td> 
+          <td width="224"> <span class="xforms_input" style="width:224px;font-size:10pt;">'17년~'18년 대한화섬 사외이사 <br java="http://xml.apache.org/xalan/java">'09년~ 현재 (現)KAIST 금융전문대학원 회계학 부교수 <br java="http://xml.apache.org/xalan/java">'15년~ 현재 (現)한국회계기준원 공시개선 전문위원회 위원장 <br java="http://xml.apache.org/xalan/java">'18년~ 현재 (現)흥국화재해상보험 사외이사/감사위원 <br java="http://xml.apache.org/xalan/java">'19년~ 현재 (現)예금보험공사 자문위원 <br java="http://xml.apache.org/xalan/java">'19년~ 현재 (現)한국공정거래학회 이사</span> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
+     </div> 
+    </div> 
+    <span class="noprint" style="display:none;width:600px;font-size:10pt;"> </span> 
+    <div id="LIB_L9003" style="width:600px;font-size:10pt;;padding:0 0 20 0"> 
+     <div> 
+      <div> 
+       <span style="width:598px;font-size:11pt;font-weight:bold;">[사업목적 변경 세부내역]</span> 
+       <table border="1" bordercolordark="white" bordercolorlight="#666666" cellpadding="1" cellspacing="0" id="XFormD4_Form0_Table0" style="margin:0px 0px 20px 0px;width:600px;font-size:10pt;border:1px solid #7f7f7f;"> 
+        <tbody> 
+         <tr> 
+          <td width="124"> <span style="width:124px;font-size:10pt;text-align:center;">구분</span> </td> 
+          <td colspan="2" width="318"> <span style="width:318px;font-size:10pt;text-align:center;">내용</span> </td> 
+          <td width="158"> <span style="width:158px;font-size:10pt;text-align:center;">이유</span> </td> 
+         </tr> 
+         <tr> 
+          <td width="124"> <span style="width:124px;font-size:10pt;">1. 사업목적 추가</span> </td> 
+          <td colspan="2" width="318"> <span class="xforms_input" style="width:318px;font-size:10pt;">- 의료기기의 제작 및 판매업 <br java="http://xml.apache.org/xalan/java">- 특허 등 지적재산권의 라이선스업 <br java="http://xml.apache.org/xalan/java">- 블록체인 기반 소프트웨어의 개발 및 판매, 암호화 자산의 매매 및 중개업 <br java="http://xml.apache.org/xalan/java">- 유리 파우더 등 기능성 소재 제작 및 판매업</span> </td> 
+          <td width="158"> <span class="xforms_input" style="width:158px;font-size:10pt;">추진중인 신사업 및 기존사업의 변동사항 반영을 위해 정관에 회사의 목적사항을 추가</span> </td> 
+         </tr> 
+         <tr> 
+          <td width="124"> <span style="width:124px;font-size:10pt;">2. 사업목적 삭제</span> </td> 
+          <td colspan="2" width="318"> <span class="xforms_input" style="width:318px;font-size:10pt;">-</span> </td> 
+          <td width="158"> <span class="xforms_input" style="width:158px;font-size:10pt;">-</span> </td> 
+         </tr> 
+         <tr> 
+          <td rowspan="2" width="124"> <span style="width:124px;font-size:10pt;">3. 사업목적 변경</span> </td> 
+          <td width="161"> <span style="width:161px;font-size:10pt;text-align:center;">변경전</span> </td> 
+          <td width="157"> <span style="width:157px;font-size:10pt;text-align:center;">변경후</span> </td> 
+          <td width="158"> <span style="width:158px;font-size:10pt;"> <br java="http://xml.apache.org/xalan/java"></span> </td> 
+         </tr> 
+         <tr> 
+          <td width="161"> <span class="xforms_input" style="width:161px;font-size:10pt;">-</span> </td> 
+          <td width="157"> <span class="xforms_input" style="width:157px;font-size:10pt;">-</span> </td> 
+          <td width="158"> <span class="xforms_input" style="width:158px;font-size:10pt;">-</span> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
+     </div> 
+    </div> 
+    <span class="noprint" style="display:none;width:600px;font-size:10pt;"> </span> 
+    <span class="noprint" style="display:none;width:600px;font-size:10pt;"> </span> 
+    <span class="noprint" style="display:none;width:600px;font-size:10pt;"> </span> 
+    <span class="noprint" style="display:none;width:600px;font-size:10pt;"> </span> 
+   </div> 
+  </div>  
+ </body>
+</html>
