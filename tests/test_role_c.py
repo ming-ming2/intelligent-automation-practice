@@ -208,6 +208,22 @@ class RoleCWorkflowTest(unittest.TestCase):
         rate_problems = program_tools.check_change_rates(analysis, data)
         self.assertEqual([p['item'] for p in rate_problems], ['C2'])
 
+    def test_same_code_items_are_all_kept(self):
+        """같은 코드가 두 건이면 Agent가 한 건만 옮겨도 나머지 한 건을 B 원문 그대로 붙인다 (5주차 최종 실행에서 발견)"""
+        items = [{'code': 'AMOUNT_UNRESOLVED', 'field': 'f', 'message': '현재 공시: 계약금액 불명확'},
+                 {'code': 'AMOUNT_UNRESOLVED', 'field': 'f', 'message': '직전 공시: 계약금액 불명확'}]
+        guard = crew.program_codes_guardrail(items)
+        analysis = crew.ChangeAnalysis(rcept_no='X', needs_verification=[
+            crew.VerificationItem(code='AMOUNT_UNRESOLVED', item='현재 공시: 계약금액 불명확', why='', origin='program')])
+
+        class Out:
+            pydantic = analysis
+            raw = analysis.model_dump_json()
+        ok, out = guard(Out())
+        texts = [v.item for v in out.pydantic.needs_verification]
+        self.assertTrue(ok)
+        self.assertEqual(sorted(texts), sorted(i['message'] for i in items))
+
     def test_change_numbers_come_only_from_program(self):
         """CHANGE 수치 칸은 Program 값만 허용: 빈 값 채우기, 틀린 값 교체·기록, 기준 불명 시 미기입, 후보 누락 시 추가"""
         payload = json.loads(json.dumps(MOCK))

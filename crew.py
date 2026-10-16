@@ -328,14 +328,24 @@ def program_codes_guardrail(program_items, facts_task=None, program_data=None):
             except Exception:
                 return False, 'ChangeAnalysis 형식의 JSON으로 다시 출력하세요.'
         added = []
-        got = {v.code for v in result.needs_verification if v.origin == 'program'}
-        for item in program_items:
-            if item['code'] not in got:
-                added.append(VerificationItem(
-                    code=item['code'], field=item.get('field'),
-                    item=item.get('message') or item['code'],
-                    why='Program 계산 결과로 남은 확인 필요 사항입니다. (Agent 누락분을 Program이 원문 그대로 보완)',
-                    origin='program'))
+        # 항목 단위로 대조한다. 같은 코드가 여러 건이면(예: 현재·직전 공시의 AMOUNT_UNRESOLVED) Agent가 옮긴 건수만큼만
+        # 채운 것으로 보고, 모자라면 Agent 출력에 같은 문장이 없는 B 원문 항목을 그대로 붙인다.
+        agent_program = [v for v in result.needs_verification if v.origin == 'program']
+        missing_items = []
+        for code in dict.fromkeys(i['code'] for i in program_items):
+            expected = [i for i in program_items if i['code'] == code]
+            written = [v for v in agent_program if v.code == code]
+            if len(written) >= len(expected):
+                continue
+            texts = ' '.join(f'{v.item} {v.why}' for v in written)
+            unmatched = [i for i in expected if (i.get('message') or '') not in texts]
+            missing_items += unmatched[:len(expected) - len(written)] or expected[len(written):]
+        for item in missing_items:
+            added.append(VerificationItem(
+                code=item['code'], field=item.get('field'),
+                item=item.get('message') or item['code'],
+                why='Program 계산 결과로 남은 확인 필요 사항입니다. (Agent 누락분을 Program이 원문 그대로 보완)',
+                origin='program'))
 
         agent_text = ' '.join(f'{v.item} {v.why}' for v in result.needs_verification if v.origin == 'agent')
         for interp in result.interpretations:
