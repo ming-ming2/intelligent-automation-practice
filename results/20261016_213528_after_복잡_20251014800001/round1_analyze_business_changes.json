@@ -1,0 +1,85 @@
+{
+  "rcept_no": "20251014800001",
+  "changes": [
+    {
+      "change_id": "C1",
+      "metric": "처분금액",
+      "previous": null,
+      "current": null,
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "비교 불가 (CORRECTION_LINK_UNCONFIRMED)",
+      "related_fact_ids": [
+        "F1"
+      ]
+    }
+  ],
+  "interpretations": [
+    {
+      "statement": "LG전자가 LG ELECTRONICS INDIA LIMITED의 주식을 처분하기로 결정한 것은 경쟁사인 LG전자의 사업 재편이 진행되고 있음을 나타낸다. 이는 삼성전자 DX 생활가전·전자 사업에 경쟁 압력을 가할 가능성이 있다.",
+      "impact_area": "경쟁환경",
+      "based_on": [
+        "F1"
+      ],
+      "confidence": "낮음"
+    }
+  ],
+  "needs_verification": [
+    {
+      "code": "HISTORY_COVERAGE_UNKNOWN",
+      "field": "history_search",
+      "item": "검색 기간 전체의 공시 목록 수집을 확인할 수 없습니다.",
+      "why": "확정된 과거 사례가 부족하여 비교가 어렵습니다.",
+      "origin": "program"
+    },
+    {
+      "code": "CORRECTION_LINK_UNCONFIRMED",
+      "field": "past_cases",
+      "item": "정정공시를 사례 수에서 제외했습니다. 원공시 연결과 비교 대상을 확인하세요.",
+      "why": "정정공시의 원본과 연결된 데이터가 불확실합니다.",
+      "origin": "program"
+    },
+    {
+      "code": "AMOUNT_UNRESOLVED",
+      "field": "triggers.amount_changes",
+      "item": "처분금액의 단위·값·표 구조가 불명확하거나 여러 번 등장합니다.",
+      "why": "처분금액의 명확한 수치가 확인되지 않았습니다.",
+      "origin": "program"
+    },
+    {
+      "code": "FINANCIAL_DATA_MISSING",
+      "field": "triggers.financial_changes",
+      "item": "현재 접수번호에 직접 연결된 재무 계정이 없습니다.",
+      "why": "재무 데이터가 부족하여 분석이 어렵습니다.",
+      "origin": "program"
+    },
+    {
+      "code": "AMOUNT_UNRESOLVED",
+      "field": "triggers.amount_changes",
+      "item": "처분금액의 단위·값·표 구조가 불명확하거나 여러 번 등장합니다.",
+      "why": "처분금액의 명확한 수치가 확인되지 않았습니다.",
+      "origin": "agent"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": null,
+      "item": "처분금액의 단위·값·표 구조가 불명확하거나 여러 번 등장합니다.",
+      "why": "정확한 금액 확인이 필요합니다.",
+      "origin": "agent"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": "interpretations",
+      "item": "해석 검증: LG전자가 LG ELECTRONICS INDIA LIMITED의 주식을 처분하기로 결정한 것은 경쟁사인 LG전자의 사업 재편이 진행되고 있음을 나타낸다. 이는 삼성전자 DX 생활가전·전자 사업에 경쟁 압력을 가할 가능성이 있다.",
+      "why": "근거(F1)만으로는 신뢰도가 낮아 추가 자료로 확인이 필요합니다.",
+      "origin": "agent"
+    }
+  ],
+  "follow_up_checks": [
+    "LG전자의 처분금액에 대한 명확한 수치를 확인할 수 있는 방법은 무엇인가?",
+    "정정공시와 원공시의 연결을 어떻게 확인할 수 있는가?",
+    "과거 사례의 공시 목록 수집이 완료되었는지 확인할 수 있는 방법은 무엇인가?",
+    "처분금액의 단위와 구조에 대한 명확한 설명이 필요한가?",
+    "LG전자의 IPO 관련 추가 공시가 있을 가능성이 있는가?"
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "rcept_no": "20250930800083",
+  "changes": [
+    {
+      "change_id": "C1",
+      "metric": "처분금액",
+      "previous": null,
+      "current": null,
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "비교 불가",
+      "related_fact_ids": [
+        "F1",
+        "F3"
+      ]
+    }
+  ],
+  "interpretations": [
+    {
+      "statement": "LG전자가 인도법인의 IPO에 따른 주식 처분을 결정한 것은 삼성전자 DX 생활가전·전자 사업에 대한 경쟁 압력을 증가시킬 가능성이 있다.",
+      "impact_area": "경쟁환경",
+      "based_on": [
+        "F1",
+        "F3"
+      ],
+      "confidence": "낮음"
+    }
+  ],
+  "needs_verification": [
+    {
+      "code": "HISTORY_COVERAGE_UNKNOWN",
+      "field": "history_search",
+      "item": "검색 기간 전체의 공시 목록 수집을 확인할 수 없습니다.",
+      "why": "확인된 과거 사례가 없기 때문에.",
+      "origin": "program"
+    },
+    {
+      "code": "PAST_CASES_MISSING",
+      "field": "past_cases",
+      "item": "확인 가능한 과거 동일 유형 사례가 없습니다.",
+      "why": "과거 사례가 없기 때문에.",
+      "origin": "program"
+    },
+    {
+      "code": "AMOUNT_UNRESOLVED",
+      "field": "triggers.amount_changes",
+      "item": "처분금액의 단위·값·표 구조가 불명확하거나 여러 번 등장합니다.",
+      "why": "처분금액이 명확하지 않기 때문에.",
+      "origin": "program"
+    },
+    {
+      "code": "FINANCIAL_DATA_MISSING",
+      "field": "triggers.financial_changes",
+      "item": "현재 접수번호에 직접 연결된 재무 계정이 없습니다.",
+      "why": "재무 데이터가 부족하기 때문에.",
+      "origin": "program"
+    },
+    {
+      "code": "CURRENT_VALUE_MISSING",
+      "field": "triggers.amount_changes",
+      "item": "처분금액: 비교 불가 (CURRENT_VALUE_MISSING)",
+      "why": "현재 값이 없기 때문에.",
+      "origin": "program"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": null,
+      "item": "처분금액의 단위 및 값 확인 필요",
+      "why": "처분금액이 불명확하여 확인이 필요하다.",
+      "origin": "agent"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": null,
+      "item": "과거 동일 유형 사례 확인 필요",
+      "why": "과거 사례가 없어서 확인이 필요하다.",
+      "origin": "agent"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": "interpretations",
+      "item": "해석 검증: LG전자가 인도법인의 IPO에 따른 주식 처분을 결정한 것은 삼성전자 DX 생활가전·전자 사업에 대한 경쟁 압력을 증가시킬 가능성이 있다.",
+      "why": "근거(F1, F3)만으로는 신뢰도가 낮아 추가 자료로 확인이 필요합니다.",
+      "origin": "agent"
+    }
+  ],
+  "follow_up_checks": [
+    "LG전자의 처분금액이 확정되면 재공시 예정이라고 하였는데, 구체적인 일정은 언제인지 확인이 필요하다.",
+    "LG전자가 처분할 주식 수에 대한 변동 가능성이 있다고 하였는데, 이와 관련된 추가 정보가 있는지 확인해야 한다.",
+    "인도법인의 IPO 일정이 확정되었는지 여부를 확인할 필요가 있다.",
+    "LG전자의 자기자본과 자본금의 변동이 향후 사업에 미치는 영향에 대해 추가 분석이 필요하다.",
+    "경쟁사인 LG전자의 IPO가 삼성전자에 미치는 영향에 대한 시장 반응을 모니터링할 필요가 있다."
+  ]
+}

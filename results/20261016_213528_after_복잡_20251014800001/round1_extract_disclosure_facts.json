@@ -1,0 +1,36 @@
+{
+  "rcept_no": "20251014800001",
+  "corp_name": "LG전자",
+  "report_nm": "[기재정정]타법인주식및출자증권처분결정",
+  "facts": [
+    {
+      "fact_id": "F1",
+      "statement": "LG전자는 2025년 10월 13일에 LG ELECTRONICS INDIA LIMITED의 주식 101,815,859주를 1,856,757,000,000원에 처분하기로 결정하였다.",
+      "category": "인수·매각",
+      "amount_raw": "1,856,757,000,000",
+      "date": "2025-10-13",
+      "evidence_quote": "처분내역_처분금액(원) | 1,738,485,000,000 | 1,856,757,000,000",
+      "evidence_rcept_no": "20251014800001"
+    },
+    {
+      "fact_id": "F2",
+      "statement": "LG전자는 2025년 10월 13일에 LG ELECTRONICS INDIA LIMITED의 자기자본 대비 처분금액 비율이 7.36%로 증가하였다.",
+      "category": "재무",
+      "amount_raw": "7.36",
+      "date": "2025-10-13",
+      "evidence_quote": "처분내역_자기자본대비(%) | 6.90 | 7.36",
+      "evidence_rcept_no": "20251014800001"
+    },
+    {
+      "fact_id": "F3",
+      "statement": "LG전자는 2025년 10월 13일에 LG ELECTRONICS INDIA LIMITED의 처분예정일자를 상장일의 1영업일 전일로 정하였다.",
+      "category": "기타",
+      "amount_raw": null,
+      "date": "2025-10-13",
+      "evidence_quote": "상기 5항의 처분예정일자는 LG ELECTRONICS INDIA LIMITED 상장일의 1영업일 전일입니다.",
+      "evidence_rcept_no": "20251014800001"
+    }
+  ],
+  "keyword_checks": [],
+  "unverifiable": []
+}
