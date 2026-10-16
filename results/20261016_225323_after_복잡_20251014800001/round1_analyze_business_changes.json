@@ -1,0 +1,97 @@
+{
+  "rcept_no": "20251014800001",
+  "program_notes": [
+    {
+      "check": "수치 보정",
+      "item": "C1",
+      "problem": "처분금액(해당 없음): Agent가 쓴 값이 Program 값과 달라 Program 값으로 바꿈",
+      "agent": {
+        "current": "1,856,757,000,000"
+      },
+      "program": {
+        "previous": "",
+        "current": "",
+        "change_rate": "비교 불가",
+        "triggered": null
+      }
+    }
+  ],
+  "changes": [
+    {
+      "change_id": "C1",
+      "metric": "처분금액",
+      "basis": null,
+      "previous": "",
+      "current": "",
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "비교 불가",
+      "related_fact_ids": [
+        "F1"
+      ]
+    }
+  ],
+  "interpretations": [
+    {
+      "statement": "LG전자가 LG ELECTRONICS INDIA LIMITED의 주식을 처분할 예정이라는 사실은 삼성전자 DX 생활가전·전자 사업에 경쟁 압력을 가할 가능성이 있다.",
+      "impact_area": "경쟁환경",
+      "impact_area_original": null,
+      "based_on": [
+        "F1"
+      ],
+      "confidence": "중간",
+      "confidence_original": null
+    }
+  ],
+  "needs_verification": [
+    {
+      "code": "HISTORY_COVERAGE_UNKNOWN",
+      "field": "history_search",
+      "item": "과거 동일 유형 공시",
+      "why": "검색 기간 전체의 공시 목록 수집을 확인할 수 없기 때문",
+      "origin": "program"
+    },
+    {
+      "code": "CORRECTION_LINK_UNCONFIRMED",
+      "field": "past_cases",
+      "item": "정정공시",
+      "why": "정정공시를 사례 수에서 제외했기 때문",
+      "origin": "program"
+    },
+    {
+      "code": "AMOUNT_UNRESOLVED",
+      "field": "triggers.amount_changes",
+      "item": "처분금액의 단위·값·표 구조",
+      "why": "단위·값·표 구조가 불명확하거나 여러 번 등장하기 때문",
+      "origin": "program"
+    },
+    {
+      "code": "FINANCIAL_DATA_MISSING",
+      "field": "triggers.financial_changes",
+      "item": "현재 접수번호에 직접 연결된 재무 계정",
+      "why": "현재 접수번호에 직접 연결된 재무 계정이 없기 때문",
+      "origin": "program"
+    },
+    {
+      "code": "CORRECTION_LINK_UNCONFIRMED",
+      "field": "triggers.amount_changes",
+      "item": "처분금액",
+      "why": "비교 불가 (CORRECTION_LINK_UNCONFIRMED)",
+      "origin": "program"
+    },
+    {
+      "code": "AMOUNT_UNRESOLVED",
+      "field": "triggers.amount_changes",
+      "item": "20251014800001: 처분금액의 단위·값·표 구조가 불명확하거나 여러 번 등장합니다.",
+      "why": "Program 계산 결과로 남은 확인 필요 사항입니다. (Agent 누락분을 Program이 원문 그대로 보완)",
+      "origin": "program"
+    }
+  ],
+  "follow_up_checks": [
+    "처분금액의 정확한 단위와 구조를 확인할 수 있는 방법은 무엇인가?",
+    "정정공시와 관련된 과거 사례를 어떻게 확인할 수 있을까?",
+    "재무 계정의 누락된 데이터를 어떻게 보완할 수 있을까?",
+    "LG전자의 처분금액이 삼성전자에 미치는 영향은 어떤가?",
+    "과거 동일 유형 공시의 검색 범위를 어떻게 확장할 수 있을까?"
+  ]
+}
