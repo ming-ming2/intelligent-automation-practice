@@ -27,6 +27,8 @@ os.environ.setdefault('CREWAI_TELEMETRY_DISABLED', 'true')
 from crewai import Agent, Crew, LLM, Process, Task  # noqa: E402
 from pydantic import BaseModel, Field  # noqa: E402
 
+from program_tools import build_tools  # noqa: E402  (Agent가 호출하는 Program 도구)
+
 
 # ---------------------------------------------------------------------------
 # Task 출력 스키마: FACT / CHANGE / INTERPRETATION / NEEDS_VERIFICATION 구분을 형식으로 강제
@@ -62,9 +64,10 @@ class FactExtraction(BaseModel):
 class Change(BaseModel):
     change_id: str = Field(description='C1, C2 ... 순번')
     metric: str = Field(description='비교 항목명 (Program 계산 결과의 metric)')
+    basis: Optional[str] = Field(default=None, description="재무 항목이면 '연결' 또는 '별도'. 금액 항목이면 null")
     previous: Optional[str] = Field(default=None, description='이전 값 (원문 표기)')
     current: Optional[str] = Field(default=None, description='현재 값 (원문 표기)')
-    change_rate: Optional[str] = Field(default=None, description='Program이 계산한 변화율 그대로 (예: +30.0%). 직접 계산 금지')
+    change_rate: Optional[str] = Field(default=None, description='도구가 돌려준 change_rate_display 그대로 (예: +30.0%). 직접 계산 금지')
     triggered: Optional[bool] = Field(default=None, description='Program 판정 그대로')
     description: str = Field(description='무엇이 어떻게 달라졌는지 사실 기반 설명')
     related_fact_ids: list[str] = Field(default_factory=list)
@@ -101,8 +104,9 @@ def make_llm() -> LLM:
     return LLM(model=os.getenv('CREWAI_MODEL', 'openai/gpt-4o-mini'), temperature=0.1)
 
 
-def build_agents(llm, verbose: bool = True) -> dict[str, Agent]:
-    common = dict(llm=llm, allow_delegation=False, verbose=verbose, max_iter=5)
+def build_agents(llm, verbose: bool = True, tools: dict | None = None) -> dict[str, Agent]:
+    tools = tools or {}
+    common = dict(llm=llm, allow_delegation=False, verbose=verbose, max_iter=10)
     disclosure = Agent(
         role='경쟁사 공시 원문 팩트 추출 담당 (Disclosure Analysis Agent)',
         goal='경쟁사 공시 원문에서 원문으로 확인되는 사건·금액·일자·대상을 근거 문장과 함께 구조화하고, '
@@ -110,6 +114,7 @@ def build_agents(llm, verbose: bool = True) -> dict[str, Agent]:
         backstory='삼성전자 DX부문(생활가전·전자) 전략기획팀에서 LG전자 등 경쟁사의 DART 공시를 1차 검토하는 '
                   '애널리스트다. 주요사항보고서와 사업·분기보고서의 서식에 익숙하다. 이 단계에서는 해석하지 않으며, '
                   '모든 사실에 원문 문장을 그대로 붙이는 것을 원칙으로 한다.',
+        tools=tools.get('disclosure', []),
         **common,
     )
     change = Agent(
@@ -118,7 +123,8 @@ def build_agents(llm, verbose: bool = True) -> dict[str, Agent]:
              '그것이 삼성전자 DX 생활가전·전자 사업에 주는 의미를 사실·해석·확인필요로 구분해 정리한다.',
         backstory='경쟁사 투자·사업재편 동향을 추적해 온 전략기획 실무자다. 숫자 계산은 Program이 이미 끝냈으므로 '
                   '직접 다시 계산하지 않는다. 비교가 불가능한 항목을 확정 사실처럼 쓰는 것을 가장 경계하며, '
-                  '근거가 약한 해석은 확인필요로 돌린다.',
+                  '근거가 약한 해석은 확인필요로 돌린다. 수치가 필요하면 Program 도구를 호출해 값을 받아 쓴다.',
+        tools=tools.get('change', []),
         **common,
     )
     report = Agent(
@@ -127,7 +133,8 @@ def build_agents(llm, verbose: bool = True) -> dict[str, Agent]:
              '검토·승인할 수 있는 보고서 초안으로 정리한다.',
         backstory='전략기획팀의 경쟁사 동향 보고서를 작성해 온 담당자다. 앞 단계에 없는 새로운 사실이나 해석을 '
                   '덧붙이지 않고, 사실과 해석이 섞이지 않도록 형식을 지킨다. 최종 중요도는 담당자가 정하므로 '
-                  '보고서에 중요도를 단정하지 않는다.',
+                  '보고서에 중요도를 단정하지 않는다. 증감을 언급할 때는 Program 도구로 방향을 확인한다.',
+        tools=tools.get('report', []),
         **common,
     )
     return {'disclosure': disclosure, 'change': change, 'report': report}
@@ -160,6 +167,7 @@ EXTRACT_DISCLOSURE_FACTS_DESCRIPTION = """\
    category 기준: 시설·지분·사업에 돈을 쓰는 것은 투자, 유상증자·사채 발행·차입처럼 돈을 들여오는 것은 자금조달,
    타법인 주식·사업부 양수도는 인수·매각, 매출·이익 등 재무제표 수치는 재무.
 2. 각 fact의 evidence_quote에는 원문 문장을 글자 그대로 복사한다. 요약하거나 고쳐 쓰지 않는다.
+   amount_raw에는 원문 표기를 그대로 쓰고, 단위 환산이 필요하면 'parse_amount_text' 도구를 호출한다. 직접 환산하지 않는다.
 3. 키워드 등장 문맥마다 아래 기준으로 실제 사건인지 판단한다.
    - 실제 사건(true): 이번 공시에서 새로 결정되었거나 발생한 중단·분할·합병·양수·신규사업.
      예: "2025년 3분기 중 A사업의 영업을 중단하기로 결정하였다", "B법인 지분을 양수하였다".
@@ -178,11 +186,13 @@ ANALYZE_BUSINESS_CHANGES_DESCRIPTION = """\
 [입력] 앞 단계(공시 사실 추출)의 FACT 추출 결과는 context로 제공된다. 아래는 Program이 계산한 결과다.
 - 접수번호: {rcept_no} / 기업: {corp_name} / 보고서명: {report_nm} / 데이터 출처: {data_origin}
 
-[Program 변화 탐지 결과 - 금액 비교 (기준 ±20%)]
-{amount_changes_json}
+[Program 비교 항목 목록 - 수치는 넣지 않았다. 값은 도구로 조회한다]
+{comparison_index}
 
-[Program 변화 탐지 결과 - 재무 비교 (기준 ±15%)]
-{financial_changes_json}
+[사용할 수 있는 Program 도구]
+- lookup_financial_change(metric, basis): 재무 계정의 현재값·이전값·기간·변화율·증감 방향·±15% 기준 판정. basis는 '연결'/'별도'.
+- lookup_amount_change(metric): 공시 금액과 직전 동일 유형 공시 대비 변화율·±20% 기준 판정·비교 불가 사유.
+- parse_amount_text(text): 원문 금액 표기를 원 단위로 환산.
 
 [과거 동일 유형 공시]
 {past_cases_json}
@@ -194,8 +204,10 @@ ANALYZE_BUSINESS_CHANGES_DESCRIPTION = """\
 {program_needs_verification_json}
 
 [할 일]
-1. changes: Program 비교 결과의 각 항목을 옮긴다. change_rate에는 Program이 준 change_rate_display
-   (예: +30.0%)를 그대로 쓰고, triggered도 Program 값을 그대로 쓴다. 직접 계산하지 않는다. status가 not_comparable이거나 triggered가 null인 항목은 "비교 불가"라고 설명하고
+1. changes: 목록에서 'Program 판정: 기준 초과'인 항목은 모두, 그 밖에 분석에 필요한 항목은 골라서 도구로 조회한 뒤 옮긴다.
+   previous·current는 도구의 previous_raw·current_raw, change_rate는 change_rate_display, triggered는 도구 값을 그대로 쓴다.
+   재무 항목은 basis에 '연결' 또는 '별도'를 반드시 적고, 연결과 별도를 한 항목에 섞지 않는다. 연결 기준을 먼저 다룬다.
+   description에 증감을 쓸 때는 도구의 direction(증가/감소)과 같은 말을 쓴다. 직접 계산하거나 추정하지 않는다. status가 not_comparable이거나 triggered가 null인 항목은 "비교 불가"라고 설명하고
    증가·감소로 단정하지 않는다. 공시 사실 추출의 관련 fact_id를 연결한다.
 2. interpretations: 확인된 사실과 변화가 삼성전자 DX 생활가전·전자 사업에 줄 수 있는 영향을
    사업/재무/경쟁환경 중 하나로 분류해 쓴다. 반드시 근거 fact_id 또는 change_id를 based_on에 적고,
@@ -221,6 +233,8 @@ WRITE_INTELLIGENCE_REPORT_DESCRIPTION = """\
 3. 모든 사실에는 fact_id와 근거 원문 인용, 접수번호를 함께 적는다.
 4. 확인 필요 항목과 담당자 후속 확인 질문(follow_up_checks)을 하나도 빠짐없이 옮긴다.
    변화율은 사업 변화·영향 분석의 표시값(예: +30.0%)을 그대로 쓴다.
+   한 줄 요약이나 해석에서 매출·영업이익·순이익의 증가/감소를 언급하면, 먼저 'lookup_financial_change' 도구로 방향을 확인하고
+   연결/별도 기준을 함께 적는다. 도구 결과와 다른 방향을 쓰지 않는다.
    공시 사실 추출의 keyword_checks는 키워드별로 근거 문장과 함께 is_actual_event가 true면 '실제 사건',
    false면 '실제 사건 아님(부정문)', null이면 '판단 불가'로 적는다.
 5. 중요도(높음/중간/낮음)는 쓰지 않는다. 담당자가 결정한다.
@@ -233,18 +247,22 @@ WRITE_INTELLIGENCE_REPORT_EXPECTED = """\
 - "## 1. 한 줄 요약"
 - "## 2. 무슨 일이 발생했나 (FACT)" (fact_id, 사실, 근거 인용, 접수번호)
 - "### 키워드 등장 검토" (키워드, 실제 사건 여부를 '실제 사건' / '실제 사건 아님(부정문)' / '판단 불가' 중 하나로, 근거 문장)
-- "## 3. 과거와 무엇이 달라졌나 (CHANGE)" (이전 값, 현재 값, Program 변화율, 비교 가능 여부)
+- "## 3. 과거와 무엇이 달라졌나 (CHANGE)" (항목, 연결/별도, 이전 값, 현재 값, Program 변화율, 비교 가능 여부)
 - "## 4. 우리 회사 관점의 시사점 (INTERPRETATION)" ([해석] 표시, 영향 영역, 근거 id, 신뢰도)
 - "## 5. 추가 확인 필요 (NEEDS_VERIFICATION)" (전부 옮긴다. origin이 program이면 "[Program] 사유 코드", agent이면 "[Agent 확인]"으로 앞에 표시하고, 확인할 내용과 이유를 적는다)
 - "### 담당자 후속 확인 질문" (follow_up_checks 전부)
 - "## 6. 담당자 검토 체크리스트" (근거 일치, 사실·해석 구분, 과도한 추론 여부 체크박스)"""
 
 
-def program_codes_guardrail(required_codes: set[str], facts_task=None):
-    """사업 변화·영향 분석 가드레일 (Program 검증).
-    1) Program이 넘긴 확인 필요 코드가 빠지면 Agent에게 재작성시킨다.
+def program_codes_guardrail(program_items, facts_task=None):
+    """사업 변화·영향 분석 가드레일 (Program 검증·보완).
+    1) Program(B)이 넘긴 확인 필요 항목의 코드가 Agent 출력에서 빠지면, Agent에게 재작성시키지 않고
+       Program이 원래 문구 그대로 채워 넣는다. (5주차: KEYWORD_EXCLUDED 등 새 코드를 Agent가 반복 누락해
+       재시도 한도 초과로 실행이 멈춘 문제 대응)
     2) 신뢰도 '낮음' 해석과 공시 사실 추출의 확인 불가 항목에 대응하는 AGENT_CHECK가 없으면 Program이 직접 채운다.
        LLM이 지시를 놓쳐도 확인 필요 항목이 보고서에서 누락되지 않게 하기 위함이다."""
+    program_items = [i for i in (program_items or []) if isinstance(i, dict) and i.get('code')]
+
     def check(output):
         result = output.pydantic
         if result is None:
@@ -252,14 +270,17 @@ def program_codes_guardrail(required_codes: set[str], facts_task=None):
                 result = ChangeAnalysis.model_validate_json(output.raw)
             except Exception:
                 return False, 'ChangeAnalysis 형식의 JSON으로 다시 출력하세요.'
+        added = []
         got = {v.code for v in result.needs_verification if v.origin == 'program'}
-        missing = sorted(required_codes - got)
-        if missing:
-            return False, (f'Program의 확인 필요 코드 {missing}가 needs_verification에 없습니다. '
-                           'origin=program으로 모두 포함해 다시 작성하세요.')
+        for item in program_items:
+            if item['code'] not in got:
+                added.append(VerificationItem(
+                    code=item['code'], field=item.get('field'),
+                    item=item.get('message') or item['code'],
+                    why='Program 계산 결과로 남은 확인 필요 사항입니다. (Agent 누락분을 Program이 원문 그대로 보완)',
+                    origin='program'))
 
         agent_text = ' '.join(f'{v.item} {v.why}' for v in result.needs_verification if v.origin == 'agent')
-        added = []
         for interp in result.interpretations:
             if interp.confidence == '낮음' and interp.statement[:15] not in agent_text:
                 added.append(VerificationItem(
@@ -286,9 +307,12 @@ class DisclosureCrew:
 
     STAGES = ('facts', 'analysis', 'report')
 
-    def __init__(self, required_codes: set[str], llm=None, log_file: Path | None = None, verbose: bool = True):
+    def __init__(self, payload: dict, llm=None, log_file: Path | None = None, verbose: bool = True):
         self.verbose = verbose
-        self.agents = build_agents(llm or make_llm(), verbose)
+        tools = build_tools(payload)                 # Agent가 호출할 Program 도구 (B의 계산 함수 사용)
+        self.program_data = tools['data']            # 실행 후 Agent 출력과 대조할 Program 원본 값
+        self.agents = build_agents(llm or make_llm(), verbose, tools)
+        required_codes = required_program_codes(payload)
         self.log_file = log_file
 
         self.task_facts = Task(
@@ -302,7 +326,7 @@ class DisclosureCrew:
         self.task_analysis = Task(
             name='analyze_business_changes',
             description=ANALYZE_BUSINESS_CHANGES_DESCRIPTION,
-            expected_output='ChangeAnalysis 형식: rcept_no, changes, interpretations(based_on 필수), '
+            expected_output='ChangeAnalysis 형식: rcept_no, changes(도구 조회 값, basis 포함), interpretations(based_on 필수), '
                             'needs_verification(Program 코드 전부 포함), follow_up_checks',
             agent=self.agents['change'],
             context=[self.task_facts],                       # 공시 사실 추출 → 사업 변화·영향 분석
@@ -382,6 +406,7 @@ def build_inputs(payload: dict, reviewer_feedback: str = '없음') -> dict:
         'keywords_json': _j(triggers.get('keywords', [])),
         'amount_changes_json': _j(_with_display(triggers.get('amount_changes', []))),
         'financial_changes_json': _j(_with_display(triggers.get('financial_changes', []))),
+        'comparison_index': build_tools(payload)['data'].index(),
         'past_cases_json': _j(payload.get('past_cases', [])),
         'history_search_json': _j(payload.get('history_search')),
         'program_needs_verification_json': _j(payload.get('needs_verification', [])),
@@ -389,5 +414,6 @@ def build_inputs(payload: dict, reviewer_feedback: str = '없음') -> dict:
     }
 
 
-def required_program_codes(payload: dict) -> set[str]:
-    return {item['code'] for item in payload.get('needs_verification', []) if item.get('code')}
+def required_program_codes(payload: dict) -> list[dict]:
+    """Program(B)의 확인 필요 항목 목록. 가드레일이 Agent 누락분을 원래 문구 그대로 보완하는 데 쓴다."""
+    return [item for item in payload.get('needs_verification', []) if isinstance(item, dict) and item.get('code')]

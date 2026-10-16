@@ -1,0 +1,276 @@
+
+>>> Round 1: 공시 사실 추출부터 실행
+╭──────────────────────────────────── ✨ Update Available ✨ ─────────────────────────────────────╮
+│                                                                                                 │
+│  A new version of CrewAI is available!                                                          │
+│                                                                                                 │
+│  Current version: 1.15.23                                                                       │
+│  Latest version:  1.15.28                                                                       │
+│                                                                                                 │
+│  To update, run: uv sync --upgrade-package crewai                                               │
+│                                                                                                 │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────────────── 🚀 Crew Execution Started ───────────────────────────────────╮
+│                                                                                                 │
+│  Crew Execution Started                                                                         │
+│  Name: crew                                                                                     │
+│  ID: 0af4869d-0db6-49db-b30d-6107c826a870                                                       │
+│                                                                                                 │
+│                                                                                                 │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭──────────────────────────────────────── 📋 Task Started ────────────────────────────────────────╮
+│                                                                                                 │
+│  Task Started                                                                                   │
+│  Name: extract_disclosure_facts                                                                 │
+│  ID: 2c6c043b-50de-4ee0-9834-733c615d42a2                                                       │
+│                                                                                                 │
+│                                                                                                 │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────────────────── 🤖 Agent Started ────────────────────────────────────────╮
+│                                                                                                 │
+│  Agent: 경쟁사 공시 원문 팩트 추출 담당 (Disclosure Analysis Agent)                             │
+│                                                                                                 │
+│  Task: [입력] 경쟁사 공시 1건                                                                   │
+│  - 기업: LG전자 / 보고서명: [기재정정]타법인주식및출자증권처분결정               / 접수번호:    │
+│  20251014800001 / 접수일: 20251014                                                              │
+│  - 데이터 출처: dart                                                                            │
+│  - 원문 정규화 상태: {                                                                          │
+│    "status": "ok",                                                                              │
+│    "original_length": 3168,                                                                     │
+│    "truncated": false,                                                                          │
+│    "selected_sections": [                                                                       │
+│      "LG전자/타법인주식및출자증권처분결정/(2025.10.14)타법인주식및출자증권처분결정"             │
+│    ]                                                                                            │
+│  }                                                                                              │
+│                                                                                                 │
+│  [정규화된 원문]                                                                                │
+│  LG전자/타법인주식및출자증권처분결정/(2025.10.14)타법인주식및출자증권처분결정                   │
+│  정정일자 | 2025-10-13                                                                          │
+│  1. 정정관련 공시서류 | 타법인 주식 및 출자증권 처분결정                                        │
+│  2. 정정관련 공시서류제출일 | 2025-10-01                                                        │
+│  3. 정정사유 | 처분 완료에 따른 정정                                                            │
+│  4. 정정사항                                                                                    │
+│  정정항목 | 정정전 | 정정후                                                                     │
+│  2. 처분내역_처분금액(원) | 1,738,485,000,000 | 1,856,757,000,000                               │
+│  2. 처분내역_자기자본대비(%) | 6.90 | 7.36                                                      │
+│  9. 기타 투자판단과 관련한 중요사항 | 3. 상기 2항의 처분내역 중 처분주식수(주)는 LG             │
+│  ELECTRONICS INDIA LIMITED의 상장 과정에 따라 변동될 수 있으며, 그 변동이 있을 경우 재공시      │
+│  예정입니다. 4. 상기 2항의 처분내역 중 처분금액(원)은 9월 30일 하나은행 최초 고시환율의         │
+│  매매기준율(15.81루피/원)을 적용하여 산출하였고, 공모가액 범위 중 최하단 가격기준이며 백만원    │
+│  단위로 반올림한 금액입니다. 공모가액 범위는 1,738,485,000,000원 ~ 1,835,068,000,000원이며,     │
+│  주당 공모가액 1,080루피 ~ 1,140루피 기준입니다. 5. 상기 2항의 처분내역 중 자기자본(원)은       │
+│  당사의 2024년도 말 연결기준 자본총계입니다. 6. 상기 3항의 처분후 지분비율은 IPO에 따른 별도    │
+│  신주발행이 예정되어 있지 않으므로 공모전 발행주식총수(678,772,392주) 기준으로 산정하였습니다.  │
+│  7. 상기 5항의 처분예정일자는 LG ELECTRONICS INDIA LIMITED 상장일의 1영업일 전일이며, 상장      │
+│  과정에 따라 변동될 수 있습니다. 8. 본 건 관련 세부 사항의 결정은 대표이사 또는 대표이사가      │
+│  지정하는 자에게 위임하였습니다. | 삭제 3. 상기 2항의 처분내역 중 처분금액(원)은 10월 13일      │
+│  하나은행 최초 고시환율의 매매기준율(16.00루피/원)을 적용하여 산출하였고, 주당 공모가액         │
+│  1,140루피 기준이며, 백만원 단위로 반올림한 금액입니다. 4. 상기 2항의 처분내역 중               │
+│  자기자본(원)은 당사의 2024년도 말 연결기준 자본총계입니다. 5. 상기 3항의 처분후 지분비율은     │
+│  IPO에 따른 별도 신주발행이 예정되어 있지 않으므로 공모전 발행주식총수(678,772,392주) 기준으로  │
+│  산정하였습니다. 6. 상기 5항의 처분예정일자는 LG ELECTRONICS INDIA LIMITED 상장일의 1영업일     │
+│  전일입니다. 7. 본 건 관련 세부 사항의 결정은 대표이사 또는 대표이사가 지정하는 자에게          │
+│  위임하였습니다.                                                                                │
+│  -                                                                                              │
+│  1. 발행회사 | 회사명 | LG ELECTRONICS INDIA LIMITED                                            │
+│  국적 | 인도(India) | 대표자 | 전홍주                                                           │
+│  자본금(원) | 116,341,587,989 | 회사와 관계 | 계열회사                                          │
+│  발행주식총수(주) | 678,772,392 | 주요사업 | 가전 제품 생산 및 판매                             │
+│  2. 처분내역 | 처분주식수(주) | 101,815,859                                                     │
+│  처분금액(원) | 1,856,757,000,000                                                               │
+│  자기자본(원) | 25,211,664,000,000                                                              │
+│  자기자본대비(%) | 7.36                                                                         │
+│  대규모법인여부 | 해당                                                                          │
+│  3. 처분후 소유주식수 및 지분비율 | 소유주식수(주) | 576,956,533                                │
+│  지분비율(%) | 85.0                                                                             │
+│  4. 처분목적 | 당사 인도법인의 인도시장 IPO에 따른 당사 보유 구주 매출                          │
+│  5. 처분예정일자 | 2025-10-13                                                                   │
+│  6. 이사회결의일(결정일) | 2025-09-30                                                           │
+│  -사외이사 참석여부 | 참석(명) | 4                                                              │
+│  불참(명) | 0                                                                                   │
+│  -감사(사외이사가 아닌 감사위원)참석여부 | -                                                    │
+│  7. 공정거래위원회 신고대상 여부 | 미해당                                                       │
+│  8. 풋옵션 등 계약의 체결여부 | 아니오                                                          │
+│  -계약내용 | -                                                                                  │
+│  9. 기타 투자판단과 관련한 중요사항                                                             │
+│  1. 본 건은 당사의 자회사인 LG ELECTRONICS INDIA LIMITED의 인도 증권시장 상장에 따른 구주 매출  │
+│  관련 사항입니다. 2. 상기 1항의 발행회사의 자본금(원)은 2025년 3월말 기준이며, 하나은행 최고    │
+│  고시환율의 매매기준율(17.14원/루피)로 원화 환산한 금액입니다. 3. 상기 2항의 처분내역 중        │
+│  처분금액(원)은 10월 13일 하나은행 최초 고시환율의 매매기준율(16.00루피/원)을 적용하여          │
+│  산출하였고, 주당 공모가액 1,140루피 기준이며, 백만원 단위로 반올림한 금액입니다. 4. 상기       │
+│  2항의 처분내역 중 자기자본(원)은 당사의 2024년도 말 연결기준 자본총계입니다. 5. 상기 3항의     │
+│  처분후 지분비율은 IPO에 따른 별도 신주발행이 예정되어 있지 않으므로 공모전                     │
+│  발행주식총수(678,772,392주) 기준으로 산정하였습니다. 6. 상기 5항의 처분예정일자는 LG           │
+│  ELECTRONICS INDIA LIMITED 상장일의 1영업일 전일입니다. 7. 본 건 관련 세부 사항의 결정은        │
+│  대표이사 또는 대표이사가 지정하는 자에게 위임하였습니다. - 하기 발행회사의 요약 재무상황은     │
+│  2025년 3월말, 2024년 3월말,2023년 3월말 기준이며, 2025년 3월말 하나은행 최초 고시환율의        │
+│  매매기준율(17.14원/루피)로 원화 환산한 금액입니다. - 본 공시는 2024년 12월 9일 조회공시        │
+│  요구(풍문 또는 보도)에 대한 답변(미확정)에 대한 확정 공시입니다.                               │
+│  ※ 관련공시 | 2024-12-09 조회공시 요구(풍문 또는 보도)에 대한 답변(미확정) 2025-01-08 조회공시  │
+│  요구(풍문 또는 보도)에 대한 답변(미확정) 2025-04-07 조회공시 요구(풍문 또는 보도)에 대한       │
+│  답변(미확정) 2025-06-05 조회공시 요구(풍문 또는 보도)에 대한 답변(미확정)                      │
+│  구분 | 자산총계 | 부채총계 | 자본총계 | 자본금 | 매출액 | 당기순이익 | 감사의견 | 외부감사인   │
+│  당해 연도 | 1,974,023,601,629 | 950,751,627,644 | 1,023,271,973,985 | 116,341,587,989 |        │
+│  4,176,441,851,344 | 377,608,475,683 | 적정 | PwC                                               │
+│  전년도 | 1,456,637,745,334 | 810,044,549,247 | 646,593,196,086 | 19,390,264,665 |              │
+│  3,659,742,336,919 | 258,988,446,481 | 적정 | PwC                                               │
+│  전전년도 | 1,541,296,101,101 | 794,586,498,167 | 746,709,602,934 | 19,390,264,665 |            │
+│  3,405,398,231,566 | 230,523,696,288 | 적정 | PwC                                               │
+│                                                                                                 │
+│  [Program이 원문 전체에서 찾은 키워드 등장 문맥]                                                │
+│  []                                                                                             │
+│                                                                                                 │
+│  [할 일]                                                                                        │
+│  1. 원문에서 확인되는 사건(투자, 계약, 인수·매각, 자회사·지배구조 변화, 자금조달, 사업 변경     │
+│  등)과                                                                                          │
+│     금액·일자·대상을 fact로 정리한다. statement는 표 행을 그대로 옮기지 말고 "투자금액은        │
+│  1,300억원이다"처럼                                                                             │
+│     주어와 서술어가 있는 문장으로 쓴다.                                                         │
+│     category 기준: 시설·지분·사업에 돈을 쓰는 것은 투자, 유상증자·사채 발행·차입처럼 돈을       │
+│  들여오는 것은 자금조달,                                                                        │
+│     타법인 주식·사업부 양수도는 인수·매각, 매출·이익 등 재무제표 수치는 재무.                   │
+│  2. 각 fact의 evidence_quote에는 원문 문장을 글자 그대로 복사한다. 요약하거나 고쳐 쓰지         │
+│  않는다.                                                                                        │
+│     amount_raw에는 원문 표기를 그대로 쓰고, 단위 환산이 필요하면 'parse_amount_text' 도구를     │
+│  호출한다. 직접 환산하지 않는다.                                                                │
+│  3. 키워드 등장 문맥마다 아래 기준으로 실제 사건인지 판단한다.                                  │
+│     - 실제 사건(true): 이번 공시에서 새로 결정되었거나 발생한 중단·분할·합병·양수·신규사업.     │
+│       예: "2025년 3분기 중 A사업의 영업을 중단하기로 결정하였다", "B법인 지분을 양수하였다".    │
+│     - 실제 사건 아님(false): 회계 항목명, 과거 회사 연혁, 일반적인 사업 설명, 부정문·가정·검토  │
+│  단계.                                                                                          │
+│       예: "중단영업 당기순손실 | (5,485)"은 회계 항목명이므로 실제 사건이 아니다.               │
+│       예: "2002년 인적분할하여 설립"은 과거 연혁이므로 이번 공시의 실제 사건이 아니다.          │
+│       예: "신규 사업분야에서 기술을 개발하고 있다"처럼 기존 사업을 설명하는 문장은 새 사건으로  │
+│  단정하지 않는다.                                                                               │
+│       예: "현재 합병 계획은 없습니다"는 부정문이므로 실제 사건이 아니다.                        │
+│     - 문맥만으로 이번 공시에서 새로 발생한 사건인지 확정할 수 없으면 null로 두고 note에 이유를  │
+│  쓴다.                                                                                          │
+│     키워드가 나왔다는 사실만으로 fact를 만들지 않으며, false/null인 키워드 문맥은 사건 FACT로   │
+│  작성하지 않는다.                                                                               │
+│  4. 원문만으로 알 수 없는 것(목적의 구체적 내용, 원문에 없는 수치, 향후 계획 등)은              │
+│  unverifiable에 적는다.                                                                         │
+│  5. 원문이 비어 있거나 정규화 상태가 ok가 아니면 facts를 비우고 그 이유를 unverifiable에        │
+│  적는다.                                                                                        │
+│  6. 추측, 업계 지식, 원문 밖의 정보로 fact를 만들지 않는다. 모든 문장은 한국어로 쓴다.          │
+│                                                                                                 │
+│  [담당자 재작업 요청]                                                                           │
+│  없음                                                                                           │
+│  위 요청이 "없음"이 아니면 반드시 반영하여 이전 결과의 문제를 고친다.                           │
+│                                                                                                 │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+[35m[Finalize] todos_count=0, todos_with_results=0[0m
+╭───────────────────────────────────── ✅ Agent Final Answer ─────────────────────────────────────╮
+│                                                                                                 │
+│  Agent: 경쟁사 공시 원문 팩트 추출 담당 (Disclosure Analysis Agent)                             │
+│                                                                                                 │
+│  Final Answer:                                                                                  │
+│  {                                                                                              │
+│    "rcept_no": "20251014800001",                                                                │
+│    "corp_name": "LG전자",                                                                       │
+│    "report_nm": "[기재정정]타법인주식및출자증권처분결정",                                       │
+│    "facts": [                                                                                   │
+│      {                                                                                          │
+│        "fact_id": "F1",                                                                         │
+│        "statement": "LG전자는 LG ELECTRONICS INDIA LIMITED의 주식 101,815,859주를               │
+│  1,856,757,000,000원에 처분하기로 결정하였다.",                                                 │
+│        "category": "지분·매각",                                                                 │
+│        "amount_raw": "1,856,757,000,000",                                                       │
+│        "date": "2025-10-13",                                                                    │
+│        "evidence_quote": "처분내역_처분금액(원) | 1,856,757,000,000",                           │
+│        "evidence_rcept_no": "20251014800001"                                                    │
+│      },                                                                                         │
+│      {                                                                                          │
+│        "fact_id": "F2",                                                                         │
+│        "statement": "LG전자는 처분금액이 자기자본의 7.36%에 해당한다고 밝혔다.",                │
+│        "category": "재무",                                                                      │
+│        "amount_raw": "25,211,664,000,000",                                                      │
+│        "date": null,                                                                            │
+│        "evidence_quote": "자기자본대비(%) | 7.36",                                              │
+│        "evidence_rcept_no": "20251014800001"                                                    │
+│      }                                                                                          │
+│    ],                                                                                           │
+│    "keyword_checks": [                                                                          │
+│      {                                                                                          │
+│        "keyword": "처분",                                                                       │
+│        "quote": "상기 2항의 처분내역 중 처분금액(원)은 10월 13일 하나은행 최초 고시환율의       │
+│  매매기준율(16.00루피/원)을 적용하여 산출하였고, 주당 공모가액 1,140루피 기준이며, 백만원       │
+│  단위로 반올림한 금액입니다.",                                                                  │
+│        "is_actual_event": true,                                                                 │
+│        "note": ""                                                                               │
+│      },                                                                                         │
+│      {                                                                                          │
+│        "keyword": "자기자본",                                                                   │
+│        "quote": "상기 2항의 처분내역 중 자기자본(원)은 당사의 2024년도 말 연결기준              │
+│  자본총계입니다.",                                                                              │
+│        "is_actual_event": true,                                                                 │
+│        "note": ""                                                                               │
+│      }                                                                                          │
+│    ],                                                                                           │
+│    "unverifiable": []                                                                           │
+│  }                                                                                              │
+│                                                                                                 │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭──────────────────────────────────────── 📋 Task Failure ────────────────────────────────────────╮
+│                                                                                                 │
+│  Task Failed                                                                                    │
+│  Name: extract_disclosure_facts                                                                 │
+│  Agent: 경쟁사 공시 원문 팩트 추출 담당 (Disclosure Analysis Agent)                             │
+│                                                                                                 │
+│                                                                                                 │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────────────────── Crew Failure ──────────────────────────────────────────╮
+│                                                                                                 │
+│  Crew Execution Failed                                                                          │
+│  Name: crew                                                                                     │
+│  ID: 0af4869d-0db6-49db-b30d-6107c826a870                                                       │
+│                                                                                                 │
+│                                                                                                 │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+Traceback (most recent call last):
+  File "/Users/chloe/Documents/intelligent-automation-practice/main.py", line 253, in <module>
+    main()
+  File "/Users/chloe/Documents/intelligent-automation-practice/main.py", line 218, in main
+    outputs = crew.run(build_inputs(payload, feedback), start_stage=start)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chloe/Documents/intelligent-automation-practice/crew.py", line 358, in run
+    crew.kickoff(inputs=inputs)
+  File "/Users/chloe/Documents/intelligent-automation-practice/.venv/lib/python3.12/site-packages/crewai/crew.py", line 1056, in kickoff
+    result = self._run_sequential_process()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chloe/Documents/intelligent-automation-practice/.venv/lib/python3.12/site-packages/crewai/crew.py", line 1524, in _run_sequential_process
+    return self._execute_tasks(self.tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chloe/Documents/intelligent-automation-practice/.venv/lib/python3.12/site-packages/crewai/crew.py", line 1628, in _execute_tasks
+    task_output = task.execute_sync(
+                  ^^^^^^^^^^^^^^^^^^
+  File "/Users/chloe/Documents/intelligent-automation-practice/.venv/lib/python3.12/site-packages/crewai/task.py", line 593, in execute_sync
+    return self._execute_core(agent, context, tools)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chloe/Documents/intelligent-automation-practice/.venv/lib/python3.12/site-packages/crewai/task.py", line 963, in _execute_core
+    raise e
+  File "/Users/chloe/Documents/intelligent-automation-practice/.venv/lib/python3.12/site-packages/crewai/task.py", line 874, in _execute_core
+    pydantic_output, json_output = self._export_output(result)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chloe/Documents/intelligent-automation-practice/.venv/lib/python3.12/site-packages/crewai/task.py", line 1204, in _export_output
+    model_output = convert_to_model(
+                   ^^^^^^^^^^^^^^^^^
+  File "/Users/chloe/Documents/intelligent-automation-practice/.venv/lib/python3.12/site-packages/crewai/utilities/converter.py", line 260, in convert_to_model
+    return handle_partial_json(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chloe/Documents/intelligent-automation-practice/.venv/lib/python3.12/site-packages/crewai/utilities/converter.py", line 329, in handle_partial_json
+    exported_result = model.model_validate(parsed)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chloe/Documents/intelligent-automation-practice/.venv/lib/python3.12/site-packages/pydantic/main.py", line 716, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for FactExtraction
+facts.0.category
+  Input should be '투자', '계약', '인수·매각', '지배구조·자회사', '자금조달', '재무', '사업변경' or '기타' [type=literal_error, input_value='지분·매각', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/literal_error

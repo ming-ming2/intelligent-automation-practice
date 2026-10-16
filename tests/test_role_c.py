@@ -20,7 +20,9 @@ warnings.filterwarnings('ignore', category=DeprecationWarning)  # CrewAI 내부 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-import main  # noqa: E402  (crew가 CrewAI 환경 변수를 먼저 설정)
+import main  # noqa: E402
+import program_tools  # noqa: E402
+import crew  # noqa: E402  (crew가 CrewAI 환경 변수를 먼저 설정)
 from crewai.llms.base_llm import BaseLLM  # noqa: E402
 
 MOCK = json.loads((ROOT / 'examples' / 'mock_input.json').read_text(encoding='utf-8'))
@@ -50,6 +52,16 @@ ANALYSIS_OK = {
 }
 
 
+def _fin(metric, fs_div, cur, prev):
+    def v(x):
+        return {'value': x, 'raw_value': f'{int(x):,}', 'unit': '원', 'currency': 'KRW',
+                'evidence': {'kind': 'financial_account', 'rcept_no': 'MOCK-CURRENT-001'}}
+    return {'metric': metric, 'status': 'evaluated', 'triggered': None, 'reason': None,
+            'current': v(cur), 'previous': v(prev), 'change_rate': None, 'threshold': 0.15,
+            'dimensions': {'fs_div': fs_div, 'sj_div': 'IS', 'current_period': '2025.1Q~3Q',
+                           'previous_period': '2024.1Q~3Q'}}
+
+
 class FakeLLM(BaseLLM):
     """프롬프트 내용을 보고 Task를 구분해 정해진 답을 돌려준다."""
 
@@ -66,7 +78,7 @@ class FakeLLM(BaseLLM):
         if '[정규화된 원문]' in text:
             facts = dict(FACTS, facts=[dict(FACTS['facts'][0], evidence_quote=self.facts_quote)])
             body = json.dumps(facts, ensure_ascii=False)
-        elif '[Program 변화 탐지 결과' in text:
+        elif '[Program 비교 항목 목록' in text:
             self.analysis_calls += 1
             body = json.dumps(ANALYSIS_BAD if self.analysis_calls == 1 else ANALYSIS_OK, ensure_ascii=False)
         else:
@@ -100,14 +112,18 @@ class RoleCWorkflowTest(unittest.TestCase):
         ])
         run_dir = main.main(['--mock'], llm=llm, review_fn=lambda report, problems: next(reviews))
 
-        analysis_prompts = [p for p in llm.prompts if '[Program 변화 탐지 결과' in p]
+        analysis_prompts = [p for p in llm.prompts if '[Program 비교 항목 목록' in p]
         report_prompts = [p for p in llm.prompts if '보고서 초안을 마크다운으로' in p]
         # context: 사업 변화·영향 분석 프롬프트에 공시 사실 추출 결과가, 경쟁사 분석 보고서 작성에 공시 사실 추출·사업 변화·영향 분석 결과가 들어간다.
         self.assertIn('투자금액은 1,300억원이다.', analysis_prompts[0])
         self.assertIn('투자금액은 1,300억원이다.', report_prompts[0])
         self.assertIn('HISTORY_COVERAGE_UNKNOWN', report_prompts[0])
-        # 가드레일: 첫 사업 변화·영향 분석 출력에 Program 코드가 없어 재시도
-        self.assertIn('needs_verification에 없습니다', '\n'.join(analysis_prompts))
+        # 가드레일: 첫 사업 변화·영향 분석 출력에 Program 코드가 없어도 멈추거나 재시도하지 않고 Program이 원문 그대로 보완
+        round1 = json.loads((run_dir / 'round1_analyze_business_changes.json').read_text(encoding='utf-8'))
+        filled = {v['code']: v['item'] for v in round1['needs_verification'] if v['origin'] == 'program'}
+        for c in MOCK['needs_verification']:
+            self.assertEqual(filled.get(c['code']), c['message'])
+        self.assertNotIn('needs_verification에 없습니다', '\n'.join(analysis_prompts))
         # 반려(해석 오류) → 공시 사실 추출은 다시 돌지 않고 사업 변화·영향 분석부터, 재작업 지시 전달
         facts_prompts = [p for p in llm.prompts if '[정규화된 원문]' in p]
         self.assertEqual(len(facts_prompts), 1)
@@ -124,7 +140,73 @@ class RoleCWorkflowTest(unittest.TestCase):
         agent_items = [v for v in analysis['needs_verification'] if v['origin'] == 'agent']
         self.assertTrue(any(v['item'] == '투자 목적' for v in agent_items))
         self.assertTrue(any('투자 목적' in p for p in report_prompts))
-        self.assertTrue(any(v['field'] == 'interpretations' for v in agent_items))
+        round2 = json.loads((run_dir / 'round2_analyze_business_changes.json').read_text(encoding='utf-8'))
+        self.assertTrue(any(v['field'] == 'interpretations' and v['origin'] == 'agent'
+                            for v in round2['needs_verification']))
+
+    def test_program_tools_return_program_values(self):
+        """교수 코멘트 반영: Agent가 호출하는 도구가 B의 계산 결과를 그대로 돌려주는지 확인"""
+        payload = json.loads(json.dumps(MOCK))
+        payload['triggers']['financial_changes'] = [
+            _fin('당기순이익(손실)', 'CFS', '1946335000000', '1305119000000'),
+            _fin('당기순이익(손실)', 'OFS', '376021000000', '1123278000000'),
+        ]
+        tools = program_tools.build_tools(payload)
+        finance = tools['change'][0]
+        cfs = json.loads(finance._run('당기순이익', '연결'))
+        self.assertEqual((cfs[0]['change_rate_display'], cfs[0]['direction'], cfs[0]['triggered']), ('+49.1%', '증가', True))
+        both = json.loads(finance._run('순이익'))
+        self.assertEqual({r['basis'] for r in both}, {'연결', '별도'})
+        amount = json.loads(tools['change'][1]._run('투자금액'))
+        self.assertEqual(amount[0]['change_rate_display'], '+30.0%')
+        parse = tools['change'][2]
+        self.assertEqual(json.loads(parse._run('1,300억원'))['value_won'], '130000000000')
+        self.assertEqual(json.loads(parse._run('1조 3,000억원'))['result'], '해석 불가')
+        self.assertIn('없음', finance._run('영업외수익'))
+        # 프롬프트 목록에는 숫자를 넣지 않는다
+        self.assertNotIn('1946335', tools['data'].index())
+
+    def test_agent_calls_program_tool_inside_crew(self):
+        """Crew 실행 중 사업 변화·영향 분석 Agent가 도구를 호출하고 Program 값을 받는지 확인"""
+        payload = json.loads(json.dumps(MOCK))
+        payload['triggers']['financial_changes'] = [_fin('당기순이익(손실)', 'CFS', '1946335000000', '1305119000000')]
+        received = []
+
+        class ToolCallingLLM(FakeLLM):
+            def call(self, messages, *args, **kwargs):
+                text = messages if isinstance(messages, str) else '\n'.join(str(m.get('content', '')) for m in messages)
+                if '[Program 비교 항목 목록' in text:
+                    self.analysis_calls += 1
+                    if self.analysis_calls == 1:
+                        return ('Thought: 순이익 확인\nAction: lookup_financial_change\n'
+                                'Action Input: {"metric": "당기순이익", "basis": "연결"}')
+                    received.append('"change_rate_display": "+49.1%"' in text and '"direction": "증가"' in text)
+                    return 'Thought: done\nFinal Answer: ' + json.dumps(ANALYSIS_OK, ensure_ascii=False)
+                return super().call(messages, *args, **kwargs)
+
+        crew_obj = crew.DisclosureCrew(payload, llm=ToolCallingLLM(), verbose=False)
+        crew_obj.run(crew.build_inputs(payload))
+        self.assertEqual(received, [True])
+
+    def test_program_checks_flag_wrong_rate_and_direction(self):
+        """Agent가 Program 값과 다른 변화율·증감 방향을 쓰면 경고하는지 확인 (개선 전 일반 사례 재현)"""
+        payload = json.loads(json.dumps(MOCK))
+        payload['triggers']['financial_changes'] = [
+            _fin('영업이익', 'CFS', '2587381000000', '3284344000000'),
+            _fin('당기순이익(손실)', 'CFS', '1946335000000', '1305119000000'),
+            _fin('당기순이익(손실)', 'OFS', '376021000000', '1123278000000'),
+        ]
+        data = program_tools.ProgramData(payload)
+        report = '영업이익과 당기순이익이 감소하였다.\n별도 기준 당기순이익은 감소했다.\n매출채권이 증가했다.'
+        problems = program_tools.check_report_directions(report, data)
+        self.assertEqual(len(problems), 1)
+        self.assertIn('+49.1%', problems[0]['program'])
+        analysis = {'changes': [
+            {'change_id': 'C1', 'metric': '영업이익', 'basis': '연결', 'change_rate': '-21.2%'},
+            {'change_id': 'C2', 'metric': '당기순이익(손실)', 'basis': '연결', 'change_rate': '-66.5%'},
+        ]}
+        rate_problems = program_tools.check_change_rates(analysis, data)
+        self.assertEqual([p['item'] for p in rate_problems], ['C2'])
 
     def test_evidence_check_flags_fabricated_quote(self):
         facts = dict(FACTS, facts=[dict(FACTS['facts'][0], evidence_quote='투자금액 | 2,000억원',

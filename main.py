@@ -22,8 +22,8 @@ from datetime import datetime
 from pathlib import Path
 from dotenv import load_dotenv
 
-from crew import (ROOT, DisclosureCrew, build_inputs,  # crew가 .env와 CrewAI 경로를 먼저 설정한다
-                  required_program_codes)
+from crew import ROOT, DisclosureCrew, build_inputs  # crew가 .env와 CrewAI 경로를 먼저 설정한다
+from program_tools import check_change_rates, check_report_directions
 
 RESULTS_DIR = Path(os.getenv('RESULTS_DIR', 'results'))
 RESULTS_DIR = RESULTS_DIR if RESULTS_DIR.is_absolute() else ROOT / RESULTS_DIR
@@ -127,11 +127,14 @@ def human_review(report: str, evidence_problems: list[dict]) -> dict:
     print(report)
     print('=' * 70)
     if evidence_problems:
-        print('\n[Program 근거 대조 경고] 아래 항목은 원문과 일치하지 않습니다:')
+        print('\n[Program 대조 경고] 아래 항목은 원문 또는 Program 계산값과 일치하지 않습니다:')
         for p in evidence_problems:
-            print(f"  - {p['fact_id']}: {p['problem']} {p.get('quote') or p.get('rcept_no') or ''}")
+            label = p.get('check', '근거 대조')
+            target = p.get('fact_id') or p.get('item') or ''
+            extra = p.get('quote') or p.get('rcept_no') or p.get('program') or ''
+            print(f"  - [{label}] {target} {p['problem']} {extra}")
     else:
-        print('\n[Program 근거 대조] 모든 FACT 인용이 원문·Program 근거에서 확인되었습니다.')
+        print('\n[Program 대조] FACT 인용·CHANGE 변화율·보고서 증감 방향이 모두 원문·Program 값과 일치합니다.')
 
     decision = ask('\n검토 결과를 선택하세요 (1 승인 / 2 보류 / 3 반려): ', {'1': 0, '2': 0, '3': 0})
     if decision == '3':
@@ -207,13 +210,16 @@ def main(argv=None, llm=None, review_fn=human_review) -> Path:
     run_dir.mkdir(parents=True, exist_ok=True)
     (run_dir / 'input.json').write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding='utf-8')
 
-    crew = DisclosureCrew(required_program_codes(payload), llm=llm, log_file=run_dir / 'crew_log.txt',
+    crew = DisclosureCrew(payload, llm=llm, log_file=run_dir / 'crew_log.txt',
                           verbose=not args.quiet)
     feedback, start, review = '없음', 1, None
     for rnd in range(1, MAX_ROUNDS + 1):
         print(f'\n>>> Round {rnd}: {STAGE_LABELS[start]}부터 실행')
         outputs = crew.run(build_inputs(payload, feedback), start_stage=start)
-        problems = check_evidence(outputs['facts'], payload)
+        # Program 대조 3종: FACT 인용 원문 대조 + CHANGE 변화율 대조 + 보고서 증감 방향 대조 (고치지 않고 경고)
+        problems = (check_evidence(outputs['facts'], payload)
+                    + check_change_rates(outputs['analysis'], crew.program_data)
+                    + check_report_directions(str(outputs['report']), crew.program_data))
         write_round(run_dir, rnd, outputs, problems)
 
         review = ({'decision': '미검토', 'comment': '--no-review 실행'} if args.no_review
