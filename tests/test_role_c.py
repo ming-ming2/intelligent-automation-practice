@@ -208,6 +208,23 @@ class RoleCWorkflowTest(unittest.TestCase):
         rate_problems = program_tools.check_change_rates(analysis, data)
         self.assertEqual([p['item'] for p in rate_problems], ['C2'])
 
+    def test_out_of_list_labels_do_not_stop_run(self):
+        """도구를 가진 Agent는 양식 강제가 꺼져 목록 밖 분류를 쓸 수 있다(5주차 실행에서 '중단', '지분·매각').
+        멈추지 않고 '기타'로 두되 원래 값은 보존하고, 사실 내용은 그대로인지 확인"""
+        fact = dict(FACTS['facts'][0], category='지분·매각')
+        parsed = crew.FactExtraction.model_validate(dict(FACTS, facts=[fact]))
+        self.assertEqual((parsed.facts[0].category, parsed.facts[0].category_original), ('기타', '지분·매각'))
+        self.assertEqual(parsed.facts[0].evidence_quote, fact['evidence_quote'])
+        interp = crew.Interpretation.model_validate(
+            {'statement': 's', 'impact_area': '시장', 'based_on': ['C1'], 'confidence': '보통'})
+        self.assertEqual((interp.impact_area, interp.impact_area_original), ('기타', '시장'))
+        self.assertEqual((interp.confidence, interp.confidence_original), ('낮음', '보통'))
+        item = crew.VerificationItem.model_validate({'code': 'X', 'item': 'i', 'why': 'w', 'origin': 'Program'})
+        self.assertEqual(item.origin, 'program')
+        kc = crew.KeywordCheck.model_validate({'keyword': '중단', 'quote': 'q', 'is_actual_event': '판단 불가'})
+        self.assertIsNone(kc.is_actual_event)
+        self.assertIn('판단 불가', kc.note)
+
     def test_evidence_check_flags_fabricated_quote(self):
         facts = dict(FACTS, facts=[dict(FACTS['facts'][0], evidence_quote='투자금액 | 2,000억원',
                                         evidence_rcept_no='99999999999999')])

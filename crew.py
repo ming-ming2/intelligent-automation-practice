@@ -25,7 +25,7 @@ os.environ.setdefault('OTEL_SDK_DISABLED', 'true')
 os.environ.setdefault('CREWAI_TELEMETRY_DISABLED', 'true')
 
 from crewai import Agent, Crew, LLM, Process, Task  # noqa: E402
-from pydantic import BaseModel, Field  # noqa: E402
+from pydantic import BaseModel, Field, model_validator  # noqa: E402
 
 from program_tools import build_tools  # noqa: E402  (Agent가 호출하는 Program 도구)
 
@@ -33,28 +33,63 @@ from program_tools import build_tools  # noqa: E402  (Agent가 호출하는 Prog
 # ---------------------------------------------------------------------------
 # Task 출력 스키마: FACT / CHANGE / INTERPRETATION / NEEDS_VERIFICATION 구분을 형식으로 강제
 # ---------------------------------------------------------------------------
+CATEGORIES = ('투자', '계약', '인수·매각', '지배구조·자회사', '자금조달', '재무', '사업변경', '기타')
+IMPACT_AREAS = ('사업', '재무', '경쟁환경', '기타')
+CONFIDENCES = ('낮음', '중간', '높음')
+
+
+def _keep_allowed(data, field, allowed, fallback):
+    """분류 칸에 허용 목록 밖 값이 오면 실행을 멈추지 않고 fallback으로 바꾸되, Agent가 쓴 원래 값을
+    <field>_original에 그대로 남긴다. 사실 내용(문장·금액·인용)은 건드리지 않는다.
+    도구를 가진 Agent에는 CrewAI가 출력 양식 강제를 끄기 때문에 필요하다(5주차 개선 후 실행에서 확인)."""
+    if isinstance(data, dict):
+        value = data.get(field)
+        if value is not None and value not in allowed:
+            data = dict(data, **{field: fallback, f'{field}_original': str(value)})
+    return data
+
+
 class Fact(BaseModel):
     fact_id: str = Field(description='F1, F2 ... 순번')
     statement: str = Field(description='원문으로 확인되는 사실 한 문장. 해석·평가 표현 금지')
-    category: Literal['투자', '계약', '인수·매각', '지배구조·자회사', '자금조달', '재무', '사업변경', '기타']
+    category: Literal['투자', '계약', '인수·매각', '지배구조·자회사', '자금조달', '재무', '사업변경', '기타'] = Field(
+        description='반드시 투자/계약/인수·매각/지배구조·자회사/자금조달/재무/사업변경/기타 중 하나')
+    category_original: Optional[str] = Field(default=None, description='Program 기록용. Agent는 쓰지 않는다')
     amount_raw: Optional[str] = Field(default=None, description='원문 표기 그대로의 금액 (예: 1,300억원). 없으면 null')
     date: Optional[str] = Field(default=None, description='원문에 적힌 일자. 없으면 null')
-    evidence_quote: str = Field(description='근거가 되는 원문 문장을 그대로 복사. 요약·의역 금지')
-    evidence_rcept_no: str = Field(description='근거가 속한 공시의 접수번호')
+    evidence_quote: str = Field(default='', description='근거가 되는 원문 문장을 그대로 복사. 요약·의역 금지')
+    evidence_rcept_no: str = Field(default='', description='근거가 속한 공시의 접수번호')
+
+    @model_validator(mode='before')
+    @classmethod
+    def _category(cls, data):
+        return _keep_allowed(data, 'category', CATEGORIES, '기타')
 
 
 class KeywordCheck(BaseModel):
     keyword: str
-    quote: str = Field(description='키워드가 등장한 원문 문장 그대로')
+    quote: str = Field(default='', description='키워드가 등장한 원문 문장 그대로')
     is_actual_event: Optional[bool] = Field(
         default=None, description='문맥상 실제 사건이면 true, 부정문·가정이면 false, 판단 불가면 null')
     note: str = ''
 
+    @model_validator(mode='before')
+    @classmethod
+    def _event(cls, data):
+        if isinstance(data, dict) and not isinstance(data.get('is_actual_event'), (bool, type(None))):
+            raw = str(data['is_actual_event']).strip().lower()
+            value = True if raw == 'true' else False if raw == 'false' else None
+            note = data.get('note') or ''
+            if value is None:
+                note = f"{note} (Agent 원래 판정값: {data['is_actual_event']})".strip()
+            data = dict(data, is_actual_event=value, note=note)
+        return data
+
 
 class FactExtraction(BaseModel):
     rcept_no: str
-    corp_name: str
-    report_nm: str
+    corp_name: str = ''
+    report_nm: str = ''
     facts: list[Fact] = Field(default_factory=list)
     keyword_checks: list[KeywordCheck] = Field(default_factory=list)
     unverifiable: list[str] = Field(
@@ -69,23 +104,38 @@ class Change(BaseModel):
     current: Optional[str] = Field(default=None, description='현재 값 (원문 표기)')
     change_rate: Optional[str] = Field(default=None, description='도구가 돌려준 change_rate_display 그대로 (예: +30.0%). 직접 계산 금지')
     triggered: Optional[bool] = Field(default=None, description='Program 판정 그대로')
-    description: str = Field(description='무엇이 어떻게 달라졌는지 사실 기반 설명')
+    description: str = Field(default='', description='무엇이 어떻게 달라졌는지 사실 기반 설명')
     related_fact_ids: list[str] = Field(default_factory=list)
 
 
 class Interpretation(BaseModel):
     statement: str = Field(description='삼성전자 DX 생활가전·전자 사업 관점의 해석. 추정임을 드러내는 표현 사용')
-    impact_area: Literal['사업', '재무', '경쟁환경']
-    based_on: list[str] = Field(description='근거가 된 fact_id 또는 change_id')
-    confidence: Literal['낮음', '중간', '높음']
+    impact_area: Literal['사업', '재무', '경쟁환경', '기타'] = Field(description='사업/재무/경쟁환경 중 하나')
+    impact_area_original: Optional[str] = Field(default=None, description='Program 기록용. Agent는 쓰지 않는다')
+    based_on: list[str] = Field(default_factory=list, description='근거가 된 fact_id 또는 change_id')
+    confidence: Literal['낮음', '중간', '높음'] = Field(description='낮음/중간/높음 중 하나')
+    confidence_original: Optional[str] = Field(default=None, description='Program 기록용. Agent는 쓰지 않는다')
+
+    @model_validator(mode='before')
+    @classmethod
+    def _labels(cls, data):
+        data = _keep_allowed(data, 'impact_area', IMPACT_AREAS, '기타')
+        return _keep_allowed(data, 'confidence', CONFIDENCES, '낮음')   # 모르는 신뢰도는 보수적으로 낮음
 
 
 class VerificationItem(BaseModel):
     code: str = Field(description='Program 사유 코드 그대로, 또는 Agent가 추가한 경우 AGENT_CHECK')
     field: Optional[str] = None
     item: str = Field(description='무엇을 확인해야 하는지')
-    why: str = Field(description='왜 공시만으로 확정할 수 없는지')
+    why: str = Field(default='', description='왜 공시만으로 확정할 수 없는지')
     origin: Literal['program', 'agent']
+
+    @model_validator(mode='before')
+    @classmethod
+    def _origin(cls, data):
+        if isinstance(data, dict) and isinstance(data.get('origin'), str):
+            data = dict(data, origin=data['origin'].strip().lower())
+        return _keep_allowed(data, 'origin', ('program', 'agent'), 'agent')
 
 
 class ChangeAnalysis(BaseModel):
@@ -166,6 +216,8 @@ EXTRACT_DISCLOSURE_FACTS_DESCRIPTION = """\
    주어와 서술어가 있는 문장으로 쓴다.
    category 기준: 시설·지분·사업에 돈을 쓰는 것은 투자, 유상증자·사채 발행·차입처럼 돈을 들여오는 것은 자금조달,
    타법인 주식·사업부 양수도는 인수·매각, 매출·이익 등 재무제표 수치는 재무.
+   category에는 반드시 투자/계약/인수·매각/지배구조·자회사/자금조달/재무/사업변경/기타 중 하나만 쓴다.
+   (예: 사업 중단은 사업변경, 지분 처분은 인수·매각) 목록에 없는 말을 만들지 않는다.
 2. 각 fact의 evidence_quote에는 원문 문장을 글자 그대로 복사한다. 요약하거나 고쳐 쓰지 않는다.
    amount_raw에는 원문 표기를 그대로 쓰고, 단위 환산이 필요하면 'parse_amount_text' 도구를 호출한다. 직접 환산하지 않는다.
 3. 키워드 등장 문맥마다 아래 기준으로 실제 사건인지 판단한다.
@@ -210,7 +262,7 @@ ANALYZE_BUSINESS_CHANGES_DESCRIPTION = """\
    description에 증감을 쓸 때는 도구의 direction(증가/감소)과 같은 말을 쓴다. 직접 계산하거나 추정하지 않는다. status가 not_comparable이거나 triggered가 null인 항목은 "비교 불가"라고 설명하고
    증가·감소로 단정하지 않는다. 공시 사실 추출의 관련 fact_id를 연결한다.
 2. interpretations: 확인된 사실과 변화가 삼성전자 DX 생활가전·전자 사업에 줄 수 있는 영향을
-   사업/재무/경쟁환경 중 하나로 분류해 쓴다. 반드시 근거 fact_id 또는 change_id를 based_on에 적고,
+   impact_area는 사업/재무/경쟁환경 중 하나, confidence는 낮음/중간/높음 중 하나만 쓴다. 반드시 근거 fact_id 또는 change_id를 based_on에 적고,
    "~일 가능성이 있다"처럼 추정임을 드러낸다. 근거 없는 해석은 쓰지 않는다.
    경쟁사의 투자·사업 확대는 삼성전자 입장에서 경쟁 압력(위협) 요인으로 먼저 검토하고, 우리 회사에 유리하다고
    볼 근거가 공시에 없으면 긍정적이라고 쓰지 않는다. 금액 하나만으로 내린 해석의 confidence는 낮음으로 둔다.
