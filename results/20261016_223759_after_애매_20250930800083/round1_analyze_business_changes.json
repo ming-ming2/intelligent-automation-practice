@@ -1,0 +1,68 @@
+{
+  "rcept_no": "20250930800083",
+  "program_notes": [
+    {
+      "check": "수치 보정",
+      "item": "P1",
+      "problem": "처분금액(해당 없음): Program 변화 후보가 CHANGE에 없어 Program이 추가"
+    }
+  ],
+  "changes": [
+    {
+      "change_id": "P1",
+      "metric": "처분금액",
+      "basis": null,
+      "previous": null,
+      "current": null,
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "Program 탐지: 비교 불가(CURRENT_VALUE_MISSING). Agent 설명 누락으로 Program이 추가",
+      "related_fact_ids": []
+    }
+  ],
+  "interpretations": [],
+  "needs_verification": [
+    {
+      "code": "HISTORY_COVERAGE_UNKNOWN",
+      "field": "history_search",
+      "item": "검색 기간 전체의 공시 목록 수집을 확인할 수 없습니다.",
+      "why": "과거 동일 유형 사례가 확인되지 않음",
+      "origin": "program"
+    },
+    {
+      "code": "PAST_CASES_MISSING",
+      "field": "past_cases",
+      "item": "확인 가능한 과거 동일 유형 사례가 없습니다.",
+      "why": "과거 사례가 비어 있음",
+      "origin": "program"
+    },
+    {
+      "code": "AMOUNT_UNRESOLVED",
+      "field": "triggers.amount_changes",
+      "item": "처분금액의 단위·값·표 구조가 불명확하거나 여러 번 등장합니다.",
+      "why": "처분금액에 대한 정보가 부족함",
+      "origin": "program"
+    },
+    {
+      "code": "FINANCIAL_DATA_MISSING",
+      "field": "triggers.financial_changes",
+      "item": "현재 접수번호에 직접 연결된 재무 계정이 없습니다.",
+      "why": "재무 데이터가 누락됨",
+      "origin": "program"
+    },
+    {
+      "code": "CURRENT_VALUE_MISSING",
+      "field": "triggers.amount_changes",
+      "item": "처분금액: 비교 불가 (CURRENT_VALUE_MISSING)",
+      "why": "현재 값이 누락되어 비교할 수 없음",
+      "origin": "program"
+    }
+  ],
+  "follow_up_checks": [
+    "LG전자가 처분할 주식의 구체적인 금액은 얼마인지 확인이 필요하다.",
+    "처분금액의 단위와 구조를 명확히 할 필요가 있다.",
+    "과거 동일 유형 공시의 목록을 확인할 수 있는 방법이 있는지 검토해야 한다.",
+    "LG전자의 처분 결정이 삼성전자에 미치는 영향에 대한 추가 분석이 필요하다.",
+    "재무 데이터의 누락 원인을 파악해야 한다."
+  ]
+}

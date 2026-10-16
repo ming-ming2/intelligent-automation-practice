@@ -1,0 +1,49 @@
+{
+  "rcept_no": "20250930800083",
+  "corp_name": "LG전자",
+  "report_nm": "타법인주식및출자증권처분결정",
+  "facts": [
+    {
+      "fact_id": "F1",
+      "statement": "LG전자는 LG ELECTRONICS INDIA LIMITED의 주식 101,815,859주를 처분할 예정이다.",
+      "category": "인수·매각",
+      "category_original": null,
+      "amount_raw": "-",
+      "date": null,
+      "evidence_quote": "처분내역 | 처분주식수(주) | 101,815,859",
+      "evidence_rcept_no": "20250930800083"
+    },
+    {
+      "fact_id": "F2",
+      "statement": "LG전자의 자기자본은 25,211,664,000,000원이다.",
+      "category": "재무",
+      "category_original": null,
+      "amount_raw": "25,211,664,000,000",
+      "date": null,
+      "evidence_quote": "자기자본(원) | 25,211,664,000,000",
+      "evidence_rcept_no": "20250930800083"
+    },
+    {
+      "fact_id": "F3",
+      "statement": "LG전자는 2025년 9월 30일 이사회 결의를 통해 주식 처분 결정을 하였다.",
+      "category": "기타",
+      "category_original": null,
+      "amount_raw": null,
+      "date": "2025-09-30",
+      "evidence_quote": "이사회결의일(결정일) | 2025-09-30",
+      "evidence_rcept_no": "20250930800083"
+    },
+    {
+      "fact_id": "F4",
+      "statement": "LG전자는 인도법인의 인도시장 IPO에 따른 보유 구주 매출을 목적으로 주식을 처분할 예정이다.",
+      "category": "기타",
+      "category_original": null,
+      "amount_raw": null,
+      "date": null,
+      "evidence_quote": "처분목적 | 당사 인도법인의 인도시장 IPO에 따른 당사 보유 구주 매출",
+      "evidence_rcept_no": "20250930800083"
+    }
+  ],
+  "keyword_checks": [],
+  "unverifiable": []
+}

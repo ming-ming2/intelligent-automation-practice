@@ -1,0 +1,35 @@
+[
+  {
+    "check": "수치 보정",
+    "item": "C1",
+    "problem": "매출액(연결): Agent가 쓴 값이 Program 값과 달라 Program 값으로 바꿈",
+    "agent": {
+      "triggered": true
+    },
+    "program": {
+      "previous": "64,966,707,000,000",
+      "current": "65,348,728,000,000",
+      "change_rate": "+0.6%",
+      "triggered": false
+    }
+  },
+  {
+    "check": "수치 보정",
+    "item": "C5",
+    "problem": "매출액(별도): Agent가 쓴 값이 Program 값과 달라 Program 값으로 바꿈",
+    "agent": {
+      "triggered": true
+    },
+    "program": {
+      "previous": "23,371,711,000,000",
+      "current": "23,308,033,000,000",
+      "change_rate": "-0.3%",
+      "triggered": false
+    }
+  },
+  {
+    "check": "수치 보정",
+    "item": "P1",
+    "problem": "계약금액(해당 없음): Program 변화 후보가 CHANGE에 없어 Program이 추가"
+  }
+]

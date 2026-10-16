@@ -218,6 +218,7 @@ def main(argv=None, llm=None, review_fn=human_review) -> Path:
         outputs = crew.run(build_inputs(payload, feedback), start_stage=start)
         # Program 대조 3종: FACT 인용 원문 대조 + CHANGE 변화율 대조 + 보고서 증감 방향 대조 (고치지 않고 경고)
         problems = (check_evidence(outputs['facts'], payload)
+                    + list((outputs['analysis'] or {}).get('program_notes', []) if isinstance(outputs['analysis'], dict) else [])
                     + check_change_rates(outputs['analysis'], crew.program_data)
                     + check_report_directions(str(outputs['report']), crew.program_data))
         write_round(run_dir, rnd, outputs, problems)

@@ -1,0 +1,21 @@
+[
+  {
+    "fact_id": "F1",
+    "problem": "근거 인용이 원문에서 확인되지 않음",
+    "quote": "처분내역_처분금액(원) | 1,856,757,000,000"
+  },
+  {
+    "check": "수치 보정",
+    "item": "C1",
+    "problem": "처분금액(해당 없음): Agent가 쓴 값이 Program 값과 달라 Program 값으로 바꿈",
+    "agent": {
+      "current": "1,856,757,000,000"
+    },
+    "program": {
+      "previous": "",
+      "current": "",
+      "change_rate": "비교 불가",
+      "triggered": null
+    }
+  }
+]

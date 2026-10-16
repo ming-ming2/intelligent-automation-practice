@@ -208,6 +208,33 @@ class RoleCWorkflowTest(unittest.TestCase):
         rate_problems = program_tools.check_change_rates(analysis, data)
         self.assertEqual([p['item'] for p in rate_problems], ['C2'])
 
+    def test_change_numbers_come_only_from_program(self):
+        """CHANGE 수치 칸은 Program 값만 허용: 빈 값 채우기, 틀린 값 교체·기록, 기준 불명 시 미기입, 후보 누락 시 추가"""
+        payload = json.loads(json.dumps(MOCK))
+        payload['triggers']['financial_changes'] = [
+            _fin('영업이익', 'CFS', '2587381000000', '3284344000000'),
+            _fin('당기순이익(손실)', 'CFS', '1946335000000', '1305119000000'),
+            _fin('당기순이익(손실)', 'OFS', '376021000000', '1123278000000'),
+        ]
+        data = program_tools.ProgramData(payload)
+        changes = [
+            crew.Change(change_id='C1', metric='영업이익', basis='연결', description='기준 초과'),        # 빈 값 → 채움
+            crew.Change(change_id='C2', metric='당기순이익(손실)', basis='연결', change_rate='-66.5%',
+                        description='순이익 감소'),                                                        # 틀린 값·방향
+            crew.Change(change_id='C3', metric='당기순이익(손실)', description='x'),                        # 기준 불명
+        ]
+        notes = program_tools.apply_program_values(changes, data, make=crew.Change)
+        self.assertEqual((changes[0].change_rate, changes[0].current), ('-21.2%', '2,587,381,000,000'))
+        self.assertEqual(changes[1].change_rate, '+49.1%')
+        self.assertIsNone(changes[2].change_rate)
+        kinds = [(n['item'], n['check']) for n in notes]
+        self.assertIn(('C2', '수치 보정'), kinds)
+        self.assertIn(('C2', '증감 방향 대조'), kinds)
+        self.assertIn(('C3', '수치 보정'), kinds)
+        added = [c for c in changes if c.change_id.startswith('P')]
+        self.assertEqual([(c.metric, c.change_rate) for c in added], [('투자금액', '+30.0%')])  # MOCK 금액 항목
+        self.assertNotIn('C1', [n['item'] for n in notes])  # 빈 칸 채우기는 경고 아님
+
     def test_out_of_list_labels_do_not_stop_run(self):
         """도구를 가진 Agent는 양식 강제가 꺼져 목록 밖 분류를 쓸 수 있다(5주차 실행에서 '중단', '지분·매각').
         멈추지 않고 '기타'로 두되 원래 값은 보존하고, 사실 내용은 그대로인지 확인"""

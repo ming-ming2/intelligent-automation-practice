@@ -27,7 +27,7 @@ os.environ.setdefault('CREWAI_TELEMETRY_DISABLED', 'true')
 from crewai import Agent, Crew, LLM, Process, Task  # noqa: E402
 from pydantic import BaseModel, Field, model_validator  # noqa: E402
 
-from program_tools import build_tools  # noqa: E402  (Agent가 호출하는 Program 도구)
+from program_tools import apply_program_values, build_tools  # noqa: E402  (Agent가 호출하는 Program 도구)
 
 
 # ---------------------------------------------------------------------------
@@ -140,6 +140,7 @@ class VerificationItem(BaseModel):
 
 class ChangeAnalysis(BaseModel):
     rcept_no: str
+    program_notes: list[dict] = Field(default_factory=list, description='Program 기록용. Agent는 쓰지 않는다')
     changes: list[Change] = Field(default_factory=list)
     interpretations: list[Interpretation] = Field(default_factory=list)
     needs_verification: list[VerificationItem] = Field(default_factory=list)
@@ -238,7 +239,7 @@ ANALYZE_BUSINESS_CHANGES_DESCRIPTION = """\
 [입력] 앞 단계(공시 사실 추출)의 FACT 추출 결과는 context로 제공된다. 아래는 Program이 계산한 결과다.
 - 접수번호: {rcept_no} / 기업: {corp_name} / 보고서명: {report_nm} / 데이터 출처: {data_origin}
 
-[Program 비교 항목 목록 - 수치는 넣지 않았다. 값은 도구로 조회한다]
+[Program 비교 항목 목록 - Program이 계산한 변화율·증감 방향·기준 판정. 원 단위 값과 기간은 도구로 조회한다]
 {comparison_index}
 
 [사용할 수 있는 Program 도구]
@@ -256,8 +257,10 @@ ANALYZE_BUSINESS_CHANGES_DESCRIPTION = """\
 {program_needs_verification_json}
 
 [할 일]
-1. changes: 목록에서 'Program 판정: 기준 초과'인 항목은 모두, 그 밖에 분석에 필요한 항목은 골라서 도구로 조회한 뒤 옮긴다.
-   previous·current는 도구의 previous_raw·current_raw, change_rate는 change_rate_display, triggered는 도구 값을 그대로 쓴다.
+1. changes: 목록에서 'Program 판정: 기준 초과'인 항목은 모두, 그 밖에 분석에 필요한 항목은 골라서 옮긴다.
+   change_rate는 목록의 변화율을 그대로 쓰고, previous·current는 lookup_financial_change/lookup_amount_change 도구로
+   조회한 previous_raw·current_raw를 쓴다. 수치 칸은 Program 값만 인정되며, 다르게 쓰면 Program이 바꾸고 기록한다.
+   '기준 초과'는 변화 폭이 기준(±15% 또는 ±20%)보다 크다는 뜻일 뿐 좋다/나쁘다를 뜻하지 않는다. 방향은 목록의 (증가)/(감소)를 따른다.
    재무 항목은 basis에 '연결' 또는 '별도'를 반드시 적고, 연결과 별도를 한 항목에 섞지 않는다. 연결 기준을 먼저 다룬다.
    description에 증감을 쓸 때는 도구의 direction(증가/감소)과 같은 말을 쓴다. 직접 계산하거나 추정하지 않는다. status가 not_comparable이거나 triggered가 null인 항목은 "비교 불가"라고 설명하고
    증가·감소로 단정하지 않는다. 공시 사실 추출의 관련 fact_id를 연결한다.
@@ -306,13 +309,15 @@ WRITE_INTELLIGENCE_REPORT_EXPECTED = """\
 - "## 6. 담당자 검토 체크리스트" (근거 일치, 사실·해석 구분, 과도한 추론 여부 체크박스)"""
 
 
-def program_codes_guardrail(program_items, facts_task=None):
+def program_codes_guardrail(program_items, facts_task=None, program_data=None):
     """사업 변화·영향 분석 가드레일 (Program 검증·보완).
     1) Program(B)이 넘긴 확인 필요 항목의 코드가 Agent 출력에서 빠지면, Agent에게 재작성시키지 않고
        Program이 원래 문구 그대로 채워 넣는다. (5주차: KEYWORD_EXCLUDED 등 새 코드를 Agent가 반복 누락해
        재시도 한도 초과로 실행이 멈춘 문제 대응)
     2) 신뢰도 '낮음' 해석과 공시 사실 추출의 확인 불가 항목에 대응하는 AGENT_CHECK가 없으면 Program이 직접 채운다.
-       LLM이 지시를 놓쳐도 확인 필요 항목이 보고서에서 누락되지 않게 하기 위함이다."""
+       LLM이 지시를 놓쳐도 확인 필요 항목이 보고서에서 누락되지 않게 하기 위함이다.
+    3) CHANGE 수치 칸은 Program 계산값만 허용하고, Program 변화 후보가 빠지면 추가한다 (program_tools.apply_program_values).
+       5주차 도구 반영 실행에서 Agent가 도구를 호출하지 않아 수치가 비어 있었던 문제 대응."""
     program_items = [i for i in (program_items or []) if isinstance(i, dict) and i.get('code')]
 
     def check(output):
@@ -346,6 +351,11 @@ def program_codes_guardrail(program_items, facts_task=None):
                 added.append(VerificationItem(
                     code='AGENT_CHECK', field='facts.unverifiable', item=text,
                     why='공시 원문만으로는 확인할 수 없는 내용입니다.', origin='agent'))
+        # 3) CHANGE 수치 칸은 Program 계산값만 허용 (Agent가 도구를 호출하지 않아도 수치가 틀리지 않게)
+        if program_data is not None:
+            result.program_notes = apply_program_values(result.changes, program_data, make=Change)
+            output.pydantic = result
+            output.raw = result.model_dump_json()
         if added:
             result.needs_verification.extend(added)
             output.pydantic = result
@@ -383,7 +393,7 @@ class DisclosureCrew:
             agent=self.agents['change'],
             context=[self.task_facts],                       # 공시 사실 추출 → 사업 변화·영향 분석
             output_pydantic=ChangeAnalysis,
-            guardrail=program_codes_guardrail(required_codes, self.task_facts),
+            guardrail=program_codes_guardrail(required_codes, self.task_facts, self.program_data),
             guardrail_max_retries=2,
         )
         self.task_report = Task(

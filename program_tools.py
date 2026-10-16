@@ -83,13 +83,16 @@ class ProgramData:
         return found
 
     def index(self) -> str:
-        """프롬프트에 넣는 비교 항목 목록. 숫자는 넣지 않고, 값은 도구로 조회하게 한다."""
+        """프롬프트에 넣는 Program 결과 요약. 변화율·증감 방향·기준 판정만 넣고, 원 단위 값·기간은 도구로 조회한다."""
         lines = []
         for label, rows in (('재무', self.financial), ('금액', self.amounts)):
             for r in rows:
-                judged = ('기준 초과' if r['triggered'] else '기준 미만') if r['status'] == 'evaluated' \
-                    else f"비교 불가({r['reason']})"
-                lines.append(f"- [{label}] {r['metric']} / {r['basis']} / Program 판정: {judged}")
+                if r['status'] == 'evaluated':
+                    judged = f"변화율 {r['change_rate_display']} ({r['direction']}) / " \
+                             f"Program 판정: {'기준 초과' if r['triggered'] else '기준 미만'}({r['threshold']})"
+                else:
+                    judged = f"변화율 비교 불가({r['reason']})"
+                lines.append(f"- [{label}] {r['metric']} / {r['basis']} / {judged}")
         return '\n'.join(lines) or '- 없음'
 
 
@@ -176,6 +179,86 @@ def _rate_text(value) -> Optional[str]:
     if '%' not in str(value) and abs(number) <= 1.5:   # 0.3 같은 비율 표기
         number *= 100
     return f'{number:+.1f}%'
+
+
+def _digits(text) -> str:
+    return re.sub(r'[^0-9-]', '', str(text or ''))
+
+
+def apply_program_values(changes: list, data: ProgramData, make=dict) -> list[dict]:
+    """CHANGE의 수치 칸은 Program 계산값만 허용한다 (사실 정확도 규칙).
+    - 같은 항목·같은 기준(연결/별도)의 Program 결과가 하나로 정해지면: previous·current·change_rate·triggered를
+      Program 값으로 채운다. Agent가 다른 값을 썼다면 Program 값으로 바꾸고, Agent가 쓴 값을 기록한다.
+    - 연결/별도를 적지 않아 Program 결과가 둘 이상이면: 값을 채우지 않고 기록한다(어느 기준인지 추정하지 않음).
+    - Program 결과에 없는 항목이면: Agent 내용을 그대로 두고 'Program 근거 없음'으로 기록한다.
+    - description의 증가/감소 표현이 Program 방향과 반대면 문장은 고치지 않고 기록한다.
+    - Program이 탐지한 변화 후보(기준 초과 재무 항목)와 공시 금액 항목이 CHANGE에 없으면 Program 값으로 추가하고 기록한다.
+      (3주차 설계: 변화 후보 탐지는 Program, 설명은 Agent. Agent가 빠뜨려도 후보가 보고서에서 사라지지 않게)
+    changes는 Change 객체(속성) 또는 dict 모두 받는다. 기록 목록을 돌려준다."""
+    get = lambda c, k: getattr(c, k, None) if not isinstance(c, dict) else c.get(k)
+
+    def put(c, k, v):
+        if isinstance(c, dict):
+            c[k] = v
+        else:
+            setattr(c, k, v)
+
+    notes = []
+    for change in changes or []:
+        cid, metric, basis = get(change, 'change_id'), get(change, 'metric') or '', get(change, 'basis')
+        rows = data.find(data.financial + data.amounts, metric, basis if basis in BASIS_CODE else None)
+        if not rows:
+            notes.append({'check': '수치 보정', 'item': cid, 'problem': f'{metric}: Program 계산 결과에 없는 항목 (수치 검증 불가)'})
+            continue
+        if len({r['basis'] for r in rows}) > 1 or len(rows) > 1:
+            notes.append({'check': '수치 보정', 'item': cid,
+                          'problem': f'{metric}: 연결/별도 기준이 없어 Program 값을 하나로 정할 수 없음 (값을 채우지 않음)',
+                          'program': [f"{r['basis']} {r['change_rate_display']}" for r in rows]})
+            continue
+        row = rows[0]
+        program = {'previous': row['previous_raw'], 'current': row['current_raw'],
+                   'change_rate': row['change_rate_display'], 'triggered': row['triggered']}
+        replaced = {}
+        for key, value in program.items():
+            written = get(change, key)
+            same = (written in (None, '') or
+                    (key == 'change_rate' and _rate_text(written) == value) or
+                    (key in ('previous', 'current') and _digits(written) == _digits(value)) or
+                    written == value)
+            if not same:
+                replaced[key] = written
+            put(change, key, value)
+        if basis not in BASIS_CODE and row['basis'] in BASIS_CODE:
+            put(change, 'basis', row['basis'])
+        if replaced:
+            notes.append({'check': '수치 보정', 'item': cid,
+                          'problem': f"{metric}({row['basis']}): Agent가 쓴 값이 Program 값과 달라 Program 값으로 바꿈",
+                          'agent': replaced, 'program': program})
+        written_dir = _first_direction(get(change, 'description') or '')
+        if written_dir and row['direction'] in ('증가', '감소') and written_dir != row['direction']:
+            notes.append({'check': '증감 방향 대조', 'item': cid,
+                          'problem': f"{metric}({row['basis']}) 설명에 \"{written_dir}\"으로 기재",
+                          'program': f"{row['change_rate_display']} ({row['direction']})"})
+    covered = set()
+    for change in changes or []:
+        for r in data.find(data.financial + data.amounts, get(change, 'metric') or '', get(change, 'basis')):
+            covered.add((r['metric'], r['basis']))
+    required = [r for r in data.financial if r['triggered']] + list(data.amounts)
+    for n, row in enumerate([r for r in required if (r['metric'], r['basis']) not in covered], start=1):
+        if row['status'] == 'evaluated':
+            desc = f"Program 탐지: {row['change_rate_display']} {row['direction']} " \
+                   f"({'기준 초과' if row['triggered'] else '기준 미만'}, {row['threshold']}). Agent 설명 누락으로 Program이 추가"
+        else:
+            desc = f"Program 탐지: 비교 불가({row['reason']}). Agent 설명 누락으로 Program이 추가"
+        changes.append(make(
+            change_id=f'P{n}', metric=row['metric'],
+            basis=row['basis'] if row['basis'] in BASIS_CODE else None,
+            previous=row['previous_raw'] or None, current=row['current_raw'] or None,
+            change_rate=row['change_rate_display'], triggered=row['triggered'],
+            description=desc, related_fact_ids=[]))
+        notes.append({'check': '수치 보정', 'item': f'P{n}',
+                      'problem': f"{row['metric']}({row['basis']}): Program 변화 후보가 CHANGE에 없어 Program이 추가"})
+    return notes
 
 
 def check_change_rates(analysis: Optional[dict], data: ProgramData) -> list[dict]:
