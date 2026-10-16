@@ -1,0 +1,16 @@
+{
+  "baseline_commit": "c938243f511faec2829d79a12ea054a5470f8525",
+  "date_timezone": "Asia/Seoul",
+  "model": "openai/gpt-4o-mini",
+  "review_mode": "--no-review",
+  "command": "python main.py --rcept-no 20250930800083 --data-origin dart --label before_애매 --no-review",
+  "sha256": {
+    "input.json": "f0d6791f79af86eadf5b3e35e6b9d97fcf83d6f4e7c34d3037095c8575024407",
+    "round1_task1_facts.json": "25a5b4d99ff280be9fd36fa6cd67be804463a1638164f36151c9c377e01a613e",
+    "round1_task2_analysis.json": "e638619d25352374721da1aca686bbdd5672c50e754d3ea23b5d8275fbdfce1d",
+    "round1_report.md": "1b6feb597e6c89b4f05c88f22fa56ef3027c274f2dfee8d26bf29a0b72e6be76",
+    "round1_evidence_check.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "final_report.md": "20683329322102c32bad9df957a4732f917b9811228bcf95e138e36f83495123",
+    "crew_log.txt": "42d5610139b23bccfc5df64cc2cee7eadd574a0c570e292078b4a17ecc1a604a"
+  }
+}

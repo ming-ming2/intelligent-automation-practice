@@ -1,0 +1,86 @@
+{
+  "rcept_no": "20251014800001",
+  "changes": [
+    {
+      "change_id": "C1",
+      "metric": "처분금액",
+      "previous": null,
+      "current": null,
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "비교 불가 (CORRECTION_LINK_UNCONFIRMED)",
+      "related_fact_ids": [
+        "F3"
+      ]
+    }
+  ],
+  "interpretations": [
+    {
+      "statement": "LG전자의 처분금액이 정정되었으나, 비교가 불가능하여 삼성전자 DX 생활가전·전자 사업에 미치는 영향은 불확실하다.",
+      "impact_area": "재무",
+      "based_on": [
+        "F3",
+        "C1"
+      ],
+      "confidence": "낮음"
+    }
+  ],
+  "needs_verification": [
+    {
+      "code": "HISTORY_COVERAGE_UNKNOWN",
+      "field": "history_search",
+      "item": "검색 기간 전체의 공시 목록 수집을 확인할 수 없습니다.",
+      "why": "정확한 과거 사례 분석을 위해 필요합니다.",
+      "origin": "program"
+    },
+    {
+      "code": "CORRECTION_LINK_UNCONFIRMED",
+      "field": "past_cases",
+      "item": "정정공시를 사례 수에서 제외했습니다.",
+      "why": "원공시 연결과 비교 대상을 확인해야 합니다.",
+      "origin": "program"
+    },
+    {
+      "code": "AMOUNT_UNRESOLVED",
+      "field": "triggers.amount_changes",
+      "item": "처분금액의 단위·값·표 구조가 불명확하거나 여러 번 등장합니다.",
+      "why": "정확한 금액 확인이 필요합니다.",
+      "origin": "program"
+    },
+    {
+      "code": "FINANCIAL_DATA_MISSING",
+      "field": "triggers.financial_changes",
+      "item": "현재 접수번호에 직접 연결된 재무 계정이 없습니다.",
+      "why": "재무 데이터의 확인이 필요합니다.",
+      "origin": "program"
+    },
+    {
+      "code": "AMOUNT_UNRESOLVED",
+      "field": "triggers.amount_changes",
+      "item": "처분금액의 단위·값·표 구조가 불명확하거나 여러 번 등장합니다.",
+      "why": "정확한 금액 확인이 필요합니다.",
+      "origin": "agent"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": "interpretations",
+      "item": "처분금액의 변동이 삼성전자에 미치는 영향을 확인해야 합니다.",
+      "why": "정확한 해석을 위해 필요합니다.",
+      "origin": "agent"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": "interpretations",
+      "item": "해석 검증: LG전자의 처분금액이 정정되었으나, 비교가 불가능하여 삼성전자 DX 생활가전·전자 사업에 미치는 영향은 불확실하다.",
+      "why": "근거(F3, C1)만으로는 신뢰도가 낮아 추가 자료로 확인이 필요합니다.",
+      "origin": "agent"
+    }
+  ],
+  "follow_up_checks": [
+    "정정된 처분금액의 정확한 수치를 확인할 수 있는 방법은 무엇인가?",
+    "과거 사례의 공시 목록을 어떻게 확보할 수 있을까?",
+    "정정공시와 원공시 간의 연결을 어떻게 확인할 수 있을까?",
+    "처분금액의 단위와 구조를 명확히 하기 위한 추가 자료는 무엇인가?",
+    "삼성전자에 미치는 경쟁적 영향은 어떻게 분석할 수 있을까?"
+  ]
+}

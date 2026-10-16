@@ -28,6 +28,7 @@ RESULTS_DIR = Path(os.getenv('RESULTS_DIR', 'results'))
 RESULTS_DIR = RESULTS_DIR if RESULTS_DIR.is_absolute() else ROOT / RESULTS_DIR
 REVIEW_DB = ROOT / 'data' / 'review.db'   # A의 dart.db는 건드리지 않고 별도 파일에 이력 저장
 MAX_ROUNDS = 3
+STAGE_LABELS = {1: '공시 사실 추출', 2: '사업 변화·영향 분석', 3: '경쟁사 분석 보고서 작성'}
 
 
 def _rel(path: Path) -> str:
@@ -37,9 +38,9 @@ def _rel(path: Path) -> str:
         return str(path)
 
 REJECT_REASONS = {
-    '1': ('근거 오류', 1, 'Task1(공시 사실 추출)부터 재작업'),
-    '2': ('비교·해석 오류', 2, 'Task2(변화·영향 분석)부터 재작업'),
-    '3': ('보고서 형식 오류', 3, 'Task3(보고서 작성)만 재작업'),
+    '1': ('근거 오류', 1, '공시 사실 추출부터 재작업'),
+    '2': ('비교·해석 오류', 2, '사업 변화·영향 분석부터 재작업'),
+    '3': ('보고서 형식 오류', 3, '경쟁사 분석 보고서 작성만 재작업'),
 }
 IMPORTANCE = {'1': '높음', '2': '중간', '3': '낮음', '4': '보류'}
 
@@ -79,7 +80,7 @@ def _collect_quotes(node, out: list[str]):
 def check_evidence(facts: dict | None, payload: dict) -> list[dict]:
     """원문·Program 근거에서 찾을 수 없는 인용, 입력에 없는 접수번호를 찾아낸다."""
     if not isinstance(facts, dict):
-        return [{'fact_id': '-', 'problem': 'Task1 결과가 구조화되지 않음'}]
+        return [{'fact_id': '-', 'problem': '공시 사실 추출 결과가 구조화되지 않음'}]
     quotes = [payload.get('normalized_text') or '']
     _collect_quotes(payload.get('triggers'), quotes)
     _collect_quotes(payload.get('past_cases'), quotes)
@@ -161,11 +162,11 @@ def save_history(row: dict):
 
 
 def write_round(run_dir: Path, rnd: int, outputs: dict, problems: list[dict]):
-    (run_dir / f'round{rnd}_task1_facts.json').write_text(
+    (run_dir / f'round{rnd}_extract_disclosure_facts.json').write_text(
         json.dumps(outputs['facts'], ensure_ascii=False, indent=2), encoding='utf-8')
-    (run_dir / f'round{rnd}_task2_analysis.json').write_text(
+    (run_dir / f'round{rnd}_analyze_business_changes.json').write_text(
         json.dumps(outputs['analysis'], ensure_ascii=False, indent=2), encoding='utf-8')
-    (run_dir / f'round{rnd}_report.md').write_text(str(outputs['report']), encoding='utf-8')
+    (run_dir / f'round{rnd}_write_intelligence_report.md').write_text(str(outputs['report']), encoding='utf-8')
     (run_dir / f'round{rnd}_evidence_check.json').write_text(
         json.dumps(problems, ensure_ascii=False, indent=2), encoding='utf-8')
 
@@ -199,7 +200,7 @@ def main(argv=None, llm=None, review_fn=human_review) -> Path:
                           verbose=not args.quiet)
     feedback, start, review = '없음', 1, None
     for rnd in range(1, MAX_ROUNDS + 1):
-        print(f'\n>>> Round {rnd}: Task{start}부터 실행')
+        print(f'\n>>> Round {rnd}: {STAGE_LABELS[start]}부터 실행')
         outputs = crew.run(build_inputs(payload, feedback), start_stage=start)
         problems = check_evidence(outputs['facts'], payload)
         write_round(run_dir, rnd, outputs, problems)

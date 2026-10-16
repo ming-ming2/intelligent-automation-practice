@@ -1,0 +1,16 @@
+{
+  "baseline_commit": "c938243f511faec2829d79a12ea054a5470f8525",
+  "date_timezone": "Asia/Seoul",
+  "model": "openai/gpt-4o-mini",
+  "review_mode": "--no-review",
+  "command": "python main.py --rcept-no 20251014800001 --data-origin dart --label before_복잡 --no-review",
+  "sha256": {
+    "input.json": "9aec8850f5d45d8e4a0a7522677af65de5ee464c26b90f789d2630715e24d949",
+    "round1_task1_facts.json": "6068b1d8be7f0bcd1f62281b407c321a705620157793e8de1b6c6991abf32814",
+    "round1_task2_analysis.json": "7f0955b39c3f4e6587c38626ac974c815781f5870543279117c7bfaf6ca31afd",
+    "round1_report.md": "e6df327b2adb4ff48887cdbde12769c709203422894f0078199e249fb3f85273",
+    "round1_evidence_check.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "final_report.md": "ea13306af4659799bb86b8b425e167ad99179a0d51d740d1f8c869cab78777f6",
+    "crew_log.txt": "81b08c6f484a311c96e13efa17d2080dd923586acdb0b0aa340996eb6b8190c3"
+  }
+}

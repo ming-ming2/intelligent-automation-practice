@@ -1,0 +1,108 @@
+{
+  "rcept_no": "20250930800083",
+  "changes": [
+    {
+      "change_id": "C1",
+      "metric": "처분금액",
+      "previous": null,
+      "current": null,
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "비교 불가 (CURRENT_VALUE_MISSING)",
+      "related_fact_ids": [
+        "F1",
+        "F3"
+      ]
+    }
+  ],
+  "interpretations": [
+    {
+      "statement": "LG전자의 주식 처분은 삼성전자 DX 생활가전·전자 사업에 경쟁 압력을 증가시킬 가능성이 있다.",
+      "impact_area": "경쟁환경",
+      "based_on": [
+        "F1",
+        "F3"
+      ],
+      "confidence": "낮음"
+    }
+  ],
+  "needs_verification": [
+    {
+      "code": "HISTORY_COVERAGE_UNKNOWN",
+      "field": "history_search",
+      "item": "검색 기간 전체의 공시 목록 수집을 확인할 수 없습니다.",
+      "why": "확인할 수 있는 과거 동일 유형 사례가 없습니다.",
+      "origin": "program"
+    },
+    {
+      "code": "PAST_CASES_MISSING",
+      "field": "past_cases",
+      "item": "확인 가능한 과거 동일 유형 사례가 없습니다.",
+      "why": "과거 사례가 비어 있습니다.",
+      "origin": "program"
+    },
+    {
+      "code": "AMOUNT_UNRESOLVED",
+      "field": "triggers.amount_changes",
+      "item": "처분금액의 단위·값·표 구조가 불명확하거나 여러 번 등장합니다.",
+      "why": "처분금액이 명확하지 않기 때문입니다.",
+      "origin": "program"
+    },
+    {
+      "code": "FINANCIAL_DATA_MISSING",
+      "field": "triggers.financial_changes",
+      "item": "현재 접수번호에 직접 연결된 재무 계정이 없습니다.",
+      "why": "재무 데이터가 부족합니다.",
+      "origin": "program"
+    },
+    {
+      "code": "CURRENT_VALUE_MISSING",
+      "field": "triggers.amount_changes",
+      "item": "처분금액: 비교 불가 (CURRENT_VALUE_MISSING)",
+      "why": "처분금액이 명확하지 않기 때문입니다.",
+      "origin": "program"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": null,
+      "item": "처분금액의 단위·값·표 구조를 확인해야 합니다.",
+      "why": "확정된 금액이 없기 때문입니다.",
+      "origin": "agent"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": null,
+      "item": "과거 동일 유형 사례를 확인해야 합니다.",
+      "why": "확인 가능한 과거 사례가 없습니다.",
+      "origin": "agent"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": "interpretations",
+      "item": "해석 검증: LG전자의 주식 처분은 삼성전자 DX 생활가전·전자 사업에 경쟁 압력을 증가시킬 가능성이 있다.",
+      "why": "근거(F1, F3)만으로는 신뢰도가 낮아 추가 자료로 확인이 필요합니다.",
+      "origin": "agent"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": "facts.unverifiable",
+      "item": "처분금액은 인도 증권거래위원회(SEBI)의 승인 이전까지 공모가액 범위를 확정할 수 없음에 따라 금액을 기재하지 않았다.",
+      "why": "공시 원문만으로는 확인할 수 없는 내용입니다.",
+      "origin": "agent"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": "facts.unverifiable",
+      "item": "처분예정일자는 SEBI의 승인 이전까지 그 일자를 확정할 수 없음에 따라 일자를 기재하지 않았다.",
+      "why": "공시 원문만으로는 확인할 수 없는 내용입니다.",
+      "origin": "agent"
+    }
+  ],
+  "follow_up_checks": [
+    "LG전자의 처분금액이 확정되면 재공시가 이루어질 예정입니다. 이 시점에 대한 확인이 필요합니다.",
+    "SEBI의 승인 일정과 관련된 정보가 필요합니다.",
+    "LG전자의 IPO와 관련된 시장 반응을 모니터링해야 합니다.",
+    "삼성전자 DX 생활가전·전자 사업의 경쟁력에 미치는 영향을 분석해야 합니다.",
+    "LG전자의 자기자본 변동에 대한 추가 정보를 확인해야 합니다."
+  ]
+}

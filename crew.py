@@ -1,9 +1,9 @@
 """역할 C: CrewAI Agent·Task 정의.
 
 3주차 설계(기획안 7페이지)를 그대로 옮긴다.
-  Agent① Disclosure Analysis Agent  → Task1 공시 핵심 사실 추출 (FACT)
-  Agent② Business Change Analyst    → Task2 변화 맥락·영향 분석 (CHANGE / INTERPRETATION / NEEDS_VERIFICATION)
-  Agent③ Intelligence Report Agent  → Task3 검토용 보고서 초안
+  Agent① Disclosure Analysis Agent  → 공시 사실 추출 (FACT)
+  Agent② Business Change Analyst    → 사업 변화·영향 분석 (CHANGE / INTERPRETATION / NEEDS_VERIFICATION)
+  Agent③ Intelligence Report Agent  → 경쟁사 분석 보고서 작성
 
 수치 계산·변화 탐지는 B(Program)가 끝낸 상태로 들어온다. Agent는 계산하지 않고 해석만 한다.
 """
@@ -141,7 +141,7 @@ FEEDBACK_BLOCK = (
     '위 요청이 "없음"이 아니면 반드시 반영하여 이전 결과의 문제를 고친다.'
 )
 
-TASK1_DESCRIPTION = """\
+EXTRACT_DISCLOSURE_FACTS_DESCRIPTION = """\
 [입력] 경쟁사 공시 1건
 - 기업: {corp_name} / 보고서명: {report_nm} / 접수번호: {rcept_no} / 접수일: {rcept_dt}
 - 데이터 출처: {data_origin}
@@ -166,8 +166,8 @@ TASK1_DESCRIPTION = """\
 5. 원문이 비어 있거나 정규화 상태가 ok가 아니면 facts를 비우고 그 이유를 unverifiable에 적는다.
 6. 추측, 업계 지식, 원문 밖의 정보로 fact를 만들지 않는다. 모든 문장은 한국어로 쓴다.""" + FEEDBACK_BLOCK
 
-TASK2_DESCRIPTION = """\
-[입력] 앞 단계(Task1)의 FACT 추출 결과는 context로 제공된다. 아래는 Program이 계산한 결과다.
+ANALYZE_BUSINESS_CHANGES_DESCRIPTION = """\
+[입력] 앞 단계(공시 사실 추출)의 FACT 추출 결과는 context로 제공된다. 아래는 Program이 계산한 결과다.
 - 접수번호: {rcept_no} / 기업: {corp_name} / 보고서명: {report_nm} / 데이터 출처: {data_origin}
 
 [Program 변화 탐지 결과 - 금액 비교 (기준 ±20%)]
@@ -188,20 +188,20 @@ TASK2_DESCRIPTION = """\
 [할 일]
 1. changes: Program 비교 결과의 각 항목을 옮긴다. change_rate에는 Program이 준 change_rate_display
    (예: +30.0%)를 그대로 쓰고, triggered도 Program 값을 그대로 쓴다. 직접 계산하지 않는다. status가 not_comparable이거나 triggered가 null인 항목은 "비교 불가"라고 설명하고
-   증가·감소로 단정하지 않는다. Task1의 관련 fact_id를 연결한다.
+   증가·감소로 단정하지 않는다. 공시 사실 추출의 관련 fact_id를 연결한다.
 2. interpretations: 확인된 사실과 변화가 삼성전자 DX 생활가전·전자 사업에 줄 수 있는 영향을
    사업/재무/경쟁환경 중 하나로 분류해 쓴다. 반드시 근거 fact_id 또는 change_id를 based_on에 적고,
    "~일 가능성이 있다"처럼 추정임을 드러낸다. 근거 없는 해석은 쓰지 않는다.
    경쟁사의 투자·사업 확대는 삼성전자 입장에서 경쟁 압력(위협) 요인으로 먼저 검토하고, 우리 회사에 유리하다고
    볼 근거가 공시에 없으면 긍정적이라고 쓰지 않는다. 금액 하나만으로 내린 해석의 confidence는 낮음으로 둔다.
 3. needs_verification: Program이 남긴 확인 필요 사항을 하나도 빠뜨리지 말고 code를 그대로 유지해
-   origin=program으로 옮긴다. Task1의 unverifiable 항목은 하나씩 모두 code=AGENT_CHECK, origin=agent로 추가하고,
+   origin=program으로 옮긴다. 공시 사실 추출의 unverifiable 항목은 하나씩 모두 code=AGENT_CHECK, origin=agent로 추가하고,
    confidence가 낮음인 해석도 무엇을 확인하면 확정할 수 있는지 AGENT_CHECK로 추가한다.
 4. 과거 사례가 비어 있어도 검색 범위(coverage_status)가 complete가 아니면 "과거에 없던 신규 사건"이라고 쓰지 않는다.
 5. follow_up_checks: 담당자가 추가로 확인할 질문을 2~5개 쓴다. 모든 문장은 한국어로 쓴다.""" + FEEDBACK_BLOCK
 
-TASK3_DESCRIPTION = """\
-[입력] Task1(FACT)과 Task2(CHANGE·INTERPRETATION·NEEDS_VERIFICATION) 결과는 context로 제공된다.
+WRITE_INTELLIGENCE_REPORT_DESCRIPTION = """\
+[입력] 공시 사실 추출(FACT)과 사업 변화·영향 분석(CHANGE·INTERPRETATION·NEEDS_VERIFICATION) 결과는 context로 제공된다.
 - 기업: {corp_name} / 보고서명: {report_nm} / 접수번호: {rcept_no} / 접수일: {rcept_dt}
 - 원문 링크: {source_url}
 - 데이터 출처 안내: {data_origin_notice}
@@ -212,13 +212,13 @@ TASK3_DESCRIPTION = """\
 2. 사실(FACT)과 해석(INTERPRETATION)을 다른 절에 쓰고, 해석 문장 앞에는 [해석]을 붙인다.
 3. 모든 사실에는 fact_id와 근거 원문 인용, 접수번호를 함께 적는다.
 4. 확인 필요 항목과 담당자 후속 확인 질문(follow_up_checks)을 하나도 빠짐없이 옮긴다.
-   변화율은 Task2의 표시값(예: +30.0%)을 그대로 쓴다.
-   Task1의 keyword_checks는 키워드별로 근거 문장과 함께 is_actual_event가 true면 '실제 사건',
+   변화율은 사업 변화·영향 분석의 표시값(예: +30.0%)을 그대로 쓴다.
+   공시 사실 추출의 keyword_checks는 키워드별로 근거 문장과 함께 is_actual_event가 true면 '실제 사건',
    false면 '실제 사건 아님(부정문)', null이면 '판단 불가'로 적는다.
 5. 중요도(높음/중간/낮음)는 쓰지 않는다. 담당자가 결정한다.
 6. 데이터 출처 안내가 "없음"이 아니면 보고서 제목 바로 아래에 "> ⚠️ "로 시작하는 인용문 한 줄로 표시한다.""" + FEEDBACK_BLOCK
 
-TASK3_EXPECTED = """\
+WRITE_INTELLIGENCE_REPORT_EXPECTED = """\
 한국어 마크다운 보고서 (코드블록으로 감싸지 않음). 제목 줄은 아래 목록의 따옴표 안 문구와 똑같이 쓰고,
 괄호 속 작성 안내는 제목에 붙이지 말고 그 절의 본문으로만 반영한다.
 - "# 경쟁사 공시 검토 보고서: (기업명) - (보고서명)" 바로 아래 데이터 출처 경고 인용문, 그 아래 접수번호·접수일·원문 링크 표
@@ -233,9 +233,9 @@ TASK3_EXPECTED = """\
 
 
 def program_codes_guardrail(required_codes: set[str], facts_task=None):
-    """Task2 가드레일 (Program 검증).
+    """사업 변화·영향 분석 가드레일 (Program 검증).
     1) Program이 넘긴 확인 필요 코드가 빠지면 Agent에게 재작성시킨다.
-    2) 신뢰도 '낮음' 해석과 Task1의 확인 불가 항목에 대응하는 AGENT_CHECK가 없으면 Program이 직접 채운다.
+    2) 신뢰도 '낮음' 해석과 공시 사실 추출의 확인 불가 항목에 대응하는 AGENT_CHECK가 없으면 Program이 직접 채운다.
        LLM이 지시를 놓쳐도 확인 필요 항목이 보고서에서 누락되지 않게 하기 위함이다."""
     def check(output):
         result = output.pydantic
@@ -284,35 +284,35 @@ class DisclosureCrew:
         self.log_file = log_file
 
         self.task_facts = Task(
-            name='task1_fact_extraction',
-            description=TASK1_DESCRIPTION,
+            name='extract_disclosure_facts',
+            description=EXTRACT_DISCLOSURE_FACTS_DESCRIPTION,
             expected_output='FactExtraction 형식: rcept_no, corp_name, report_nm, facts(근거 원문 포함), '
                             'keyword_checks, unverifiable',
             agent=self.agents['disclosure'],
             output_pydantic=FactExtraction,
         )
         self.task_analysis = Task(
-            name='task2_change_analysis',
-            description=TASK2_DESCRIPTION,
+            name='analyze_business_changes',
+            description=ANALYZE_BUSINESS_CHANGES_DESCRIPTION,
             expected_output='ChangeAnalysis 형식: rcept_no, changes, interpretations(based_on 필수), '
                             'needs_verification(Program 코드 전부 포함), follow_up_checks',
             agent=self.agents['change'],
-            context=[self.task_facts],                       # Task1 → Task2
+            context=[self.task_facts],                       # 공시 사실 추출 → 사업 변화·영향 분석
             output_pydantic=ChangeAnalysis,
             guardrail=program_codes_guardrail(required_codes, self.task_facts),
             guardrail_max_retries=2,
         )
         self.task_report = Task(
-            name='task3_intelligence_report',
-            description=TASK3_DESCRIPTION,
-            expected_output=TASK3_EXPECTED,
+            name='write_intelligence_report',
+            description=WRITE_INTELLIGENCE_REPORT_DESCRIPTION,
+            expected_output=WRITE_INTELLIGENCE_REPORT_EXPECTED,
             agent=self.agents['report'],
-            context=[self.task_facts, self.task_analysis],   # Task1·2 → Task3
+            context=[self.task_facts, self.task_analysis],   # 공시 사실 추출·사업 변화·영향 분석 → 경쟁사 분석 보고서 작성
         )
         self.tasks = [self.task_facts, self.task_analysis, self.task_report]
 
     def run(self, inputs: dict, start_stage: int = 1) -> dict:
-        """start_stage=1: 전체, 2: Task2부터, 3: Task3만.
+        """start_stage=1: 전체, 2: 사업 변화·영향 분석부터, 3: 경쟁사 분석 보고서 작성만.
         앞 Task 객체는 직전 실행 결과(output)를 보존하므로 context로 그대로 전달된다."""
         if start_stage > 1 and any(t.output is None for t in self.tasks[:start_stage - 1]):
             raise RuntimeError('앞 단계 결과가 없어 부분 재실행을 할 수 없습니다. 처음부터 실행하세요.')

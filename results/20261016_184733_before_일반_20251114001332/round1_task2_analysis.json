@@ -1,0 +1,312 @@
+{
+  "rcept_no": "20251114001332",
+  "changes": [
+    {
+      "change_id": "C1",
+      "metric": "계약금액",
+      "previous": null,
+      "current": null,
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "비교 불가 (CURRENT_VALUE_MISSING)",
+      "related_fact_ids": [
+        "F1",
+        "F2"
+      ]
+    },
+    {
+      "change_id": "C2",
+      "metric": "유동자산",
+      "previous": "33,923,517,000,000",
+      "current": "34,764,672,000,000",
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "비교 불가 (PERIOD_UNVERIFIED)",
+      "related_fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "change_id": "C3",
+      "metric": "비유동자산",
+      "previous": "31,706,072,000,000",
+      "current": "32,405,463,000,000",
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "비교 불가 (PERIOD_UNVERIFIED)",
+      "related_fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "change_id": "C4",
+      "metric": "자산총계",
+      "previous": "65,629,589,000,000",
+      "current": "67,170,135,000,000",
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "비교 불가 (PERIOD_UNVERIFIED)",
+      "related_fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "change_id": "C5",
+      "metric": "유동부채",
+      "previous": "27,307,439,000,000",
+      "current": "27,597,279,000,000",
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "비교 불가 (PERIOD_UNVERIFIED)",
+      "related_fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "change_id": "C6",
+      "metric": "비유동부채",
+      "previous": "13,110,486,000,000",
+      "current": "12,653,265,000,000",
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "비교 불가 (PERIOD_UNVERIFIED)",
+      "related_fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "change_id": "C7",
+      "metric": "부채총계",
+      "previous": "40,417,925,000,000",
+      "current": "40,250,544,000,000",
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "비교 불가 (PERIOD_UNVERIFIED)",
+      "related_fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "change_id": "C8",
+      "metric": "자본금",
+      "previous": "904,169,000,000",
+      "current": "904,169,000,000",
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "비교 불가 (PERIOD_UNVERIFIED)",
+      "related_fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "change_id": "C9",
+      "metric": "이익잉여금",
+      "previous": "16,352,773,000,000",
+      "current": "18,025,792,000,000",
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "비교 불가 (PERIOD_UNVERIFIED)",
+      "related_fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "change_id": "C10",
+      "metric": "자본총계",
+      "previous": "25,211,664,000,000",
+      "current": "26,919,591,000,000",
+      "change_rate": "비교 불가",
+      "triggered": null,
+      "description": "비교 불가 (PERIOD_UNVERIFIED)",
+      "related_fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "change_id": "C11",
+      "metric": "매출액",
+      "previous": "64,966,707,000,000",
+      "current": "65,348,728,000,000",
+      "change_rate": "+0.6%",
+      "triggered": false,
+      "description": "비교 가능",
+      "related_fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "change_id": "C12",
+      "metric": "영업이익",
+      "previous": "3,284,344,000,000",
+      "current": "2,587,381,000,000",
+      "change_rate": "-21.2%",
+      "triggered": true,
+      "description": "비교 가능",
+      "related_fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "change_id": "C13",
+      "metric": "법인세차감전 순이익",
+      "previous": "2,431,169,000,000",
+      "current": "2,447,001,000,000",
+      "change_rate": "+0.7%",
+      "triggered": false,
+      "description": "비교 가능",
+      "related_fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "change_id": "C14",
+      "metric": "당기순이익(손실)",
+      "previous": "1,305,119,000,000",
+      "current": "1,946,335,000,000",
+      "change_rate": "+49.1%",
+      "triggered": true,
+      "description": "비교 가능",
+      "related_fact_ids": [
+        "F1"
+      ]
+    },
+    {
+      "change_id": "C15",
+      "metric": "총포괄손익",
+      "previous": "1,235,511,000,000",
+      "current": "1,858,209,000,000",
+      "change_rate": "+50.4%",
+      "triggered": true,
+      "description": "비교 가능",
+      "related_fact_ids": [
+        "F1"
+      ]
+    }
+  ],
+  "interpretations": [
+    {
+      "statement": "LG전자의 재무 지표가 전반적으로 증가하고 있으나, 영업이익과 당기순이익이 감소하고 있어 수익성에 대한 우려가 커질 가능성이 있다.",
+      "impact_area": "재무",
+      "based_on": [
+        "C11",
+        "C12",
+        "C14"
+      ],
+      "confidence": "낮음"
+    }
+  ],
+  "needs_verification": [
+    {
+      "code": "AMOUNT_UNRESOLVED",
+      "field": "triggers.amount_changes",
+      "item": "계약금액",
+      "why": "계약금액의 단위·값·표 구조가 불명확하거나 여러 번 등장합니다.",
+      "origin": "program"
+    },
+    {
+      "code": "CURRENT_VALUE_MISSING",
+      "field": "triggers.amount_changes",
+      "item": "계약금액",
+      "why": "비교 불가 (CURRENT_VALUE_MISSING)",
+      "origin": "program"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "item": "유동자산",
+      "why": "비교 불가 (PERIOD_UNVERIFIED)",
+      "origin": "program"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "item": "비유동자산",
+      "why": "비교 불가 (PERIOD_UNVERIFIED)",
+      "origin": "program"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "item": "자산총계",
+      "why": "비교 불가 (PERIOD_UNVERIFIED)",
+      "origin": "program"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "item": "유동부채",
+      "why": "비교 불가 (PERIOD_UNVERIFIED)",
+      "origin": "program"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "item": "비유동부채",
+      "why": "비교 불가 (PERIOD_UNVERIFIED)",
+      "origin": "program"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "item": "부채총계",
+      "why": "비교 불가 (PERIOD_UNVERIFIED)",
+      "origin": "program"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "item": "자본금",
+      "why": "비교 불가 (PERIOD_UNVERIFIED)",
+      "origin": "program"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "item": "이익잉여금",
+      "why": "비교 불가 (PERIOD_UNVERIFIED)",
+      "origin": "program"
+    },
+    {
+      "code": "PERIOD_UNVERIFIED",
+      "field": "triggers.financial_changes",
+      "item": "자본총계",
+      "why": "비교 불가 (PERIOD_UNVERIFIED)",
+      "origin": "program"
+    },
+    {
+      "code": "KEYWORD_EVIDENCE_TRUNCATED",
+      "field": "triggers.keywords",
+      "item": "중단",
+      "why": "중단 관련 증거가 일부 누락되었습니다.",
+      "origin": "program"
+    },
+    {
+      "code": "KEYWORD_EVIDENCE_TRUNCATED",
+      "field": "triggers.keywords",
+      "item": "분할",
+      "why": "분할 관련 증거가 일부 누락되었습니다.",
+      "origin": "program"
+    },
+    {
+      "code": "KEYWORD_EVIDENCE_TRUNCATED",
+      "field": "triggers.keywords",
+      "item": "합병",
+      "why": "합병 관련 증거가 일부 누락되었습니다.",
+      "origin": "program"
+    },
+    {
+      "code": "AGENT_CHECK",
+      "field": "interpretations",
+      "item": "해석 검증: LG전자의 재무 지표가 전반적으로 증가하고 있으나, 영업이익과 당기순이익이 감소하고 있어 수익성에 대한 우려가 커질 가능성이 있다.",
+      "why": "근거(C11, C12, C14)만으로는 신뢰도가 낮아 추가 자료로 확인이 필요합니다.",
+      "origin": "agent"
+    }
+  ],
+  "follow_up_checks": [
+    "계약금액의 단위와 값이 명확한지 확인할 필요가 있다.",
+    "유동자산, 비유동자산, 자산총계 등의 기간이 확인 가능한지 검토해야 한다.",
+    "영업이익 감소의 원인을 분석할 필요가 있다.",
+    "당기순이익 증가의 지속 가능성을 평가해야 한다.",
+    "경쟁사의 재무 변화가 삼성전자에 미치는 영향을 추가로 분석해야 한다."
+  ]
+}
